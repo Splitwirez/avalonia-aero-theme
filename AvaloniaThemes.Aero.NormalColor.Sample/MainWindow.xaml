@@ -1,0 +1,73 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="398" d:DesignHeight="482"
+        x:Class="AvaloniaThemes.Aero.NormalColor.Sample.MainWindow"
+        Title="AvaloniaThemes.Aero.NormalColor.Sample" Width="398" Height="482" CanResize="False">
+  <DockPanel>
+    <Grid Margin="0,0,7,8" ColumnDefinitions="73,8,73,8,73" HorizontalAlignment="Right" DockPanel.Dock="Bottom">
+      <Button IsDefault="True" Content="OK"/>
+      <Button IsCancel="True" Content="Cancel" Grid.Column="2"/>
+      <Button IsDefault="True" Content="Apply" Grid.Column="4"/>
+    </Grid>
+    <TabControl>
+      <TabItem Header="Buttons">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Spacing="8" Margin="4">
+          <StackPanel HorizontalAlignment="Left" Width="86">
+            <Button Content="Button">
+              <ToolTip.Tip>
+                <ToolTip Content="This Button is a Button, but you already knew that."/>
+              </ToolTip.Tip>
+            </Button>
+            <Button Content="Disabled Button" IsEnabled="False"/>
+          </StackPanel>
+          <StackPanel Orientation="Vertical">
+            <RadioButton GroupName="RadiosGroup" Content="RadioButton 1"/>
+            <RadioButton GroupName="RadiosGroup" Content="RadioButton 2" IsChecked="True"/>
+            <RadioButton GroupName="RadiosGroup" Content="RadioButton 3"/>
+            <RadioButton GroupName="RadiosGroup" Content="RadioButton 4 but it's a disabled RadioButton" IsEnabled="False"/>
+          </StackPanel>
+          <StackPanel Orientation="Vertical">
+            <CheckBox Content="CheckBox"/>
+            <CheckBox Content="CheckBox but IsChecked == true" IsChecked="True"/>
+            <CheckBox Content="Checked CheckBox IsChecked == null" IsChecked="{x:Null}" IsThreeState="True"/>
+            <CheckBox Content="CheckBox but it's a disabled CheckBox" IsEnabled="False"/>
+          </StackPanel>
+        </StackPanel>
+      </TabItem>
+      <TabItem Header="Spinners">
+        <UniformGrid HorizontalAlignment="Center" VerticalAlignment="Center" Columns="1">
+          <StackPanel Orientation="Vertical">
+            <ButtonSpinner/>
+            <ButtonSpinner IsEnabled="False"/>
+          </StackPanel>
+          <StackPanel Orientation="Vertical">
+            <NumericUpDown/>
+            <NumericUpDown IsEnabled="False"/>
+          </StackPanel>
+        </UniformGrid>
+      </TabItem>
+      <TabItem Header="Carousels">
+        <StackPanel Orientation="Vertical">
+          <Carousel>
+            <Carousel.PageTransition>
+              <PageSlide Duration="0.25" Orientation="Vertical" />
+            </Carousel.PageTransition>
+            <Rectangle Width="40" Height="40" Fill="Red"/>
+            <Rectangle Width="40" Height="40" Fill="Green"/>
+            <Rectangle Width="40" Height="40" Fill="Blue"/>
+          </Carousel>
+          <Carousel IsEnabled="False">
+            <Carousel.PageTransition>
+              <PageSlide Duration="0.25" Orientation="Vertical" />
+            </Carousel.PageTransition>
+            <Rectangle Width="40" Height="40" Fill="Red"/>
+            <Rectangle Width="40" Height="40" Fill="Green"/>
+            <Rectangle Width="40" Height="40" Fill="Blue"/>
+          </Carousel>
+        </StackPanel>
+      </TabItem>
+    </TabControl>
+  </DockPanel>
+</Window>
