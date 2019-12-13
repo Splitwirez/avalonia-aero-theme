@@ -2,38 +2,35 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Avalonia.Themes.Aero.NormalColor.Sample"
         mc:Ignorable="d" d:DesignWidth="398" d:DesignHeight="482"
-        x:Class="AvaloniaThemes.Aero.NormalColor.Sample.MainWindow"
-        Title="AvaloniaThemes.Aero.NormalColor.Sample" Width="398" Height="482" CanResize="False">
+        x:Class="Avalonia.Themes.Aero.NormalColor.Sample.MainWindow"
+        Title="Windows Aero for Avalonia Sample" Width="398" Height="482" CanResize="False">
   <DockPanel>
-    <Grid Margin="0,0,7,8" ColumnDefinitions="73,8,73,8,73" HorizontalAlignment="Right" DockPanel.Dock="Bottom">
-      <Button IsDefault="True" Content="OK"/>
-      <Button IsCancel="True" Content="Cancel" Grid.Column="2"/>
-      <Button IsDefault="True" Content="Apply" Grid.Column="4"/>
-    </Grid>
+    <DockPanel Margin="7,0,7,8" DockPanel.Dock="Bottom">
+      <Grid ColumnDefinitions="73,8,73,8,73" HorizontalAlignment="Right" DockPanel.Dock="Right">
+        <Button IsDefault="True" Content="OK"/>
+        <Button IsCancel="True" Content="Cancel" Grid.Column="2"/>
+        <Button IsDefault="True" Content="Apply" Grid.Column="4" IsEnabled="False"/>
+      </Grid>
+      <CheckBox x:Name="LightsOnCheckBox" Content="Lights" IsChecked="True"/>
+      <!--IsChecked="{Binding Path=AreLightsOn, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:MainWindow}}, Mode=TwoWay}"-->
+    </DockPanel>
     <TabControl>
       <TabItem Header="Buttons">
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Spacing="8" Margin="4">
-          <StackPanel HorizontalAlignment="Left" Width="86">
-            <Button Content="Button">
-              <ToolTip.Tip>
-                <ToolTip Content="This Button is a Button, but you already knew that."/>
-              </ToolTip.Tip>
-            </Button>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Spacing="10" Margin="4">
+          <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Width="86" Spacing="10">
+            <Button Content="Button"/>
             <Button Content="Disabled Button" IsEnabled="False"/>
           </StackPanel>
-          <StackPanel Orientation="Vertical">
-            <RadioButton GroupName="RadiosGroup" Content="RadioButton 1"/>
-            <RadioButton GroupName="RadiosGroup" Content="RadioButton 2" IsChecked="True"/>
-            <RadioButton GroupName="RadiosGroup" Content="RadioButton 3"/>
-            <RadioButton GroupName="RadiosGroup" Content="RadioButton 4 but it's a disabled RadioButton" IsEnabled="False"/>
-          </StackPanel>
-          <StackPanel Orientation="Vertical">
-            <CheckBox Content="CheckBox"/>
-            <CheckBox Content="CheckBox but IsChecked == true" IsChecked="True"/>
-            <CheckBox Content="Checked CheckBox IsChecked == null" IsChecked="{x:Null}" IsThreeState="True"/>
-            <CheckBox Content="CheckBox but it's a disabled CheckBox" IsEnabled="False"/>
-          </StackPanel>
+          <RadioButton GroupName="RadiosGroup" Content="RadioButton 1"/>
+          <RadioButton GroupName="RadiosGroup" Content="RadioButton 2" IsChecked="True"/>
+          <RadioButton GroupName="RadiosGroup" Content="RadioButton 3"/>
+          <RadioButton GroupName="RadiosGroup" Content="RadioButton 4 but it's a disabled RadioButton" IsEnabled="False"/>
+          <CheckBox Content="CheckBox"/>
+          <CheckBox Content="CheckBox but IsChecked == true" IsChecked="True"/>
+          <CheckBox Content="Checked CheckBox IsChecked == null" IsChecked="{x:Null}" IsThreeState="True"/>
+          <CheckBox Content="CheckBox but it's a disabled CheckBox" IsEnabled="False"/>
         </StackPanel>
       </TabItem>
       <TabItem Header="Spinners">

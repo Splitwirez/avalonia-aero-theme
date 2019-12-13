@@ -1,10 +1,16 @@
 ﻿<Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             x:Class="AvaloniaThemes.Aero.NormalColor.Sample.App">
+             x:Class="Avalonia.Themes.Aero.NormalColor.Sample.App">
+    <Application.Resources>
+      <ResourceDictionary>
+        <ResourceDictionary.MergedDictionaries>
+          <ResourceInclude Source="avares://Avalonia.Themes.Aero.NormalColor/Accents/BaseLight.xaml"/>
+        </ResourceDictionary.MergedDictionaries>
+      </ResourceDictionary>
+    </Application.Resources>
     <Application.Styles>
       <StyleInclude Source="avares://Avalonia.Themes.Default/Accents/BaseLight.xaml"/>
       <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/Aero.NormalColor.xaml"/>
-      <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/Accents/BaseLight.xaml"/>
       <!--StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/Accents/BaseDark.xaml"/-->
     </Application.Styles>
 </Application>

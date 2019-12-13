@@ -4,6 +4,7 @@
     <Setter Property="BorderBrush" Value="{DynamicResource AeroTabControlInnerBorderBrush}"/>
     <Setter Property="BorderThickness" Value="1"/>
     <Setter Property="Margin" Value="6,7,4,6"/>
+    <Setter Property="Padding" Value="14,15"/>
     <Setter Property="Template">
       <ControlTemplate>
         <DockPanel HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}">

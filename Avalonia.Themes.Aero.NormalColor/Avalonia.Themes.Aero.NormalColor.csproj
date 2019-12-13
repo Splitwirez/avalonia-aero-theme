@@ -9,6 +9,6 @@
     <EmbeddedResource Include="**/*.xaml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="0.9.0-rc.1" />
+    <PackageReference Include="Avalonia" Version="0.9.0" />
   </ItemGroup>
 </Project>

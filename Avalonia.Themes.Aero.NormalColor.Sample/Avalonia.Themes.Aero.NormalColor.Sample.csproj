@@ -12,10 +12,10 @@
     </AvaloniaResource>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="0.9.0-rc.1" />
-    <PackageReference Include="Avalonia.Desktop" Version="0.9.0-rc.1" />
+    <PackageReference Include="Avalonia" Version="0.9.0" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.9.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AvaloniaThemes.Aero.NormalColor\Avalonia.Themes.Aero.NormalColor.csproj" />
+    <ProjectReference Include="..\Avalonia.Themes.Aero.NormalColor\Avalonia.Themes.Aero.NormalColor.csproj" />
   </ItemGroup>
 </Project>
