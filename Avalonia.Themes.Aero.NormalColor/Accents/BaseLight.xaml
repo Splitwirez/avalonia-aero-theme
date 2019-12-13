@@ -103,6 +103,29 @@
   </LinearGradientBrush>
   <SolidColorBrush x:Key="AeroCheckBoxDisabledCheckMarkBrush">#FF3A5B98</SolidColorBrush>
 
+  
+  
+  <RadialGradientBrush x:Key="AeroRadioButtonIdleCircleFill" Center="25%,25%" GradientOrigin="25%,25%">
+    <GradientStop Offset="0.5" Color="#FFC7EBFD"/>
+    <GradientStop Offset="1" Color="#FF0B82C7"/>
+  </RadialGradientBrush>
+
+  <RadialGradientBrush x:Key="AeroRadioButtonHoverCircleFill" Center="25%,25%" GradientOrigin="25%,25%">
+    <GradientStop Offset="0.5" Color="#FF74FFFF"/>
+    <GradientStop Offset="1" Color="#FF11A3F2"/>
+  </RadialGradientBrush>
+
+  <RadialGradientBrush x:Key="AeroRadioButtonPressedCircleFill" Center="25%,25%" GradientOrigin="25%,25%">
+    <GradientStop Offset="0.5" Color="#FF95D9FC"/>
+    <GradientStop Offset="1" Color="#FF095684"/>
+  </RadialGradientBrush>
+
+  <RadialGradientBrush x:Key="AeroRadioButtonDisabledCircleFill" Center="25%,25%" GradientOrigin="25%,25%">
+    <GradientStop Offset="0.5" Color="#FFC7EBFD"/>
+    <GradientStop Offset="1" Color="#FF0B82C7"/>
+  </RadialGradientBrush>
+
+  
 
   <SolidColorBrush x:Key="AeroTabControlBackground" Color="#FFFFFFFF"/>
   <SolidColorBrush x:Key="AeroTabControlOuterBorderBrush" Color="#FFFFFFFF"/>

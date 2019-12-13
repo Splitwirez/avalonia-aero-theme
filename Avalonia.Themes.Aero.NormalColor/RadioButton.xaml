@@ -1,44 +1,121 @@
 <Styles xmlns="https://github.com/avaloniaui">
   <Style Selector="RadioButton">
-    <Setter Property="Background" Value="Transparent"/>
-    <Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderMidBrush}"/>
-    <Setter Property="BorderThickness" Value="{DynamicResource ThemeBorderThickness}"/>
+    <Setter Property="Foreground" Value="{DynamicResource AeroForeground}"/>
+    <Setter Property="Background" Value="{DynamicResource AeroCheckBoxIdleBackground}"/>
+    <Setter Property="BorderBrush" Value="{DynamicResource AeroCheckBoxIdleOuterBorderBrush}"/>
+    <Setter Property="BorderThickness" Value="1"/>
+    <Setter Property="Padding" Value="4,0,0,0"/>
+    <Setter Property="VerticalContentAlignment" Value="Center"/>
+    <Setter Property="HorizontalContentAlignment" Value="Left"/>
     <Setter Property="Template">
       <ControlTemplate>
-        <Grid ColumnDefinitions="Auto,*" Background="{TemplateBinding Background}">
-          <Ellipse Name="border"
-                   Stroke="{TemplateBinding BorderBrush}"
-                   StrokeThickness="1"
-                   Width="18"
-                   Height="18"
-                   VerticalAlignment="Center"/>
-          <Ellipse Name="checkMark"
-                   Fill="{DynamicResource HighlightBrush}"
-                   Width="10"
-                   Height="10"
-                   Stretch="Uniform"
-                   UseLayoutRounding="False"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"/>
-          <Ellipse Name="indeterminateMark"
-                   Fill="{DynamicResource ThemeAccentBrush}"
-                   Width="10"
-                   Height="10"
-                   Stretch="Uniform"
-                   UseLayoutRounding="False"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"/>
-          <ContentPresenter Name="PART_ContentPresenter"
-                            ContentTemplate="{TemplateBinding ContentTemplate}"
-                            Content="{TemplateBinding Content}"
-                            Margin="4,0,0,0"
-                            VerticalAlignment="Center"
-                            Grid.Column="1"/>
+        <Grid ColumnDefinitions="Auto,*">
+          <Grid Width="12" Height="12" VerticalAlignment="Center" Grid.Column="0">
+            <Border Classes="AeroStyledIdleBackground">
+              <Grid>
+                <Ellipse Stroke="{TemplateBinding BorderBrush}" StrokeThickness="1"/>
+                <Ellipse Stroke="{DynamicResource AeroCheckBoxIdleMiddleBorderBrush}" StrokeThickness="1" Margin="1"/>
+                <Ellipse Fill="{TemplateBinding Background}" Stroke="{DynamicResource AeroCheckBoxIdleInnerBorderBrush}" StrokeThickness="1" Margin="2"/>
+              </Grid>
+            </Border>
+            <Border Classes="AeroStyledHoverBackground">
+              <Grid>
+                <Ellipse Stroke="{DynamicResource AeroCheckBoxHoverOuterBorderBrush}" StrokeThickness="1"/>
+                <Ellipse Stroke="{DynamicResource AeroCheckBoxHoverMiddleBorderBrush}" StrokeThickness="1" Margin="1"/>
+                <Ellipse Fill="{DynamicResource AeroCheckBoxHoverBackground}" Stroke="{DynamicResource AeroCheckBoxHoverInnerBorderBrush}" StrokeThickness="1" Margin="2"/>
+              </Grid>
+            </Border>
+            <Border Classes="AeroStyledPressedBackground">
+              <Grid>
+                <Ellipse Stroke="{DynamicResource AeroCheckBoxPressedOuterBorderBrush}" StrokeThickness="1"/>
+                <Ellipse Stroke="{DynamicResource AeroCheckBoxPressedMiddleBorderBrush}" StrokeThickness="1" Margin="1"/>
+                <Ellipse Fill="{DynamicResource AeroCheckBoxPressedBackground}" Stroke="{DynamicResource AeroCheckBoxPressedInnerBorderBrush}" StrokeThickness="1" Margin="2"/>
+              </Grid>
+            </Border>
+            <Border Classes="AeroStyledDisabledBackground">
+              <Ellipse Fill="{DynamicResource AeroCheckBoxDisabledBackground}" Stroke="{DynamicResource AeroCheckBoxDisabledBorderBrush}" StrokeThickness="{TemplateBinding BorderThickness}"/>
+            </Border>
+            <Grid Width="6" Height="6" HorizontalAlignment="Center" VerticalAlignment="Center">
+              <Ellipse Name="checkMark" Width="6" Height="6" StrokeThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Uniform"/>
+              <Ellipse Name="indeterminateMark" Width="6" Height="6" StrokeThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Uniform"/>
+            </Grid>
+          </Grid>
+          <ContentPresenter Name="PART_ContentPresenter" TextBlock.Foreground="{TemplateBinding Foreground}" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Grid.Column="1"/>
         </Grid>
       </ControlTemplate>
     </Setter>
   </Style>
-  <Style Selector="RadioButton:pointerover /template/ Ellipse#border">
+  <Style Selector="RadioButton /template/ Ellipse#checkMark">
+    <Setter Property="Opacity" Value="0"/>
+    <Setter Property="Fill" Value="{DynamicResource AeroRadioButtonIdleCircleFill}"/>
+    <Setter Property="Stroke" Value="{DynamicResource AeroCheckBoxIdleCheckMarkBrush}"/>
+  </Style>
+  <Style Selector="RadioButton:pointerover /template/ Ellipse#checkMark">
+    <Setter Property="Fill" Value="{DynamicResource AeroRadioButtonHoverCircleFill}"/>
+    <Setter Property="Stroke" Value="{DynamicResource AeroCheckBoxHoverCheckMarkBrush}"/>
+  </Style>
+  <Style Selector="RadioButton:pressed /template/ Ellipse#checkMark">
+    <Setter Property="Fill" Value="{DynamicResource AeroRadioButtonPressedCircleFill}"/>
+    <Setter Property="Stroke" Value="{DynamicResource AeroCheckBoxPressedCheckMarkBrush}"/>
+  </Style>
+  <Style Selector="RadioButton:disabled /template/ Ellipse#checkMark">
+    <Setter Property="Fill" Value="{DynamicResource AeroRadioButtonDisabledCircleFill}"/>
+    <Setter Property="Stroke" Value="{DynamicResource AeroCheckBoxDisabledCheckMarkBrush}"/>
+  </Style>
+  <Style Selector="RadioButton:not(:checked) /template/ Ellipse#checkMark">
+    <Style.Animations>
+      <Animation FillMode="Both" Duration="0:0:0.125">
+        <KeyFrame Cue="100%">
+          <Setter Property="Opacity" Value="0.0"/>
+        </KeyFrame>
+      </Animation>
+    </Style.Animations>
+  </Style>
+  <Style Selector="RadioButton:checked /template/ Ellipse#checkMark">
+    <Style.Animations>
+      <Animation FillMode="Both" Duration="0:0:0.125">
+        <KeyFrame Cue="100%">
+          <Setter Property="Opacity" Value="1.0"/>
+        </KeyFrame>
+      </Animation>
+    </Style.Animations>
+  </Style>
+  <Style Selector="RadioButton /template/ Ellipse#indeterminateMark">
+    <Setter Property="Opacity" Value="0"/>
+    <Setter Property="Fill" Value="{DynamicResource AeroRadioButtonIdleCircleFill}"/>
+    <Setter Property="Stroke" Value="{DynamicResource AeroCheckBoxIdleCheckMarkBrush}"/>
+  </Style>
+  <Style Selector="RadioButton:pointerover /template/ Ellipse#indeterminateMark">
+    <Setter Property="Fill" Value="{DynamicResource AeroRadioButtonHoverCircleFill}"/>
+    <Setter Property="Fill" Value="{DynamicResource AeroCheckBoxHoverCheckMarkBrush}"/>
+  </Style>
+  <Style Selector="RadioButton:pressed /template/ Ellipse#indeterminateMark">
+    <Setter Property="Fill" Value="{DynamicResource AeroRadioButtonPressedCircleFill}"/>
+    <Setter Property="Fill" Value="{DynamicResource AeroCheckBoxPressedCheckMarkBrush}"/>
+  </Style>
+  <Style Selector="RadioButton:disabled /template/ Ellipse#indeterminateMark">
+    <Setter Property="Fill" Value="{DynamicResource AeroRadioButtonDisabledCircleFill}"/>
+    <Setter Property="Fill" Value="{DynamicResource AeroCheckBoxDisabledCheckMarkBrush}"/>
+  </Style>
+  <Style Selector="RadioButton:not(:indeterminate) /template/ Ellipse#indeterminateMark">
+    <Style.Animations>
+      <Animation FillMode="Both" Duration="0:0:0.125">
+        <KeyFrame Cue="100%">
+          <Setter Property="Opacity" Value="0.0"/>
+        </KeyFrame>
+      </Animation>
+    </Style.Animations>
+  </Style>
+  <Style Selector="RadioButton:indeterminate /template/ Ellipse#indeterminateMark">
+    <Style.Animations>
+      <Animation FillMode="Both" Duration="0:0:0.125">
+        <KeyFrame Cue="100%">
+          <Setter Property="Opacity" Value="1.0"/>
+        </KeyFrame>
+      </Animation>
+    </Style.Animations>
+  </Style>
+  <!--Style Selector="RadioButton:pointerover /template/ Ellipse#border">
     <Setter Property="Stroke" Value="{DynamicResource ThemeBorderHighBrush}"/>
   </Style>
   <Style Selector="RadioButton /template/ Ellipse#checkMark">
@@ -55,5 +132,5 @@
   </Style>
   <Style Selector="RadioButton:disabled /template/ Ellipse#border">
     <Setter Property="Opacity" Value="{DynamicResource ThemeDisabledOpacity}"/>
-  </Style>
+  </Style-->
 </Styles>
