@@ -1,9 +1,8 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
-       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-       xmlns:sys="clr-namespace:System;assembly=netstandard">
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <!--Brightness -100, Contrast 0; then Brightness -75, Contrast 12 in PDN-->
   <SolidColorBrush x:Key="AeroForeground" Color="#FFFFFFFF"/>
-  <SolidColorBrush x:Key="AeroDisabledForeground" Color="#FF7F7F7F"/>
+  <SolidColorBrush x:Key="AeroDisabledForeground" Color="#7FFFFFFF"/>
   <SolidColorBrush x:Key="AeroWindowBackground" Color="#FF373737"/>
 
 
@@ -145,15 +144,99 @@
   <SolidColorBrush x:Key="AeroTabControlOuterBorderBrush" Color="#FF474747"/>
   <SolidColorBrush x:Key="AeroTabControlInnerBorderBrush" Color="#FF202020"/>
 
+  <SolidColorBrush x:Key="AeroTextBoxIdleBackground" Color="#FF575757"/>
+  <LinearGradientBrush x:Key="AeroTextBoxIdleBorderBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+    <GradientStop Offset="0" Color="#FF000000"/>
+    <GradientStop Offset="1" Color="#FF3D3D3D"/>
+  </LinearGradientBrush>
+
+  <SolidColorBrush x:Key="AeroTextBoxHoverBackground" Color="#FF5D5D5D"/>
+  <LinearGradientBrush x:Key="AeroTextBoxHoverBorderBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+    <GradientStop Offset="0" Color="#FF001729"/>
+    <GradientStop Offset="1" Color="#FF003966"/>
+  </LinearGradientBrush>
+
+  <SolidColorBrush x:Key="AeroTextBoxFocusBackground" Color="#FF5D5D5D"/>
+  <LinearGradientBrush x:Key="AeroTextBoxFocusBorderBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+    <GradientStop Offset="0" Color="#FF001729"/>
+    <GradientStop Offset="1" Color="#FF003966"/>
+  </LinearGradientBrush>
+
+  <SolidColorBrush x:Key="AeroTextBoxDisabledBackground" Color="#FF797979"/>
+  <SolidColorBrush x:Key="AeroTextBoxDisabledBorderBrush" Color="#FF565656"/>
 
 
 
+  <LinearGradientBrush x:Key="AeroScrollBarButtonForeground" StartPoint="0%,0%" EndPoint="100%,100%">
+    <GradientStop Offset="0" Color="#E0FFFFFF"/>
+    <GradientStop Offset="1" Color="#A0FFFFFF"/>
+  </LinearGradientBrush>
+  <SolidColorBrush x:Key="AeroScrollBarButtonIconStroke" Color="#40000000"/>
+  <SolidColorBrush x:Key="AeroScrollBarThumbIconStroke" Color="#FF000000"/>
+
+  <LinearGradientBrush x:Key="AeroHorizontalScrollBarTrackBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+    <GradientStop Offset="0" Color="#FF2A2A2A"/>
+    <GradientStop Offset="0.25" Color="#FF383838"/>
+    <GradientStop Offset="1" Color="#FF3B3B3B"/>
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="AeroHorizontalScrollBarTrackBorderBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+    <GradientStop Offset="0" Color="#FF424242"/>
+    <GradientStop Offset="1" Color="#FF323232"/>
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="AeroVerticalScrollBarTrackBackground" StartPoint="0%,0%" EndPoint="100%,0%">
+    <GradientStop Offset="0" Color="#FF2A2A2A"/>
+    <GradientStop Offset="0.25" Color="#FF383838"/>
+    <GradientStop Offset="1" Color="#FF3B3B3B"/>
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="AeroVerticalScrollBarTrackBorderBrush" StartPoint="0%,0%" EndPoint="100%,0%">
+    <GradientStop Offset="0" Color="#FF424242"/>
+    <GradientStop Offset="1" Color="#FF323232"/>
+  </LinearGradientBrush>
+  
+  <LinearGradientBrush x:Key="AeroVerticalScrollBarButtonIdleBackground" StartPoint="0%,0%" EndPoint="100%,0%">
+    <GradientStop Offset="0" Color="#FF3E3E3E"/>
+    <GradientStop Offset="0.5" Color="#FF373737"/>
+    <GradientStop Offset="0.5" Color="#FF292929"/>
+    <GradientStop Offset="1" Color="#FF1B1B1B"/>
+  </LinearGradientBrush>
+  <SolidColorBrush x:Key="AeroVerticalScrollBarButtonIdleOuterBorderBrush" Color="#FF000000"/>
+  <LinearGradientBrush x:Key="AeroVerticalScrollBarButtonIdleInnerBorderBrush" StartPoint="0%,0%" EndPoint="100%,0%">
+    <GradientStop Offset="0" Color="#FF484848"/>
+    <GradientStop Offset="1" Color="#FF3F3F3F"/>
+  </LinearGradientBrush>
 
 
-  <sys:Double x:Key="AeroFontSizeSmall">10</sys:Double>
-  <sys:Double x:Key="AeroFontSizeNormal">12</sys:Double>
-  <sys:Double x:Key="AeroFontSizeLarge">16</sys:Double>
+  <LinearGradientBrush x:Key="AeroVerticalScrollBarButtonHoverBackground" StartPoint="0%,0%" EndPoint="100%,0%">
+    <GradientStop Offset="0" Color="#FF0C3159"/>
+    <GradientStop Offset="0.5" Color="#FF0A2D50"/>
+    <GradientStop Offset="0.5" Color="#FF08213C"/>
+    <GradientStop Offset="1" Color="#FF08192D"/>
+  </LinearGradientBrush>
+  <SolidColorBrush x:Key="AeroVerticalScrollBarButtonHoverOuterBorderBrush" Color="#FF001729"/>
+  <LinearGradientBrush x:Key="AeroVerticalScrollBarButtonHoverInnerBorderBrush" StartPoint="0%,0%" EndPoint="100%,0%">
+    <GradientStop Offset="0" Color="#FF004A7F"/>
+    <GradientStop Offset="1" Color="#FF024375"/>
+  </LinearGradientBrush>
 
-  <sys:Double x:Key="AeroScrollBarThickness">18</sys:Double>
-  <sys:Double x:Key="AeroScrollBarThumbThickness">8</sys:Double>
+  <LinearGradientBrush x:Key="AeroVerticalScrollBarButtonPressedBackground" StartPoint="0%,0%" EndPoint="100%,0%">
+    <GradientStop Offset="0" Color="#FF001840"/>
+    <GradientStop Offset="0.5" Color="#FF001437"/>
+    <GradientStop Offset="0.5" Color="#FF000823"/>
+    <GradientStop Offset="1" Color="#FF000014"/>
+  </LinearGradientBrush>
+  <SolidColorBrush x:Key="AeroVerticalScrollBarButtonPressedOuterBorderBrush" Color="#FF001729"/>
+  <LinearGradientBrush x:Key="AeroVerticalScrollBarButtonPressedInnerBorderBrush" StartPoint="0%,0%" EndPoint="100%,0%">
+    <GradientStop Offset="0" Color="#FF000B27"/>
+    <GradientStop Offset="0.5" Color="#FF00001B"/>
+    <GradientStop Offset="0.5" Color="#FF00000F"/>
+    <GradientStop Offset="1" Color="#FF000009"/>
+  </LinearGradientBrush>
+
+  <SolidColorBrush x:Key="AeroVerticalScrollBarButtonDisabledBackground" Color="#FF606060"/>
+  <SolidColorBrush x:Key="AeroVerticalScrollBarButtonDisabledOuterBorderBrush" Color="#FF444849"/>
+  <SolidColorBrush x:Key="AeroVerticalScrollBarButtonDisabledInnerBorderBrush" Color="#FF6C6C6C"/>
+
+  
+  
+  <SolidColorBrush x:Key="AeroScrollViewerCornerBackground" Color="#FF373737"/>
 </ResourceDictionary>

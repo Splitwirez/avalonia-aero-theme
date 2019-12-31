@@ -1,5 +1,6 @@
 ﻿using System;
 using Avalonia;
+using Avalonia.Logging;
 using Avalonia.Logging.Serilog;
 using Avalonia.Platform;
 
@@ -7,29 +8,19 @@ namespace Avalonia.Themes.Aero.NormalColor.Sample
 {
     class Program
     {
-        // Initialization code. Don't use any Avalonia, third-party APIs or any
-        // SynchronizationContext-reliant code before AppMain is called: things aren't initialized
-        // yet and stuff might break.
-        public static void Main(string[] args) => BuildAvaloniaApp().StartWithClassicDesktopLifetime(args); //.Start<MainWindow>();
-
-        // Avalonia configuration, don't remove; also used by visual designer.
-        public static AppBuilder BuildAvaloniaApp()
-            => AppBuilder.Configure<App>()
-                .UsePlatformDetect()
-                .LogToDebug();
-
-        // Your application's entry point. Here you can initialize your MVVM framework, DI
-        // container, etc.
-        /*private static void AppMain(Application app, string[] args)
+        static AppBuilder BuildAvaloniaApp()
         {
-            app.Run(new MainWindow());
-        }*/
+            return AppBuilder.Configure<App>()
+                           .UsePlatformDetect()
+                           .LogToDebug(LogEventLevel.Warning);
+        }
 
-        private static void ConfigureAssetAssembly(AppBuilder builder)
+        // The entry point. Things aren't ready yet, so at this point
+        // you shouldn't use any Avalonia types or anything that expects
+        // a SynchronizationContext to be ready
+        static void Main(string[] args)
         {
-            AvaloniaLocator.CurrentMutable
-                .GetService<IAssetLoader>()
-                .SetDefaultAssembly(typeof(App).Assembly);
+            BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);
         }
     }
 }

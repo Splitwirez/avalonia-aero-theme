@@ -1,7 +1,13 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         x:Class="Avalonia.Themes.Aero.NormalColor.DefaultTheme">
-  
+  <Styles.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceInclude Source="avares://Avalonia.Themes.Aero.NormalColor/CommonResources.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </Styles.Resources>
   <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/ToolTip.xaml"/>
   <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/DataValidationErrors.xaml"/>
 
@@ -22,32 +28,32 @@
   <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/OverlayPopupHost.xaml"/>
   <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/PopupRoot.xaml"/>
   <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/ProgressBar.xaml"/>
-  <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/RadioButton.xaml"/>
-  <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/RepeatButton.xaml"/>
+  <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/RadioButton.xaml"/><!--done-->
+  <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/RepeatButton.xaml"/><!--done-->
   <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/Separator.xaml"/>
   <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/Slider.xaml"/>
-  <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/ScrollBar.xaml"/>
-  <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/ScrollViewer.xaml"/>
+  <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/ScrollBar.xaml"/><!--done-->
+  <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/ScrollViewer.xaml"/><!--done-->
   <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/TabStrip.xaml"/>
   <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/TabStripItem.xaml"/>
   
-  <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/TabControl.xaml"/>
+  <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/TabControl.xaml"/><!--done-->
   <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/TabItem.xaml"/><!--done-->
-  <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/TextBox.xaml"/>
-  <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/ToggleButton.xaml"/>
+  <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/TextBox.xaml"/><!--done-->
+  <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/ToggleButton.xaml"/><!--done-->
   <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/Expander.xaml"/>
   <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/TreeView.xaml"/>
   <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/TreeViewItem.xaml"/>
   <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/UserControl.xaml"/>
-  <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/Window.xaml"/>
+  <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/Window.xaml"/><!--done-->
   <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/EmbeddableControlRoot.xaml"/>
   <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/CalendarButton.xaml"/>
   <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/CalendarDayButton.xaml"/>
   <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/CalendarItem.xaml"/>
   <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/Calendar.xaml"/>
   <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/DatePicker.xaml"/>
-  <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/ButtonSpinner.xaml"/>
-  <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/NumericUpDown.xaml"/>
+  <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/ButtonSpinner.xaml"/><!--done-->
+  <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/NumericUpDown.xaml"/><!--done-->
   <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/AutoCompleteBox.xaml"/>
   <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/WindowNotificationManager.xaml"/>
   <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/NotificationCard.xaml"/>
@@ -59,6 +65,10 @@
   <Style Selector="Border.AeroStyledPressedBackground">
     <Setter Property="Opacity" Value="0"/>
   </Style>
+  <Style Selector="Border.AeroStyledCheckedBackground">
+    <Setter Property="Opacity" Value="0"/>
+  </Style>
+  
   <Style Selector=":not(:pointerover) /template/ Border.AeroStyledHoverBackground">
     <Style.Animations>
       <Animation FillMode="Both" Duration="0:0:0.375">
@@ -96,14 +106,52 @@
       </Animation>
     </Style.Animations>
   </Style>
+  
+  <Style Selector=":not(:checked) /template/ Border.AeroStyledCheckedBackground">
+    <Style.Animations>
+      <Animation FillMode="Both" Duration="0:0:0.375">
+        <KeyFrame Cue="100%">
+          <Setter Property="Opacity" Value="0.0"/>
+        </KeyFrame>
+      </Animation>
+    </Style.Animations>
+  </Style>
+  <Style Selector=":checked /template/ Border.AeroStyledCheckedBackground">
+    <Style.Animations>
+      <Animation FillMode="Both" Duration="0:0:0.125">
+        <KeyFrame Cue="100%">
+          <Setter Property="Opacity" Value="1.0"/>
+        </KeyFrame>
+      </Animation>
+    </Style.Animations>
+  </Style>
+
+  <Style Selector=":not(:focus) /template/ Border.AeroStyledFocusBackground">
+    <Style.Animations>
+      <Animation FillMode="Both" Duration="0:0:0.375">
+        <KeyFrame Cue="100%">
+          <Setter Property="Opacity" Value="0.0"/>
+        </KeyFrame>
+      </Animation>
+    </Style.Animations>
+  </Style>
+  <Style Selector=":focus /template/ Border.AeroStyledFocusBackground">
+    <Style.Animations>
+      <Animation FillMode="Both" Duration="0:0:0.125">
+        <KeyFrame Cue="100%">
+          <Setter Property="Opacity" Value="1.0"/>
+        </KeyFrame>
+      </Animation>
+    </Style.Animations>
+  </Style>
 
   <Style Selector=":not(:disabled) /template/ Border.AeroStyledDisabledBackground">
     <Setter Property="IsVisible" Value="False"/>
   </Style>
-  <Style Selector=":not(:disabled) /template/ Border > Border > ContentPresenter">
+  <Style Selector=":is(Control):not(:disabled)">
     <Setter Property="TextBlock.Foreground" Value="{Binding Foreground, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
   </Style>
-  <Style Selector=":disabled /template/ Border > Border > ContentPresenter">
+  <Style Selector=":is(Control):disabled">
     <Setter Property="TextBlock.Foreground" Value="{DynamicResource AeroDisabledForeground}"/>
   </Style>
 </Styles>

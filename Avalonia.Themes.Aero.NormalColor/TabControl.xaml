@@ -7,11 +7,11 @@
     <Setter Property="Padding" Value="14,15"/>
     <Setter Property="Template">
       <ControlTemplate>
-        <DockPanel HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}">
+        <DockPanel>
           <ItemsPresenter Name="PART_ItemsPresenter" Items="{TemplateBinding Items}" ItemsPanel="{TemplateBinding ItemsPanel}" ItemTemplate="{TemplateBinding ItemTemplate}" ZIndex="1" Margin="2,0,0,0"/>
           <Border BorderBrush="{DynamicResource AeroTabControlOuterBorderBrush}" BorderThickness="0,0,2,1">
             <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
-              <ContentPresenter Name="PART_SelectedContentHost" Padding="{TemplateBinding Padding}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" Content="{TemplateBinding SelectedContent}" ContentTemplate="{TemplateBinding SelectedContentTemplate}"/>
+              <ContentPresenter Name="PART_SelectedContentHost" Margin="{TemplateBinding Padding}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" Content="{TemplateBinding SelectedContent}" ContentTemplate="{TemplateBinding SelectedContentTemplate}"/>
             </Border>
           </Border>
         </DockPanel>

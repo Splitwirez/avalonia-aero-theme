@@ -1,40 +1,37 @@
 <Styles xmlns="https://github.com/avaloniaui">
-    <Style Selector="RepeatButton">
-        <Setter Property="Background"
-                Value="{DynamicResource ThemeControlMidBrush}" />
-        <Setter Property="BorderBrush"
-                Value="{DynamicResource ThemeBorderLowBrush}" />
-        <Setter Property="BorderThickness"
-                Value="{DynamicResource ThemeBorderThickness}" />
-        <Setter Property="Foreground"
-                Value="{DynamicResource ThemeForegroundBrush}" />
-        <Setter Property="HorizontalContentAlignment"
-                Value="Center" />
-        <Setter Property="VerticalContentAlignment"
-                Value="Center" />
-        <Setter Property="Padding"
-                Value="4" />
-        <Setter Property="Template">
-            <ControlTemplate>
-                <ContentPresenter Name="PART_ContentPresenter"
-                                  Background="{TemplateBinding Background}"
-                                  BorderBrush="{TemplateBinding BorderBrush}"
-                                  BorderThickness="{TemplateBinding BorderThickness}"
-                                  ContentTemplate="{TemplateBinding ContentTemplate}"
-                                  Content="{TemplateBinding Content}"
-                                  Padding="{TemplateBinding Padding}"
-                                  TextBlock.Foreground="{TemplateBinding Foreground}"
-                                  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
-            </ControlTemplate>
-        </Setter>
-    </Style>
-    <Style Selector="RepeatButton:pointerover /template/ ContentPresenter">
-        <Setter Property="BorderBrush"
-                Value="{DynamicResource ThemeBorderMidBrush}" />
-    </Style>
-    <Style Selector="RepeatButton:disabled">
-        <Setter Property="Opacity"
-                Value="{DynamicResource ThemeDisabledOpacity}" />
-    </Style>
+  <Style Selector="RepeatButton">
+    <Setter Property="Background" Value="{DynamicResource AeroButtonIdleBackground}"/>
+    <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonIdleOuterBorderBrush}"/>
+    <Setter Property="BorderThickness" Value="1"/>
+    <Setter Property="Foreground" Value="{DynamicResource AeroForeground}"/>
+    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+    <Setter Property="VerticalContentAlignment" Value="Center"/>
+    <Setter Property="Padding" Value="3"/>
+    <Setter Property="FontSize" Value="{DynamicResource AeroFontSizeNormal}"/>
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Grid>
+          <Border Classes="AeroStyledIdleBackground" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+            <Border Background="{TemplateBinding Background}" BorderBrush="{DynamicResource AeroButtonIdleInnerBorderBrush}" BorderThickness="1"/>
+          </Border>
+          <Border Classes="AeroStyledHoverBackground" BorderBrush="{DynamicResource AeroButtonHoverOuterBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+            <Border Background="{DynamicResource AeroButtonHoverBackground}" BorderBrush="{DynamicResource AeroButtonHoverInnerBorderBrush}" BorderThickness="1"/>
+          </Border>
+          <Border Classes="AeroStyledPressedBackground" BorderBrush="{DynamicResource AeroButtonPressedOuterBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+            <Border Background="{DynamicResource AeroButtonPressedBackground}" BorderBrush="{DynamicResource AeroButtonPressedInnerBorderBrush}" BorderThickness="1,1,1,0"/>
+          </Border>
+          <Border Classes="AeroStyledDisabledBackground" BorderBrush="{DynamicResource AeroButtonDisabledOuterBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+            <Border Background="{DynamicResource AeroButtonDisabledBackground}" BorderBrush="{DynamicResource AeroButtonDisabledInnerBorderBrush}" BorderThickness="1"/>
+          </Border>
+          <ContentPresenter Name="PART_ContentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" Padding="{TemplateBinding Padding}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+        </Grid>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+  <Style Selector="RepeatButton /template/ Border">
+    <Setter Property="CornerRadius" Value="3"/>
+  </Style>
+  <Style Selector="RepeatButton /template/ Border > Border">
+    <Setter Property="CornerRadius" Value="2"/>
+  </Style>
 </Styles>

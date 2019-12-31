@@ -1,64 +1,86 @@
 <Styles xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Design.PreviewWith>
+    <Grid>
+      <TextBox Text="aAAAa"/>
+    </Grid>
+  </Design.PreviewWith>
   <Style Selector="TextBox">
-    <Setter Property="Background" Value="{DynamicResource ThemeBackgroundBrush}"/>
-    <Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderMidBrush}"/>
-    <Setter Property="BorderThickness" Value="{DynamicResource ThemeBorderThickness}"/>
+    <Setter Property="Background" Value="{DynamicResource AeroTextBoxIdleBackground}"/>
+    <Setter Property="BorderBrush" Value="{DynamicResource AeroTextBoxIdleBorderBrush}"/>
+    <Setter Property="BorderThickness" Value="1"/>
+    <Setter Property="Foreground" Value="{DynamicResource AeroForeground}"/>
+    <Setter Property="Padding" Value="3"/>
+    <Setter Property="FontSize" Value="{DynamicResource AeroFontSizeNormal}"/>
+    <Setter Property="Cursor" Value="IBeam" />
     <Setter Property="SelectionBrush" Value="{DynamicResource HighlightBrush}"/>
     <Setter Property="SelectionForegroundBrush" Value="{DynamicResource HighlightForegroundBrush}"/>
-    <Setter Property="Padding" Value="4"/>
     <Setter Property="Template">
       <ControlTemplate>
-        <Border Name="border"
-                Background="{TemplateBinding Background}"
-                BorderBrush="{TemplateBinding BorderBrush}"
-                BorderThickness="{TemplateBinding BorderThickness}">
-          <DockPanel Margin="{TemplateBinding Padding}">
+        <Grid>
+          <Border Classes="AeroStyledIdleBackground" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3"/>
+          <Border Classes="AeroStyledHoverBackground" Background="{DynamicResource AeroTextBoxHoverBackground}" BorderBrush="{DynamicResource AeroTextBoxHoverBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3"/>
+          <Border Classes="AeroStyledFocusBackground" Background="{DynamicResource AeroTextBoxFocusBackground}" BorderBrush="{DynamicResource AeroTextBoxFocusBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3"/>
+          <Border Classes="AeroStyledDisabledBackground" Background="{DynamicResource AeroTextBoxDisabledBackground}" BorderBrush="{DynamicResource AeroTextBoxDisabledBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3"/>
+          <Border Name="border">
+            <DockPanel Margin="{TemplateBinding Padding}">
 
-            <TextBlock Name="floatingWatermark"
-                       Foreground="{DynamicResource ThemeAccentBrush}"
-                       FontSize="{DynamicResource FontSizeSmall}"
-                       Text="{TemplateBinding Watermark}"
-                       DockPanel.Dock="Top">
-              <TextBlock.IsVisible>
-                <MultiBinding Converter="{x:Static BoolConverters.And}">
-                  <Binding RelativeSource="{RelativeSource TemplatedParent}"
-                           Path="UseFloatingWatermark"/>
-                  <Binding RelativeSource="{RelativeSource TemplatedParent}"
-                           Path="Text"
-                           Converter="{x:Static StringConverters.IsNotNullOrEmpty}"/>
-                </MultiBinding>
-              </TextBlock.IsVisible>
-            </TextBlock>
+              <TextBlock Name="floatingWatermark"
+                         FontSize="{DynamicResource FontSizeSmall}"
+                         Text="{TemplateBinding Watermark}"
+                         DockPanel.Dock="Top">
+                <TextBlock.IsVisible>
+                  <MultiBinding Converter="{x:Static BoolConverters.And}">
+                    <Binding RelativeSource="{RelativeSource TemplatedParent}"
+                             Path="UseFloatingWatermark"/>
+                    <Binding RelativeSource="{RelativeSource TemplatedParent}"
+                             Path="Text"
+                             Converter="{x:Static StringConverters.IsNotNullOrEmpty}"/>
+                  </MultiBinding>
+                </TextBlock.IsVisible>
+              </TextBlock>
 
-            <DataValidationErrors>
-              <ScrollViewer HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
-                            VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
+              <DataValidationErrors>
+                <ScrollViewer HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
+                              VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
 
-                <Panel>
-                  <TextBlock Name="watermark"
-                             Opacity="0.5"
-                             Text="{TemplateBinding Watermark}"
-                             IsVisible="{TemplateBinding Text, Converter={x:Static StringConverters.IsNullOrEmpty}}"/>
-                  <TextPresenter Name="PART_TextPresenter"
-                                 Text="{TemplateBinding Text, Mode=TwoWay}"
-                                 CaretIndex="{TemplateBinding CaretIndex}"
-                                 SelectionStart="{TemplateBinding SelectionStart}"
-                                 SelectionEnd="{TemplateBinding SelectionEnd}"
-                                 TextAlignment="{TemplateBinding TextAlignment}"
-                                 TextWrapping="{TemplateBinding TextWrapping}"
-                                 PasswordChar="{TemplateBinding PasswordChar}"
-                                 SelectionBrush="{TemplateBinding SelectionBrush}"
-                                 SelectionForegroundBrush="{TemplateBinding SelectionForegroundBrush}"
-                                 CaretBrush="{TemplateBinding CaretBrush}"/>
-                </Panel>
-              </ScrollViewer>
-            </DataValidationErrors>
-          </DockPanel>
-        </Border>
+                  <Panel>
+                    <TextBlock Name="watermark"
+                               Opacity="0.5"
+                               Text="{TemplateBinding Watermark}"
+                               IsVisible="{TemplateBinding Text, Converter={x:Static StringConverters.IsNullOrEmpty}}"/>
+                    <TextPresenter Name="PART_TextPresenter"
+                                   Text="{TemplateBinding Text, Mode=TwoWay}"
+                                   CaretIndex="{TemplateBinding CaretIndex}"
+                                   SelectionStart="{TemplateBinding SelectionStart}"
+                                   SelectionEnd="{TemplateBinding SelectionEnd}"
+                                   TextAlignment="{TemplateBinding TextAlignment}"
+                                   TextWrapping="{TemplateBinding TextWrapping}"
+                                   PasswordChar="{TemplateBinding PasswordChar}"
+                                   SelectionBrush="{TemplateBinding SelectionBrush}"
+                                   SelectionForegroundBrush="{TemplateBinding SelectionForegroundBrush}"
+                                   CaretBrush="{TemplateBinding CaretBrush}"/>
+                  </Panel>
+                </ScrollViewer>
+              </DataValidationErrors>
+            </DockPanel>
+          </Border>
+        </Grid>
       </ControlTemplate>
     </Setter>
   </Style>
-  <Style Selector="TextBox:pointerover /template/ Border#border">
+  <Style Selector="TextBox:not(:disabled) /template/ TextPresenter">
+    <Setter Property="Foreground" Value="{TemplateBinding Foreground}"/>
+  </Style>
+  <Style Selector="TextBox:disabled /template/ TextPresenter">
+    <Setter Property="Foreground" Value="{DynamicResource AeroDisabledForeground}"/>
+  </Style>
+  <Style Selector="TextBox:not(:disabled) /template/ TextBlock">
+    <Setter Property="Foreground" Value="{TemplateBinding Foreground}"/>
+  </Style>
+  <Style Selector="TextBox:disabled /template/ TextBlock">
+    <Setter Property="Foreground" Value="{DynamicResource AeroDisabledForeground}"/>
+  </Style>
+  <!--Style Selector="TextBox:pointerover /template/ Border#border">
     <Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderHighBrush}"/>
   </Style>
   <Style Selector="TextBox:focus /template/ Border#border">
@@ -69,5 +91,5 @@
   </Style>
   <Style Selector="TextBox">
     <Setter Property="Cursor" Value="IBeam" />
-  </Style>
+  </Style-->
 </Styles>
