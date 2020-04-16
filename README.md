@@ -1,3 +1,3 @@
-gi# Windows Aero Theme for Avalonia
+# This project has moved!
 
-![Image of Aero-themed Buttons and such](https://i.imgur.com/rliRWEV.png)
+See https://github.com/Splitwirez/Mechanism-for-Avalonia
