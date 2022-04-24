@@ -1,0 +1,36 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Avalonia.Themes.Aero.NormalColor.Sample"
+        xmlns:v="clr-namespace:Avalonia.Themes.Aero.NormalColor.Sample.Views"
+        mc:Ignorable="d" d:DesignWidth="398" d:DesignHeight="482"
+        x:Class="Avalonia.Themes.Aero.NormalColor.Sample.Views.SpinnersPageView">
+  <Grid ColumnDefinitions="86,10,86" RowDefinitions="21,10,21,10,21,10,21">
+    <Grid.Styles>
+      <Style Selector=":is(Control):disabled">
+        <Setter Property="Grid.Column" Value="2"/>
+      </Style>
+      <Style Selector="ButtonSpinner">
+        <Setter Property="Grid.Row" Value="0"/>
+      </Style>
+      <Style Selector="ButtonSpinner[ButtonSpinnerLocation=Left]">
+        <Setter Property="Grid.Row" Value="2"/>
+      </Style>
+      <Style Selector="NumericUpDown">
+        <Setter Property="Grid.Row" Value="4"/>
+      </Style>
+      <Style Selector="NumericUpDown[ButtonSpinnerLocation=Left]">
+        <Setter Property="Grid.Row" Value="6"/>
+      </Style>
+    </Grid.Styles>
+    <ButtonSpinner/>
+    <ButtonSpinner IsEnabled="False"/>
+    <ButtonSpinner ButtonSpinnerLocation="Left"/>
+    <ButtonSpinner ButtonSpinnerLocation="Left" IsEnabled="False"/>
+    <NumericUpDown/>
+    <NumericUpDown IsEnabled="False"/>
+    <NumericUpDown ButtonSpinnerLocation="Left"/>
+    <NumericUpDown ButtonSpinnerLocation="Left" IsEnabled="False"/>
+  </Grid>
+</UserControl>

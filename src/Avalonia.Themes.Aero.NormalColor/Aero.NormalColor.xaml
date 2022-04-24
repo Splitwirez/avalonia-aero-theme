@@ -1,0 +1,121 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Styles.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceInclude Source="avares://Avalonia.Themes.Aero.NormalColor/CommonResources.xaml"/>
+        <!--ResourceInclude Source="avares://Avalonia.Themes.Aero.NormalColor/Accents/BaseLight.xaml"/-->
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </Styles.Resources>
+  
+  <!--TEMP Fluent placeholders-->
+  <StyleInclude Source="avares://Avalonia.Themes.Fluent/Accents/AccentColors.xaml" />
+	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Accents/BaseLight.xaml" />
+	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Accents/Base.xaml" />  
+	<!--StyleInclude Source="avares://Avalonia.Themes.Fluent/Accents/FluentBaseLight.xaml" /-->
+	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Accents/FluentControlResourcesLight.xaml" />
+  
+  
+  <Style Selector="Border.AeroStyledHoverBackground">
+    <Setter Property="Opacity" Value="0"/>
+  </Style>
+  <Style Selector="Border.AeroStyledPressedBackground">
+    <Setter Property="Opacity" Value="0"/>
+  </Style>
+  <Style Selector="Border.AeroStyledCheckedBackground">
+    <Setter Property="Opacity" Value="0"/>
+  </Style>
+  
+  <Style Selector=":not(:pointerover) /template/ Border.AeroStyledHoverBackground">
+    <Style.Animations>
+      <Animation FillMode="Both" Duration="0:0:0.375">
+        <KeyFrame Cue="100%">
+          <Setter Property="Opacity" Value="0.0"/>
+        </KeyFrame>
+      </Animation>
+    </Style.Animations>
+  </Style>
+  <Style Selector=":pointerover /template/ Border.AeroStyledHoverBackground">
+    <Style.Animations>
+      <Animation FillMode="Both" Duration="0:0:0.125">
+        <KeyFrame Cue="100%">
+          <Setter Property="Opacity" Value="1.0"/>
+        </KeyFrame>
+      </Animation>
+    </Style.Animations>
+  </Style>
+
+  <Style Selector=":not(:pressed) /template/ Border.AeroStyledPressedBackground">
+    <Style.Animations>
+      <Animation FillMode="Both" Duration="0:0:0.375">
+        <KeyFrame Cue="100%">
+          <Setter Property="Opacity" Value="0.0"/>
+        </KeyFrame>
+      </Animation>
+    </Style.Animations>
+  </Style>
+  <Style Selector=":pressed /template/ Border.AeroStyledPressedBackground">
+    <Style.Animations>
+      <Animation FillMode="Both" Duration="0:0:0.125">
+        <KeyFrame Cue="100%">
+          <Setter Property="Opacity" Value="1.0"/>
+        </KeyFrame>
+      </Animation>
+    </Style.Animations>
+  </Style>
+  
+  <Style Selector=":not(:checked) /template/ Border.AeroStyledCheckedBackground">
+    <Style.Animations>
+      <Animation FillMode="Both" Duration="0:0:0.375">
+        <KeyFrame Cue="100%">
+          <Setter Property="Opacity" Value="0.0"/>
+        </KeyFrame>
+      </Animation>
+    </Style.Animations>
+  </Style>
+  <Style Selector=":checked /template/ Border.AeroStyledCheckedBackground">
+    <Style.Animations>
+      <Animation FillMode="Both" Duration="0:0:0.125">
+        <KeyFrame Cue="100%">
+          <Setter Property="Opacity" Value="1.0"/>
+        </KeyFrame>
+      </Animation>
+    </Style.Animations>
+  </Style>
+
+  <Style Selector=":not(:focus) /template/ Border.AeroStyledFocusBackground">
+    <Style.Animations>
+      <Animation FillMode="Both" Duration="0:0:0.375">
+        <KeyFrame Cue="100%">
+          <Setter Property="Opacity" Value="0.0"/>
+        </KeyFrame>
+      </Animation>
+    </Style.Animations>
+  </Style>
+  <Style Selector=":focus /template/ Border.AeroStyledFocusBackground">
+    <Style.Animations>
+      <Animation FillMode="Both" Duration="0:0:0.125">
+        <KeyFrame Cue="100%">
+          <Setter Property="Opacity" Value="1.0"/>
+        </KeyFrame>
+      </Animation>
+    </Style.Animations>
+  </Style>
+
+  <Style Selector=":not(:disabled) /template/ Border.AeroStyledDisabledBackground">
+    <Setter Property="IsVisible" Value="False"/>
+  </Style>
+  <Style Selector=":is(Control):not(:disabled)">
+    <Setter Property="TextBlock.Foreground" Value="{Binding Foreground, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+  </Style>
+  <Style Selector=":is(Control):disabled">
+    <Setter Property="TextBlock.Foreground" Value="{DynamicResource AeroDisabledForeground}"/>
+  </Style>
+
+
+
+
+  
+  <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/Controls.xaml"/>
+</Styles>

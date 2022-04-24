@@ -1,0 +1,55 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Avalonia.Themes.Aero.NormalColor.Sample"
+        xmlns:v="clr-namespace:Avalonia.Themes.Aero.NormalColor.Sample.Views"
+        mc:Ignorable="d" d:DesignWidth="398" d:DesignHeight="482"
+        x:Class="Avalonia.Themes.Aero.NormalColor.Sample.MainWindow"
+        Title="Windows Aero for Avalonia Sample" Width="398" Height="482" CanResize="False">
+  <DockPanel>
+    <DockPanel Margin="7,0,7,8" DockPanel.Dock="Bottom">
+      <Grid ColumnDefinitions="73,8,73,8,73" HorizontalAlignment="Right" DockPanel.Dock="Right">
+        <Button IsDefault="True" Content="OK"/>
+        <Button IsCancel="True" Content="Cancel" Grid.Column="2"/>
+        <Button Content="Apply" Grid.Column="4" IsEnabled="False"/>
+      </Grid>
+      <CheckBox x:Name="LightsOnCheckBox" Content="Lights" IsChecked="True"/>
+      <!--IsChecked="{Binding Path=AreLightsOn, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:MainWindow}}, Mode=TwoWay}"-->
+    </DockPanel>
+    <TabControl>
+      <TabItem Header="Buttons">
+        <v:ButtonsPageView/>
+      </TabItem>
+      <TabItem Header="Boxes">
+        <v:BoxesPageView/>
+      </TabItem>
+      <TabItem Header="Spinners">
+        <v:SpinnersPageView/>
+      </TabItem>
+      <TabItem Header="ScrollViewer">
+        <v:ScrollViewerPageView/>
+      </TabItem>
+      <!--TabItem Header="Carousels">
+        <StackPanel Orientation="Vertical">
+          <Carousel>
+            <Carousel.PageTransition>
+              <PageSlide Duration="0.25" Orientation="Vertical" />
+            </Carousel.PageTransition>
+            <Rectangle Width="40" Height="40" Fill="Red"/>
+            <Rectangle Width="40" Height="40" Fill="Green"/>
+            <Rectangle Width="40" Height="40" Fill="Blue"/>
+          </Carousel>
+          <Carousel IsEnabled="False">
+            <Carousel.PageTransition>
+              <PageSlide Duration="0.25" Orientation="Vertical" />
+            </Carousel.PageTransition>
+            <Rectangle Width="40" Height="40" Fill="Red"/>
+            <Rectangle Width="40" Height="40" Fill="Green"/>
+            <Rectangle Width="40" Height="40" Fill="Blue"/>
+          </Carousel>
+        </StackPanel>
+      </TabItem-->
+    </TabControl>
+  </DockPanel>
+</Window>
