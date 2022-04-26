@@ -1,0 +1,22 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="using:AvaloniaAero.Demo"
+             xmlns:aero="using:AvaloniaAero"
+             x:Class="AvaloniaAero.Demo.App">
+    <Application.DataTemplates>
+        <local:ViewLocator/>
+    </Application.DataTemplates>
+    
+    <!--Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceInclude Source="avares://AvaloniaAero/Variant/Light.axaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources-->
+    
+    <Application.Styles>
+        <!--StyleInclude Source="avares://AvaloniaAero/AeroBase.axaml"/-->
+        <aero:AeroTheme />
+    </Application.Styles>
+</Application>

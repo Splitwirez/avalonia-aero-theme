@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/samples/AeroDemo/AeroDemo.csproj",
+                "${workspaceFolder}/samples/AvaloniaAero.Demo/AvaloniaAero.Demo.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/samples/AeroDemo/AeroDemo.csproj",
+                "${workspaceFolder}/samples/AvaloniaAero.Demo/AvaloniaAero.Demo.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -33,7 +33,7 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/samples/AeroDemo/AeroDemo.csproj"
+                "${workspaceFolder}/samples/AvaloniaAero.Demo/AvaloniaAero.Demo.csproj"
             ],
             "problemMatcher": "$msCompile"
         }
