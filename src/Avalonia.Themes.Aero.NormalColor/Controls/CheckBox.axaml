@@ -1,0 +1,126 @@
+<Styles xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style Selector="CheckBox">
+        <Setter Property="Foreground" Value="{DynamicResource AeroForeground}"/>
+        <Setter Property="Background" Value="{DynamicResource AeroCheckBoxIdleBackground}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource AeroCheckBoxIdleOuterBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="4,0,0,0"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid ColumnDefinitions="Auto,*">
+                    <Grid Width="13" Height="13" VerticalAlignment="Center">
+                        <Border Classes="aeroIdle" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <Border BorderBrush="{DynamicResource AeroCheckBoxIdleMiddleBorderBrush}" BorderThickness="1">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="{DynamicResource AeroCheckBoxIdleInnerBorderBrush}" BorderThickness="1"/>
+                            </Border>
+                        </Border>
+                        <Border Classes="aeroPointerover" BorderBrush="{DynamicResource AeroCheckBoxHoverOuterBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <Border BorderBrush="{DynamicResource AeroCheckBoxHoverMiddleBorderBrush}" BorderThickness="1">
+                                <Border Background="{DynamicResource AeroCheckBoxHoverBackground}" BorderBrush="{DynamicResource AeroCheckBoxHoverInnerBorderBrush}" BorderThickness="1"/>
+                            </Border>
+                        </Border>
+                        <Border Classes="aeroPressed" BorderBrush="{DynamicResource AeroCheckBoxPressedOuterBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <Border BorderBrush="{DynamicResource AeroCheckBoxPressedMiddleBorderBrush}" BorderThickness="1">
+                                <Border Background="{DynamicResource AeroCheckBoxPressedBackground}" BorderBrush="{DynamicResource AeroCheckBoxPressedInnerBorderBrush}" BorderThickness="1"/>
+                            </Border>
+                        </Border>
+                        <Border Classes="aeroDisabled" Background="{DynamicResource AeroCheckBoxDisabledBackground}" BorderBrush="{DynamicResource AeroCheckBoxDisabledBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"/>
+                        <Panel>
+                            <Path Name="checkMark" Data="M 0 4 L 3 7 L 6 0" StrokeThickness="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <!--Width="11"
+                                        Height="10"
+                                        Stretch="Uniform"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Data="M 1145.607177734375,430 C1145.607177734375,430 1141.449951171875,435.0772705078125 1141.449951171875,435.0772705078125 1141.449951171875,435.0772705078125 1139.232177734375,433.0999755859375 1139.232177734375,433.0999755859375 1139.232177734375,433.0999755859375 1138,434.5538330078125 1138,434.5538330078125 1138,434.5538330078125 1141.482177734375,438 1141.482177734375,438 1141.482177734375,438 1141.96875,437.9375 1141.96875,437.9375 1141.96875,437.9375 1147,431.34619140625 1147,431.34619140625 1147,431.34619140625 1145.607177734375,430 1145.607177734375,430 z"/-->
+                            <Rectangle Name="indeterminateMark" Width="5" Height="5" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Panel>
+                    </Grid>
+                    <ContentPresenter Name="PART_ContentPresenter" TextBlock.Foreground="{TemplateBinding Foreground}" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" IsVisible="{TemplateBinding Content, Converter={x:Static ObjectConverters.IsNotNull}}" Grid.Column="1"/>
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+    <Style Selector="CheckBox /template/ Path#checkMark">
+        <Setter Property="Opacity" Value="0"/>
+        <Setter Property="Stroke" Value="{DynamicResource AeroCheckBoxIdleCheckMarkBrush}"/>
+    </Style>
+    <Style Selector="CheckBox:pointerover /template/ Path#checkMark">
+        <Setter Property="Stroke" Value="{DynamicResource AeroCheckBoxHoverCheckMarkBrush}"/>
+    </Style>
+    <Style Selector="CheckBox:pressed /template/ Path#checkMark">
+        <Setter Property="Stroke" Value="{DynamicResource AeroCheckBoxPressedCheckMarkBrush}"/>
+    </Style>
+    <Style Selector="CheckBox:disabled /template/ Path#checkMark">
+        <Setter Property="Stroke" Value="{DynamicResource AeroCheckBoxDisabledCheckMarkBrush}"/>
+    </Style>
+    <Style Selector="CheckBox:not(:checked) /template/ Path#checkMark">
+        <Style.Animations>
+            <Animation FillMode="Both" Duration="0:0:0.125">
+                <KeyFrame Cue="100%">
+                    <Setter Property="Opacity" Value="0.0"/>
+                </KeyFrame>
+            </Animation>
+        </Style.Animations>
+    </Style>
+    <Style Selector="CheckBox:checked /template/ Path#checkMark">
+        <Style.Animations>
+            <Animation FillMode="Both" Duration="0:0:0.125">
+                <KeyFrame Cue="100%">
+                    <Setter Property="Opacity" Value="1.0"/>
+                </KeyFrame>
+            </Animation>
+        </Style.Animations>
+    </Style>
+    <Style Selector="CheckBox /template/ Rectangle#indeterminateMark">
+        <Setter Property="Opacity" Value="0"/>
+        <Setter Property="Fill" Value="{DynamicResource AeroCheckBoxIdleCheckMarkBrush}"/>
+    </Style>
+    <Style Selector="CheckBox:pointerover /template/ Rectangle#indeterminateMark">
+        <Setter Property="Fill" Value="{DynamicResource AeroCheckBoxHoverCheckMarkBrush}"/>
+    </Style>
+    <Style Selector="CheckBox:pressed /template/ Rectangle#indeterminateMark">
+        <Setter Property="Fill" Value="{DynamicResource AeroCheckBoxPressedCheckMarkBrush}"/>
+    </Style>
+    <Style Selector="CheckBox:disabled /template/ Rectangle#indeterminateMark">
+        <Setter Property="Fill" Value="{DynamicResource AeroCheckBoxDisabledCheckMarkBrush}"/>
+    </Style>
+    <Style Selector="CheckBox:not(:indeterminate) /template/ Rectangle#indeterminateMark">
+        <Style.Animations>
+            <Animation FillMode="Both" Duration="0:0:0.125">
+                <KeyFrame Cue="100%">
+                    <Setter Property="Opacity" Value="0.0"/>
+                </KeyFrame>
+            </Animation>
+        </Style.Animations>
+    </Style>
+    <Style Selector="CheckBox:indeterminate /template/ Rectangle#indeterminateMark">
+        <Style.Animations>
+            <Animation FillMode="Both" Duration="0:0:0.125">
+                <KeyFrame Cue="100%">
+                    <Setter Property="Opacity" Value="1.0"/>
+                </KeyFrame>
+            </Animation>
+        </Style.Animations>
+    </Style>
+    <!--Style Selector="CheckBox:pointerover /template/ Border#border">
+        <Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderHighBrush}"/>
+    </Style>
+    <Style Selector="CheckBox /template/ Path#checkMark">
+        <Setter Property="IsVisible" Value="False"/>
+    </Style>
+    <Style Selector="CheckBox /template/ Rectangle#indeterminateMark">
+        <Setter Property="IsVisible" Value="False"/>
+    </Style>
+    <Style Selector="CheckBox:checked /template/ Path#checkMark">
+        <Setter Property="IsVisible" Value="True"/>
+    </Style>
+    <Style Selector="CheckBox:indeterminate /template/ Rectangle#indeterminateMark">
+        <Setter Property="IsVisible" Value="True"/>
+    </Style>
+    <Style Selector="CheckBox:disabled /template/ Border#border">
+        <Setter Property="Opacity" Value="{DynamicResource ThemeDisabledOpacity}"/>
+    </Style-->
+</Styles>

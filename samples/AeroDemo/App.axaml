@@ -9,12 +9,12 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceInclude Source="avares://Avalonia.Themes.Aero.NormalColor/Accents/BaseLight.xaml"/>
+                <ResourceInclude Source="avares://Avalonia.Themes.Aero.NormalColor/Accents/BaseLight.axaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
     
     <Application.Styles>
-        <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/Aero.NormalColor.xaml"/>
+        <StyleInclude Source="avares://Avalonia.Themes.Aero.NormalColor/Aero.NormalColor.axaml"/>
     </Application.Styles>
 </Application>

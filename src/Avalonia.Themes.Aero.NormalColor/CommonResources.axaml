@@ -1,0 +1,14 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:sys="using:System">
+    <sys:Double x:Key="AeroFontSizeSmall">10</sys:Double>
+    <sys:Double x:Key="AeroFontSizeNormal">12</sys:Double>
+    <sys:Double x:Key="AeroFontSizeLarge">16</sys:Double>
+
+    <sys:Double x:Key="AeroScrollBarThickness">17</sys:Double>
+    <sys:Double x:Key="AeroSmallScrollBarThickness">7</sys:Double>
+    <sys:Double x:Key="AeroScrollBarThumbThickness">17</sys:Double>
+    
+    <TransformOperations x:Key="VerticalSmallScrollThumbScaleTransform">scaleX(0.125) translateX(-2px)</TransformOperations>
+    <TransformOperations x:Key="HorizontalSmallScrollThumbScaleTransform">scaleY(0.125) translateY(-2px)</TransformOperations>
+</ResourceDictionary>
