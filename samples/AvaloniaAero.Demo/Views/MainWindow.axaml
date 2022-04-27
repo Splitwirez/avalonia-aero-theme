@@ -15,6 +15,12 @@
     </Design.DataContext>
 
     <Window.Styles>
+        <Style Selector="CheckBox.lightSwitch[IsChecked=true]">
+            <Setter Property="Content" Value="Lights on"/>
+        </Style>
+        <Style Selector="CheckBox.lightSwitch[IsChecked=false]">
+            <Setter Property="Content" Value="Lights off"/>
+        </Style>
     </Window.Styles>
 
     <DockPanel>
@@ -38,10 +44,12 @@
                 <Button Content="Apply"
                         IsEnabled="False"/>
             </UniformGrid>
-            <ToggleSwitch IsChecked="{Binding AreLightsOn}"
+            <CheckBox IsChecked="{Binding AreLightsOn}"
+                    Classes="lightSwitch"/>
+            <!--ToggleSwitch IsChecked="{Binding AreLightsOn}"
                         OnContent="Lights on"
                         OffContent="Lights off"
-                        Margin="0,-20"/>
+                        Margin="0,-20"/-->
         </DockPanel>
         <TabControl Items="{Binding Pages}">
             <TabControl.ItemTemplate>

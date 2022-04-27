@@ -57,7 +57,9 @@
     <StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/TreeView.xaml"/>
     <StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/TreeViewItem.xaml"/>
     <StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/UserControl.xaml"/>
-    <StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/Window.xaml"/>
+    
+    <StyleInclude Source="avares://AvaloniaAero/ControlStyles/Window.axaml"/><!--done-->
+    
     <StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/EmbeddableControlRoot.xaml"/>
     <StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/CalendarButton.xaml"/>
     <StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/CalendarDayButton.xaml"/>
@@ -81,11 +83,4 @@
     <StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/MenuFlyoutPresenter.xaml"/>
     <!-- ManagedFileChooser comes last because it uses (and overrides) styles for a multitude of other controls...the dialogs were originally UserControls, after all-->
     <!--StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/ManagedFileChooser.xaml"/-->
-    
-
-
-
-    <!--
-    <StyleInclude Source="avares://AvaloniaAero/ControlStyles/Window.axaml"/><!-done->
-    -->
 </Styles>
