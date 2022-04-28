@@ -1,0 +1,30 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:v="using:AvaloniaAero.Demo.Views"
+        mc:Ignorable="d" d:DesignWidth="398" d:DesignHeight="482"
+        x:Class="AvaloniaAero.Demo.Views.ToggleSwitchPageView">
+    <!--UserControl.Styles>
+        <Style Selector="ToggleSwitch">
+            <Setter Property="Content" Value="ToggleSwitch"/>
+        </Style>
+        <Style Selector="ToggleSwitch[IsChecked=true]">
+            <Setter Property="Content" Value="Checked ToggleSwitch"/>
+        </Style>
+    </UserControl.Styles-->
+
+    <UniformGrid Columns="2"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Margin="4">
+        <ToggleSwitch Content="ToggleSwitch"/>
+        <ToggleSwitch Content="Disabled ToggleSwitch"
+                    IsEnabled="False"/>
+        <ToggleSwitch Content="Another ToggleSwitch"
+                    IsChecked="True"/>
+        <ToggleSwitch Content="Another disabled ToggleSwitch"
+                    IsChecked="True"
+                    IsEnabled="False"/>
+    </UniformGrid>
+</UserControl>

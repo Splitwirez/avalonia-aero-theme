@@ -1,230 +1,242 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <SolidColorBrush x:Key="AeroForeground" Color="#FF000000"/>
-    <SolidColorBrush x:Key="AeroDisabledForeground" Color="#7F000000"/>
-    <SolidColorBrush x:Key="AeroWindowBackground" Color="#FFFCFCFC"/>
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	<Color x:Key="AeroForegroundColor">#FF000000</Color>
+	<Color x:Key="AeroDisabledForegroundColor">#7F000000</Color>
 
 
 
-    <LinearGradientBrush x:Key="AeroToolTipBackground" StartPoint="0%,0%" EndPoint="0%,100%">
-        <GradientStop Offset="0" Color="#FFFFFFFF"/>
-        <GradientStop Offset="1" Color="#FFE4E5F0"/>
-    </LinearGradientBrush>
-    <SolidColorBrush x:Key="AeroToolTipBorderBrush" Color="#FF767676"/>
+
+	<Color x:Key="AeroWindowBackgroundColor">#FFFCFCFC</Color>
 
 
 
-    <LinearGradientBrush x:Key="AeroButtonIdleBackground" StartPoint="0%,0%" EndPoint="0%,100%">
-        <GradientStop Offset="0" Color="#FFF2F2F2"/>
-        <GradientStop Offset="0.5" Color="#FFEBEBEB"/>
-        <GradientStop Offset="0.5" Color="#FFDDDDDD"/>
-        <GradientStop Offset="1" Color="#FFCFCFCF"/>
-    </LinearGradientBrush>
-    <SolidColorBrush x:Key="AeroButtonIdleOuterBorderBrush" Color="#FF707070"/>
-    <LinearGradientBrush x:Key="AeroButtonIdleInnerBorderBrush" StartPoint="0%,0%" EndPoint="0%,100%">
-        <GradientStop Offset="0" Color="#FFFCFCFC"/>
-        <GradientStop Offset="1" Color="#FFF3F3F3"/>
-    </LinearGradientBrush>
 
+	<Color x:Key="AeroToolTipBackgroundColor0">#FFFFFFFF</Color>
+	<Color x:Key="AeroToolTipBackgroundColor1">#FFE4E5F0</Color>
 
-    <LinearGradientBrush x:Key="AeroButtonHoverBackground" StartPoint="0%,0%" EndPoint="0%,100%">
-        <GradientStop Offset="0" Color="#FFEAF6FD"/>
-        <GradientStop Offset="0.5" Color="#FFD9F0FC"/>
-        <GradientStop Offset="0.5" Color="#FFBEE6FD"/>
-        <GradientStop Offset="1" Color="#FFA7D9F5"/>
-    </LinearGradientBrush>
-    <SolidColorBrush x:Key="AeroButtonHoverOuterBorderBrush" Color="#FF3C7FB1"/>
-    <LinearGradientBrush x:Key="AeroButtonHoverInnerBorderBrush" StartPoint="0%,0%" EndPoint="0%,100%">
-        <GradientStop Offset="0" Color="#FFFAFDFE"/>
-        <GradientStop Offset="1" Color="#FFE8F5FC"/>
-    </LinearGradientBrush>
-
-    <LinearGradientBrush x:Key="AeroButtonPressedBackground" StartPoint="0%,0%" EndPoint="0%,100%">
-        <GradientStop Offset="0" Color="#FFE5F4FC"/>
-        <GradientStop Offset="0.5" Color="#FFC4E5F6"/>
-        <GradientStop Offset="0.5" Color="#FF98D1EF"/>
-        <GradientStop Offset="1" Color="#FF68B3DB"/>
-    </LinearGradientBrush>
-    <SolidColorBrush x:Key="AeroButtonPressedOuterBorderBrush" Color="#FF2C628B"/>
-    <LinearGradientBrush x:Key="AeroButtonPressedInnerBorderBrush" StartPoint="0%,0%" EndPoint="0%,100%">
-        <GradientStop Offset="0" Color="#FF9EB0BA"/>
-        <GradientStop Offset="0.5" Color="#FF9ABACB"/>
-        <GradientStop Offset="0.5" Color="#FF78AAC5"/>
-        <GradientStop Offset="1" Color="#FF68B3DB"/>
-    </LinearGradientBrush>
-
-    <SolidColorBrush x:Key="AeroButtonDisabledBackground" Color="#FFF4F4F4"/>
-    <SolidColorBrush x:Key="AeroButtonDisabledOuterBorderBrush" Color="#FFADB2B5"/>
-    <SolidColorBrush x:Key="AeroButtonDisabledInnerBorderBrush" Color="#FFFCFCFC"/>
+	<Color x:Key="AeroToolTipBorderBrushColor">#FF767676</Color>
 
 
 
-    <SolidColorBrush x:Key="AeroCheckBoxIdleOuterBorderBrush" Color="#FF8E8F8F"/>
-    <SolidColorBrush x:Key="AeroCheckBoxIdleMiddleBorderBrush" Color="#FFF4F4F4"/>
-    <LinearGradientBrush x:Key="AeroCheckBoxIdleInnerBorderBrush" StartPoint="0%,0%" EndPoint="100%,100%">
-        <GradientStop Offset="0" Color="#FFAEB3B9"/>
-        <GradientStop Offset="1" Color="#FFE9E9EA"/>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="AeroCheckBoxIdleBackground" StartPoint="0%,0%" EndPoint="100%,100%">
-        <GradientStop Offset="0" Color="#FFCBCFD5"/>
-        <GradientStop Offset="1" Color="#FFF6F6F6"/>
-    </LinearGradientBrush>
-    <SolidColorBrush x:Key="AeroCheckBoxIdleCheckMarkBrush">#FF495F96</SolidColorBrush>
 
-    <SolidColorBrush x:Key="AeroCheckBoxHoverOuterBorderBrush" Color="#FF5586A3"/>
-    <SolidColorBrush x:Key="AeroCheckBoxHoverMiddleBorderBrush" Color="#FFDEF9FA"/>
-    <LinearGradientBrush x:Key="AeroCheckBoxHoverInnerBorderBrush" StartPoint="0%,0%" EndPoint="100%,100%">
-        <GradientStop Offset="0" Color="#FF79C6F9"/>
-        <GradientStop Offset="1" Color="#FFCFECFD"/>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="AeroCheckBoxHoverBackground" StartPoint="0%,0%" EndPoint="100%,100%">
-        <GradientStop Offset="0" Color="#FFB1DFFD"/>
-        <GradientStop Offset="1" Color="#FFE7F7FE"/>
-    </LinearGradientBrush>
-    <SolidColorBrush x:Key="AeroCheckBoxHoverCheckMarkBrush">#FF042271</SolidColorBrush>
+	<Color x:Key="AeroButtonIdleBackgroundColor0">#FFF2F2F2</Color>
+	<Color x:Key="AeroButtonIdleBackgroundColor1">#FFEBEBEB</Color>
+	<Color x:Key="AeroButtonIdleBackgroundColor2">#FFDDDDDD</Color>
+	<Color x:Key="AeroButtonIdleBackgroundColor3">#FFCFCFCF</Color>
 
-    <SolidColorBrush x:Key="AeroCheckBoxPressedOuterBorderBrush" Color="#FF2C628B"/>
-    <SolidColorBrush x:Key="AeroCheckBoxPressedMiddleBorderBrush" Color="#FFC2E4F6"/>
-    <LinearGradientBrush x:Key="AeroCheckBoxPressedInnerBorderBrush" StartPoint="0%,0%" EndPoint="100%,100%">
-        <GradientStop Offset="0" Color="#FF5EB6F7"/>
-        <GradientStop Offset="1" Color="#FFC1E6FC"/>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="AeroCheckBoxPressedBackground" StartPoint="0%,0%" EndPoint="100%,100%">
-        <GradientStop Offset="0" Color="#FF9DD5FC"/>
-        <GradientStop Offset="1" Color="#FFE0F4FE"/>
-    </LinearGradientBrush>
-    <SolidColorBrush x:Key="AeroCheckBoxPressedCheckMarkBrush">#FF3A5B98</SolidColorBrush>
+	<Color x:Key="AeroButtonIdleOuterBorderBrushColor">#FF707070</Color>
 
-    <SolidColorBrush x:Key="AeroCheckBoxDisabledBorderBrush" Color="#FFB1B1B1"/>
-    <LinearGradientBrush x:Key="AeroCheckBoxDisabledBackground" StartPoint="0%,0%" EndPoint="100%,100%">
-        <GradientStop Offset="0" Color="#FFF0F0F0"/>
-        <GradientStop Offset="1" Color="#FFFBFBFB"/>
-    </LinearGradientBrush>
-    <SolidColorBrush x:Key="AeroCheckBoxDisabledCheckMarkBrush">#FF3A5B98</SolidColorBrush>
-
-    
-    
-    <RadialGradientBrush x:Key="AeroRadioButtonIdleCircleFill" Center="25%,25%" GradientOrigin="25%,25%">
-        <GradientStop Offset="0.5" Color="#FFC7EBFD"/>
-        <GradientStop Offset="1" Color="#FF0B82C7"/>
-    </RadialGradientBrush>
-
-    <RadialGradientBrush x:Key="AeroRadioButtonHoverCircleFill" Center="25%,25%" GradientOrigin="25%,25%">
-        <GradientStop Offset="0.5" Color="#FF74FFFF"/>
-        <GradientStop Offset="1" Color="#FF11A3F2"/>
-    </RadialGradientBrush>
-
-    <RadialGradientBrush x:Key="AeroRadioButtonPressedCircleFill" Center="25%,25%" GradientOrigin="25%,25%">
-        <GradientStop Offset="0.5" Color="#FF95D9FC"/>
-        <GradientStop Offset="1" Color="#FF095684"/>
-    </RadialGradientBrush>
-
-    <RadialGradientBrush x:Key="AeroRadioButtonDisabledCircleFill" Center="25%,25%" GradientOrigin="25%,25%">
-        <GradientStop Offset="0.5" Color="#FFC7EBFD"/>
-        <GradientStop Offset="1" Color="#FF0B82C7"/>
-    </RadialGradientBrush>
-
-    
-
-    <SolidColorBrush x:Key="AeroTabControlBackground" Color="#FFFFFFFF"/>
-    <SolidColorBrush x:Key="AeroTabControlOuterBorderBrush" Color="#FFFFFFFF"/>
-    <SolidColorBrush x:Key="AeroTabControlInnerBorderBrush" Color="#FF898C95"/>
-
-    
-    
-    <SolidColorBrush x:Key="AeroTextBoxIdleBackground" Color="#FFF9F9F9"/>
-    <LinearGradientBrush x:Key="AeroTextBoxIdleBorderBrush" StartPoint="0%,0%" EndPoint="0%,100%">
-        <GradientStop Offset="0" Color="#FF707070"/>
-        <GradientStop Offset="1" Color="#FFC9C9C9"/>
-    </LinearGradientBrush>
-
-    <SolidColorBrush x:Key="AeroTextBoxHoverBackground" Color="#FFFFFFFF"/>
-    <LinearGradientBrush x:Key="AeroTextBoxHoverBorderBrush" StartPoint="0%,0%" EndPoint="0%,100%">
-        <GradientStop Offset="0" Color="#FF3C7FB1"/>
-        <GradientStop Offset="1" Color="#FF56B8FF"/>
-    </LinearGradientBrush>
-
-    <SolidColorBrush x:Key="AeroTextBoxFocusBackground" Color="#FFFFFFFF"/>
-    <LinearGradientBrush x:Key="AeroTextBoxFocusBorderBrush" StartPoint="0%,0%" EndPoint="0%,100%">
-        <GradientStop Offset="0" Color="#FF2C628B"/>
-        <GradientStop Offset="1" Color="#FF49A4E5"/>
-    </LinearGradientBrush>
-
-    <SolidColorBrush x:Key="AeroTextBoxDisabledBackground" Color="#FFE9E9E9"/>
-    <SolidColorBrush x:Key="AeroTextBoxDisabledBorderBrush" Color="#FFADB2B5"/>
-    
-    
-    
-    <LinearGradientBrush x:Key="AeroScrollBarButtonForeground" StartPoint="0%,0%" EndPoint="100%,100%">
-        <GradientStop Offset="0" Color="#E0000000"/>
-        <GradientStop Offset="1" Color="#A0000000"/>
-    </LinearGradientBrush>
-    <SolidColorBrush x:Key="AeroScrollBarButtonIconStroke" Color="#40FFFFFF"/>
-    <SolidColorBrush x:Key="AeroScrollBarThumbIconStroke" Color="#FFFFFFFF"/>
-
-    <LinearGradientBrush x:Key="AeroHorizontalScrollBarTrackBackground" StartPoint="0%,0%" EndPoint="0%,100%">
-        <GradientStop Offset="0" Color="#FFE3E3E3"/>
-        <GradientStop Offset="0.25" Color="#FFEFEFEF"/>
-        <GradientStop Offset="1" Color="#FFF2F2F2"/>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="AeroHorizontalScrollBarTrackBorderBrush" StartPoint="0%,0%" EndPoint="0%,100%">
-        <GradientStop Offset="0" Color="#FFF8F8F8"/>
-        <GradientStop Offset="1" Color="#FFEAEAEA"/>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="AeroVerticalScrollBarTrackBackground" StartPoint="0%,0%" EndPoint="100%,0%">
-        <GradientStop Offset="0" Color="#FFE3E3E3"/>
-        <GradientStop Offset="0.25" Color="#FFEFEFEF"/>
-        <GradientStop Offset="1" Color="#FFF2F2F2"/>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="AeroVerticalScrollBarTrackBorderBrush" StartPoint="0%,0%" EndPoint="100%,0%">
-        <GradientStop Offset="0" Color="#FFF8F8F8"/>
-        <GradientStop Offset="1" Color="#FFEAEAEA"/>
-    </LinearGradientBrush>
-    
-    <LinearGradientBrush x:Key="AeroVerticalScrollBarButtonIdleBackground" StartPoint="0%,0%" EndPoint="100%,0%">
-        <GradientStop Offset="0" Color="#FFF2F2F2"/>
-        <GradientStop Offset="0.5" Color="#FFEBEBEB"/>
-        <GradientStop Offset="0.5" Color="#FFDDDDDD"/>
-        <GradientStop Offset="1" Color="#FFCFCFCF"/>
-    </LinearGradientBrush>
-    <SolidColorBrush x:Key="AeroVerticalScrollBarButtonIdleOuterBorderBrush" Color="#FF707070"/>
-    <LinearGradientBrush x:Key="AeroVerticalScrollBarButtonIdleInnerBorderBrush" StartPoint="0%,0%" EndPoint="100%,0%">
-        <GradientStop Offset="0" Color="#FFFCFCFC"/>
-        <GradientStop Offset="1" Color="#FFF3F3F3"/>
-    </LinearGradientBrush>
+	<Color x:Key="AeroButtonIdleInnerBorderBrushColor0">#FFFCFCFC</Color>
+	<Color x:Key="AeroButtonIdleInnerBorderBrushColor1">#FFF3F3F3</Color>
 
 
-    <LinearGradientBrush x:Key="AeroVerticalScrollBarButtonHoverBackground" StartPoint="0%,0%" EndPoint="100%,0%">
-        <GradientStop Offset="0" Color="#FFEAF6FD"/>
-        <GradientStop Offset="0.5" Color="#FFD9F0FC"/>
-        <GradientStop Offset="0.5" Color="#FFBEE6FD"/>
-        <GradientStop Offset="1" Color="#FFA7D9F5"/>
-    </LinearGradientBrush>
-    <SolidColorBrush x:Key="AeroVerticalScrollBarButtonHoverOuterBorderBrush" Color="#FF3C7FB1"/>
-    <LinearGradientBrush x:Key="AeroVerticalScrollBarButtonHoverInnerBorderBrush" StartPoint="0%,0%" EndPoint="100%,0%">
-        <GradientStop Offset="0" Color="#FFFAFDFE"/>
-        <GradientStop Offset="1" Color="#FFE8F5FC"/>
-    </LinearGradientBrush>
+	<Color x:Key="AeroButtonHoverBackgroundColor0">#FFEAF6FD</Color>
+	<Color x:Key="AeroButtonHoverBackgroundColor1">#FFD9F0FC</Color>
+	<Color x:Key="AeroButtonHoverBackgroundColor2">#FFBEE6FD</Color>
+	<Color x:Key="AeroButtonHoverBackgroundColor3">#FFA7D9F5</Color>
 
-    <LinearGradientBrush x:Key="AeroVerticalScrollBarButtonPressedBackground" StartPoint="0%,0%" EndPoint="100%,0%">
-        <GradientStop Offset="0" Color="#FFE5F4FC"/>
-        <GradientStop Offset="0.5" Color="#FFC4E5F6"/>
-        <GradientStop Offset="0.5" Color="#FF98D1EF"/>
-        <GradientStop Offset="1" Color="#FF68B3DB"/>
-    </LinearGradientBrush>
-    <SolidColorBrush x:Key="AeroVerticalScrollBarButtonPressedOuterBorderBrush" Color="#FF2C628B"/>
-    <LinearGradientBrush x:Key="AeroVerticalScrollBarButtonPressedInnerBorderBrush" StartPoint="0%,0%" EndPoint="100%,0%">
-        <GradientStop Offset="0" Color="#FF9EB0BA"/>
-        <GradientStop Offset="0.5" Color="#FF9ABACB"/>
-        <GradientStop Offset="0.5" Color="#FF78AAC5"/>
-        <GradientStop Offset="1" Color="#FF68B3DB"/>
-    </LinearGradientBrush>
+	<Color x:Key="AeroButtonHoverOuterBorderBrushColor">#FF3C7FB1</Color>
 
-    <SolidColorBrush x:Key="AeroVerticalScrollBarButtonDisabledBackground" Color="#FFF4F4F4"/>
-    <SolidColorBrush x:Key="AeroVerticalScrollBarButtonDisabledOuterBorderBrush" Color="#FFADB2B5"/>
-    <SolidColorBrush x:Key="AeroVerticalScrollBarButtonDisabledInnerBorderBrush" Color="#FFFCFCFC"/>
+	<Color x:Key="AeroButtonHoverInnerBorderBrushColor0">#FFFAFDFE</Color>
+	<Color x:Key="AeroButtonHoverInnerBorderBrushColor1">#FFE8F5FC</Color>
 
-    
-    
-    <SolidColorBrush x:Key="AeroScrollViewerCornerBackground" Color="#FFFCFCFC"/>
+
+	<Color x:Key="AeroButtonPressedBackgroundColor0">#FFE5F4FC</Color>
+	<Color x:Key="AeroButtonPressedBackgroundColor1">#FFC4E5F6</Color>
+	<Color x:Key="AeroButtonPressedBackgroundColor2">#FF98D1EF</Color>
+	<Color x:Key="AeroButtonPressedBackgroundColor3">#FF68B3DB</Color>
+
+	<Color x:Key="AeroButtonPressedOuterBorderBrushColor">#FF2C628B</Color>
+
+	<Color x:Key="AeroButtonPressedInnerBorderBrushColor0">#FF9EB0BA</Color>
+	<Color x:Key="AeroButtonPressedInnerBorderBrushColor1">#FF9ABACB</Color>
+	<Color x:Key="AeroButtonPressedInnerBorderBrushColor2">#FF78AAC5</Color>
+	<Color x:Key="AeroButtonPressedInnerBorderBrushColor3">#FF68B3DB</Color>
+
+
+	<Color x:Key="AeroButtonDisabledBackgroundColor">#FFF4F4F4</Color>
+
+	<Color x:Key="AeroButtonDisabledOuterBorderBrushColor">#FFADB2B5</Color>
+
+	<Color x:Key="AeroButtonDisabledInnerBorderBrushColor">#FFFCFCFC</Color>
+
+
+
+
+	<Color x:Key="AeroCheckBoxIdleOuterBorderBrushColor">#FF8E8F8F</Color>
+
+	<Color x:Key="AeroCheckBoxIdleMiddleBorderBrushColor">#FFF4F4F4</Color>
+
+	<Color x:Key="AeroCheckBoxIdleInnerBorderBrushColor0">#FFAEB3B9</Color>
+	<Color x:Key="AeroCheckBoxIdleInnerBorderBrushColor1">#FFE9E9EA</Color>
+
+	<Color x:Key="AeroCheckBoxIdleBackgroundColor0">#FFCBCFD5</Color>
+	<Color x:Key="AeroCheckBoxIdleBackgroundColor1">#FFF6F6F6</Color>
+
+	<Color x:Key="AeroCheckBoxIdleCheckMarkBrushColor">#FF495F96</Color>
+
+
+	<Color x:Key="AeroCheckBoxHoverOuterBorderBrushColor">#FF5586A3</Color>
+
+	<Color x:Key="AeroCheckBoxHoverMiddleBorderBrushColor">#FFDEF9FA</Color>
+
+	<Color x:Key="AeroCheckBoxHoverInnerBorderBrushColor0">#FF79C6F9</Color>
+	<Color x:Key="AeroCheckBoxHoverInnerBorderBrushColor1">#FFCFECFD</Color>
+
+	<Color x:Key="AeroCheckBoxHoverBackgroundColor0">#FFB1DFFD</Color>
+	<Color x:Key="AeroCheckBoxHoverBackgroundColor1">#FFE7F7FE</Color>
+
+	<Color x:Key="AeroCheckBoxHoverCheckMarkBrushColor">#FF042271</Color>
+
+
+	<Color x:Key="AeroCheckBoxPressedOuterBorderBrushColor">#FF2C628B</Color>
+
+	<Color x:Key="AeroCheckBoxPressedMiddleBorderBrushColor">#FFC2E4F6</Color>
+
+	<Color x:Key="AeroCheckBoxPressedInnerBorderBrushColor0">#FF5EB6F7</Color>
+	<Color x:Key="AeroCheckBoxPressedInnerBorderBrushColor1">#FFC1E6FC</Color>
+
+	<Color x:Key="AeroCheckBoxPressedBackgroundColor0">#FF9DD5FC</Color>
+	<Color x:Key="AeroCheckBoxPressedBackgroundColor1">#FFE0F4FE</Color>
+
+	<Color x:Key="AeroCheckBoxPressedCheckMarkBrushColor">#FF3A5B98</Color>
+
+
+	<Color x:Key="AeroCheckBoxDisabledBorderBrushColor">#FFB1B1B1</Color>
+
+	<Color x:Key="AeroCheckBoxDisabledBackgroundColor0">#FFF0F0F0</Color>
+	<Color x:Key="AeroCheckBoxDisabledBackgroundColor1">#FFFBFBFB</Color>
+
+	<Color x:Key="AeroCheckBoxDisabledCheckMarkBrushColor">#FF3A5B98</Color>
+
+
+
+
+	<Color x:Key="AeroRadioButtonIdleCircleFillColor0">#FFC7EBFD</Color>
+	<Color x:Key="AeroRadioButtonIdleCircleFillColor1">#FF0B82C7</Color>
+
+
+	<Color x:Key="AeroRadioButtonHoverCircleFillColor0">#FF74FFFF</Color>
+	<Color x:Key="AeroRadioButtonHoverCircleFillColor1">#FF11A3F2</Color>
+
+
+	<Color x:Key="AeroRadioButtonPressedCircleFillColor0">#FF95D9FC</Color>
+	<Color x:Key="AeroRadioButtonPressedCircleFillColor1">#FF095684</Color>
+
+
+	<Color x:Key="AeroRadioButtonDisabledCircleFillColor0">#FFC7EBFD</Color>
+	<Color x:Key="AeroRadioButtonDisabledCircleFillColor1">#FF0B82C7</Color>
+
+
+
+
+	<Color x:Key="AeroTabControlBackgroundColor">#FFFFFFFF</Color>
+
+	<Color x:Key="AeroTabControlOuterBorderBrushColor">#FFFFFFFF</Color>
+
+	<Color x:Key="AeroTabControlInnerBorderBrushColor">#FF898C95</Color>
+
+
+
+
+	<Color x:Key="AeroTextBoxIdleBackgroundColor">#FFF9F9F9</Color>
+
+	<Color x:Key="AeroTextBoxIdleBorderBrushColor0">#FF707070</Color>
+	<Color x:Key="AeroTextBoxIdleBorderBrushColor1">#FFC9C9C9</Color>
+
+
+	<Color x:Key="AeroTextBoxHoverBackgroundColor">#FFFFFFFF</Color>
+
+	<Color x:Key="AeroTextBoxHoverBorderBrushColor0">#FF3C7FB1</Color>
+	<Color x:Key="AeroTextBoxHoverBorderBrushColor1">#FF56B8FF</Color>
+
+
+	<Color x:Key="AeroTextBoxFocusBackgroundColor">#FFFFFFFF</Color>
+
+	<Color x:Key="AeroTextBoxFocusBorderBrushColor0">#FF2C628B</Color>
+	<Color x:Key="AeroTextBoxFocusBorderBrushColor1">#FF49A4E5</Color>
+
+
+	<Color x:Key="AeroTextBoxDisabledBackgroundColor">#FFE9E9E9</Color>
+
+	<Color x:Key="AeroTextBoxDisabledBorderBrushColor">#FFADB2B5</Color>
+
+
+
+
+
+	<Color x:Key="AeroScrollBarButtonForegroundColor0">#E0000000</Color>
+	<Color x:Key="AeroScrollBarButtonForegroundColor1">#A0000000</Color>
+
+
+	<Color x:Key="AeroScrollBarButtonIconStrokeColor">#40FFFFFF</Color>
+
+	<Color x:Key="AeroScrollBarThumbIconStrokeColor">#FFFFFFFF</Color>
+
+	<Color x:Key="AeroHorizontalScrollBarTrackBackgroundColor0">#FFE3E3E3</Color>
+	<Color x:Key="AeroHorizontalScrollBarTrackBackgroundColor1">#FFEFEFEF</Color>
+	<Color x:Key="AeroHorizontalScrollBarTrackBackgroundColor2">#FFF2F2F2</Color>
+
+	<Color x:Key="AeroHorizontalScrollBarTrackBorderBrushColor0">#FFF8F8F8</Color>
+	<Color x:Key="AeroHorizontalScrollBarTrackBorderBrushColor1">#FFEAEAEA</Color>
+
+	<Color x:Key="AeroVerticalScrollBarTrackBackgroundColor0">#FFE3E3E3</Color>
+	<Color x:Key="AeroVerticalScrollBarTrackBackgroundColor1">#FFEFEFEF</Color>
+	<Color x:Key="AeroVerticalScrollBarTrackBackgroundColor2">#FFF2F2F2</Color>
+
+	<Color x:Key="AeroVerticalScrollBarTrackBorderBrushColor0">#FFF8F8F8</Color>
+	<Color x:Key="AeroVerticalScrollBarTrackBorderBrushColor1">#FFEAEAEA</Color>
+
+	<Color x:Key="AeroVerticalScrollBarButtonIdleBackgroundColor0">#FFF2F2F2</Color>
+	<Color x:Key="AeroVerticalScrollBarButtonIdleBackgroundColor1">#FFEBEBEB</Color>
+	<Color x:Key="AeroVerticalScrollBarButtonIdleBackgroundColor2">#FFDDDDDD</Color>
+	<Color x:Key="AeroVerticalScrollBarButtonIdleBackgroundColor3">#FFCFCFCF</Color>
+
+	<Color x:Key="AeroVerticalScrollBarButtonIdleOuterBorderBrushColor">#FF707070</Color>
+
+	<Color x:Key="AeroVerticalScrollBarButtonIdleInnerBorderBrushColor0">#FFFCFCFC</Color>
+	<Color x:Key="AeroVerticalScrollBarButtonIdleInnerBorderBrushColor1">#FFF3F3F3</Color>
+
+
+	<Color x:Key="AeroVerticalScrollBarButtonHoverBackgroundColor0">#FFEAF6FD</Color>
+	<Color x:Key="AeroVerticalScrollBarButtonHoverBackgroundColor1">#FFD9F0FC</Color>
+	<Color x:Key="AeroVerticalScrollBarButtonHoverBackgroundColor2">#FFBEE6FD</Color>
+	<Color x:Key="AeroVerticalScrollBarButtonHoverBackgroundColor3">#FFA7D9F5</Color>
+
+	<Color x:Key="AeroVerticalScrollBarButtonHoverOuterBorderBrushColor">#FF3C7FB1</Color>
+
+	<Color x:Key="AeroVerticalScrollBarButtonHoverInnerBorderBrushColor0">#FFFAFDFE</Color>
+	<Color x:Key="AeroVerticalScrollBarButtonHoverInnerBorderBrushColor1">#FFE8F5FC</Color>
+
+
+	<Color x:Key="AeroVerticalScrollBarButtonPressedBackgroundColor0">#FFE5F4FC</Color>
+	<Color x:Key="AeroVerticalScrollBarButtonPressedBackgroundColor1">#FFC4E5F6</Color>
+	<Color x:Key="AeroVerticalScrollBarButtonPressedBackgroundColor2">#FF98D1EF</Color>
+	<Color x:Key="AeroVerticalScrollBarButtonPressedBackgroundColor3">#FF68B3DB</Color>
+
+	<Color x:Key="AeroVerticalScrollBarButtonPressedOuterBorderBrushColor">#FF2C628B</Color>
+
+	<Color x:Key="AeroVerticalScrollBarButtonPressedInnerBorderBrushColor0">#FF9EB0BA</Color>
+	<Color x:Key="AeroVerticalScrollBarButtonPressedInnerBorderBrushColor1">#FF9ABACB</Color>
+	<Color x:Key="AeroVerticalScrollBarButtonPressedInnerBorderBrushColor2">#FF78AAC5</Color>
+	<Color x:Key="AeroVerticalScrollBarButtonPressedInnerBorderBrushColor3">#FF68B3DB</Color>
+
+
+	<Color x:Key="AeroVerticalScrollBarButtonDisabledBackgroundColor">#FFF4F4F4</Color>
+
+	<Color x:Key="AeroVerticalScrollBarButtonDisabledOuterBorderBrushColor">#FFADB2B5</Color>
+
+	<Color x:Key="AeroVerticalScrollBarButtonDisabledInnerBorderBrushColor">#FFFCFCFC</Color>
+
+
+	<Color x:Key="AeroScrollViewerCornerBackgroundColor">#FFFCFCFC</Color>
+
+
+
+
+	<Color x:Key="AeroToggleSwitchCheckedBackgroundColor">#FFC1DFF6</Color><!--FF3B83B8-->
+
+	<Color x:Key="AeroToggleSwitchCheckedBorderBrushColor0">#FF2C628B</Color>
+	<Color x:Key="AeroToggleSwitchCheckedBorderBrushColor1">#FF49A4E5</Color>
 </ResourceDictionary>

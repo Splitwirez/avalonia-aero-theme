@@ -17,10 +17,26 @@
         <Setter Property="Template">
             <ControlTemplate>
                 <Grid>
-                    <Border Classes="aeroIdle" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3"/>
-                    <Border Classes="aeroPointerover" Background="{DynamicResource AeroTextBoxHoverBackground}" BorderBrush="{DynamicResource AeroTextBoxHoverBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3"/>
-                    <Border Classes="aeroFocus" Background="{DynamicResource AeroTextBoxFocusBackground}" BorderBrush="{DynamicResource AeroTextBoxFocusBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3"/>
-                    <Border Classes="aeroDisabled" Background="{DynamicResource AeroTextBoxDisabledBackground}" BorderBrush="{DynamicResource AeroTextBoxDisabledBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3"/>
+                    <Border Classes="aeroIdle"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="3"/>
+                            <Border Classes="aeroPointerover"
+                                    Background="{DynamicResource AeroTextBoxHoverBackground}"
+                                    BorderBrush="{DynamicResource AeroTextBoxHoverBorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="3"/>
+                            <Border Classes="aeroFocus"
+                                    Background="{DynamicResource AeroTextBoxFocusBackground}"
+                                    BorderBrush="{DynamicResource AeroTextBoxFocusBorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="3"/>
+                            <Border Classes="aeroDisabled"
+                                    Background="{DynamicResource AeroTextBoxDisabledBackground}"
+                                    BorderBrush="{DynamicResource AeroTextBoxDisabledBorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="3"/>
                     <Border Name="border">
                         <DockPanel Margin="{TemplateBinding Padding}">
 

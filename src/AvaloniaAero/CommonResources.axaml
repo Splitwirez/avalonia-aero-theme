@@ -8,7 +8,4 @@
     <sys:Double x:Key="AeroScrollBarThickness">17</sys:Double>
     <sys:Double x:Key="AeroSmallScrollBarThickness">7</sys:Double>
     <sys:Double x:Key="AeroScrollBarThumbThickness">17</sys:Double>
-    
-    <TransformOperations x:Key="VerticalSmallScrollThumbScaleTransform">scaleX(0.125) translateX(-2px)</TransformOperations>
-    <TransformOperations x:Key="HorizontalSmallScrollThumbScaleTransform">scaleY(0.125) translateY(-2px)</TransformOperations>
 </ResourceDictionary>

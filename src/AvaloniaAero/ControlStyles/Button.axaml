@@ -1,4 +1,5 @@
-<Styles xmlns="https://github.com/avaloniaui">
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Style Selector="Button">
         <Setter Property="Background" Value="{DynamicResource AeroButtonIdleBackground}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonIdleOuterBorderBrush}"/>
@@ -23,7 +24,12 @@
                     <Border Classes="aeroDisabled" BorderBrush="{DynamicResource AeroButtonDisabledOuterBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
                         <Border Background="{DynamicResource AeroButtonDisabledBackground}" BorderBrush="{DynamicResource AeroButtonDisabledInnerBorderBrush}" BorderThickness="1"/>
                     </Border>
-                    <ContentPresenter Name="PART_ContentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" Padding="{TemplateBinding Padding}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    <ContentPresenter x:Name="PART_ContentPresenter"
+                                    ContentTemplate="{TemplateBinding ContentTemplate}"
+                                    Content="{TemplateBinding Content}"
+                                    Padding="{TemplateBinding Padding}"
+                                    HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                    VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
                 </Grid>
             </ControlTemplate>
         </Setter>

@@ -5,54 +5,89 @@
         xmlns:v="using:AvaloniaAero.Demo.Views"
         mc:Ignorable="d" d:DesignWidth="398" d:DesignHeight="482"
         x:Class="AvaloniaAero.Demo.Views.ButtonsPageView">
-    <StackPanel Orientation="Vertical"
-                HorizontalAlignment="Stretch"
-                VerticalAlignment="Stretch"
-                Spacing="10"
-                Margin="4">
-        <Grid HorizontalAlignment="Left"
-                ColumnDefinitions="*,10,*"
-                RowDefinitions="*,10,*,10,*">
-            <Grid.Styles>
-                <Style Selector=":is(Button):disabled">
-                    <Setter Property="Grid.Column" Value="2"/>
-                </Style>
-                <Style Selector="RepeatButton">
-                    <Setter Property="Grid.Row" Value="2"/>
-                </Style>
-                <Style Selector="ToggleButton">
-                    <Setter Property="Grid.Row" Value="4"/>
-                </Style>
-            </Grid.Styles>
+    <UserControl.Styles>
+        <Style Selector="RadioButton">
+            <Setter Property="Content" Value="RadioButton"/>
+        </Style>
+        <Style Selector="RadioButton[IsChecked=true]">
+            <Setter Property="Content" Value="Checked RadioButton"/>
+        </Style>
+
+        <Style Selector="CheckBox">
+            <Setter Property="Content" Value="CheckBox"/>
+        </Style>
+        <Style Selector="CheckBox[IsChecked=true]">
+            <Setter Property="Content" Value="Checked CheckBox"/>
+        </Style>
+        <Style Selector="CheckBox[IsThreeState=true]">
+            <Setter Property="Content" Value="Null three-state CheckBox"/>
+        </Style>
+        <Style Selector="CheckBox[IsThreeState=true][IsChecked=true]">
+            <Setter Property="Content" Value="Checked three-state CheckBox"/>
+        </Style>
+        <Style Selector="CheckBox[IsThreeState=true][IsChecked=false]">
+            <Setter Property="Content" Value="Three-state CheckBox"/>
+        </Style>
+    </UserControl.Styles>
+    <ScrollViewer>
+        <StackPanel Orientation="Vertical"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Spacing="10"
+                    Margin="4">
+            <Grid HorizontalAlignment="Left"
+                    ColumnDefinitions="*,10,*"
+                    RowDefinitions="*,10,*,10,*">
+                <Grid.Styles>
+                    <Style Selector=":is(Button):disabled">
+                        <Setter Property="Grid.Column" Value="2"/>
+                    </Style>
+                    <Style Selector="RepeatButton">
+                        <Setter Property="Grid.Row" Value="2"/>
+                    </Style>
+                    <Style Selector="ToggleButton">
+                        <Setter Property="Grid.Row" Value="4"/>
+                    </Style>
+                </Grid.Styles>
+                
+                <Button Content="Button"/>
+                <Button Content="Disabled Button"
+                        IsEnabled="False"/>
+                
+                <RepeatButton Content="RepeatButton"/>
+                <RepeatButton Content="Disabled RepeatButton"
+                            IsEnabled="False"/>
+                
+                <ToggleButton Content="ToggleButton"/>
+                <ToggleButton Content="Disabled ToggleButton"
+                            IsEnabled="False"/>
+            </Grid>
             
-            <Button Content="Button"/>
-            <Button Content="Disabled Button" IsEnabled="False"/>
+            <RadioButton GroupName="RadiosGroup"/>
+            <RadioButton IsChecked="True"
+                        GroupName="RadiosGroup"/>
+            <RadioButton GroupName="RadiosGroup"/>
+            <RadioButton Content="Disabled RadioButton"
+                        IsEnabled="False"
+                        GroupName="DisabledRadiosGroup"/>
+            <RadioButton Content="Disabled checked RadioButton"
+                        IsChecked="True"
+                        IsEnabled="False"
+                        GroupName="DisabledRadiosGroup"/>
             
-            <RepeatButton Content="RepeatButton"/>
-            <RepeatButton Content="Disabled RepeatButton" IsEnabled="False"/>
-            
-            <ToggleButton Content="ToggleButton"/>
-            <ToggleButton Content="Disabled ToggleButton" IsEnabled="False"/>
-        </Grid>
-        
-        <RadioButton Content="RadioButton 1"
-                    GroupName="RadiosGroup"/>
-        <RadioButton Content="RadioButton 2"
+            <CheckBox />
+            <CheckBox IsChecked="True" />
+            <CheckBox IsThreeState="True"
+                    IsChecked="{x:Null}" />
+            <CheckBox Content="Disabled CheckBox"
+                    IsEnabled="False" />
+            <CheckBox Content="Disabled checked CheckBox"
                     IsChecked="True"
-                    GroupName="RadiosGroup"/>
-        <RadioButton Content="RadioButton 3"
-                    GroupName="RadiosGroup"/>
-        <RadioButton Content="RadioButton 4 but it's a disabled RadioButton"
-                    IsEnabled="False"
-                    GroupName="RadiosGroup"/>
-        
-        <CheckBox Content="CheckBox"/>
-        <CheckBox Content="CheckBox but IsChecked == true"
-                IsChecked="True"/>
-        <CheckBox Content="Checked CheckBox IsChecked == null"
-                IsChecked="{x:Null}"
-                IsThreeState="True"/>
-        <CheckBox Content="CheckBox but it's a disabled CheckBox"
-                IsEnabled="False"/>
-  </StackPanel>
+                    IsEnabled="False" />
+            <CheckBox Content="Disabled null three-state CheckBox"
+                    IsThreeState="True"
+                    IsChecked="{x:Null}"
+                    IsEnabled="False" />
+        </StackPanel>
+    </ScrollViewer>
 </UserControl>

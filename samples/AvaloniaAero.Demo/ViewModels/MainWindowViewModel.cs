@@ -12,9 +12,11 @@ namespace AvaloniaAero.Demo.ViewModels
         PageViewModelBase[] _pages =
         {
             new ButtonsPageViewModel(),
+            new ToggleSwitchPageViewModel(),
+            new ScrollViewerPageViewModel(),
             new BoxesPageViewModel(),
             new SpinnersPageViewModel(),
-            new ScrollViewerPageViewModel(),
+            //new TestPageViewModel(),
         };
         public PageViewModelBase[] Pages
         {

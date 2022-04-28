@@ -4,6 +4,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceInclude Source="avares://AvaloniaAero/CommonResources.axaml"/>
+                <ResourceInclude Source="avares://AvaloniaAero/BrushResources.axaml"/>
                 <!--ResourceInclude Source="avares://AvaloniaAero/Accents/BaseLight.axaml"/-->
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
