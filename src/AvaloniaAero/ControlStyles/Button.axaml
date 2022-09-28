@@ -1,6 +1,6 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Style Selector="Button">
+    <Style Selector="Button, RepeatButton, ToggleButton">
         <Setter Property="Background" Value="{DynamicResource AeroButtonIdleBackground}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonIdleOuterBorderBrush}"/>
         <Setter Property="BorderThickness" Value="1"/>
@@ -34,10 +34,19 @@
             </ControlTemplate>
         </Setter>
     </Style>
-    <Style Selector="Button /template/ Border">
+    <Style Selector="Button /template/ Border,
+                    RepeatButton /template/ Border,
+                    ToggleButton /template/ Border">
         <Setter Property="CornerRadius" Value="3"/>
     </Style>
-    <Style Selector="Button /template/ Border > Border">
+    <Style Selector="Button /template/ Border > Border,
+                    RepeatButton /template/ Border > Border,
+                    ToggleButton /template/ Border > Border">
         <Setter Property="CornerRadius" Value="2"/>
+    </Style>
+    <Style Selector="Button:disabled /template/ ContentPresenter#PART_ContentPresenter,
+                    RepeatButton:disabled /template/ ContentPresenter#PART_ContentPresenter,
+                    ToggleButton:disabled /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="TextBlock.Foreground" Value="{DynamicResource AeroButtonDisabledForeground}"/>
     </Style>
 </Styles>

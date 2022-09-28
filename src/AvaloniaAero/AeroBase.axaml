@@ -18,37 +18,17 @@
 	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Accents/FluentControlResourcesLight.xaml" />
     
     
-    <Style Selector="Border.aeroPointerover">
+    <Style Selector="Border.aeroPointerover,
+                    Border.aeroPressed,
+                    Border.aeroChecked">
         <Setter Property="Opacity" Value="0"/>
-    </Style>
-    <Style Selector="Border.aeroPressed">
-        <Setter Property="Opacity" Value="0"/>
-    </Style>
-    <Style Selector="Border.aeroChecked">
-        <Setter Property="Opacity" Value="0"/>
-    </Style>
-    
-    <Style Selector=":not(:pointerover) /template/ Border.aeroPointerover">
-        <Style.Animations>
-            <Animation FillMode="Both" Duration="0:0:0.375">
-                <KeyFrame Cue="100%">
-                    <Setter Property="Opacity" Value="0.0"/>
-                </KeyFrame>
-            </Animation>
-        </Style.Animations>
-    </Style>
-    <Style Selector=":pointerover /template/ Border.aeroPointerover">
-        <Style.Animations>
-            <Animation FillMode="Both" Duration="0:0:0.125">
-                <KeyFrame Cue="100%">
-                    <Setter Property="Opacity" Value="1.0"/>
-                </KeyFrame>
-            </Animation>
-        </Style.Animations>
     </Style>
 
-    <Style Selector=":not(:pressed) /template/ Border.aeroPressed">
-        <Style.Animations>
+    <Style Selector=":not(:pointerover) /template/ Border.aeroPointerover,
+                    :not(:pressed) /template/ Border.aeroPressed,
+                    :not(:checked) /template/ Border.aeroChecked,
+                    :not(:focus) /template/ Border.aeroFocus">
+        <Style.Animations><!--:not(.aeroChecked)-->
             <Animation FillMode="Both" Duration="0:0:0.375">
                 <KeyFrame Cue="100%">
                     <Setter Property="Opacity" Value="0.0"/>
@@ -56,45 +36,10 @@
             </Animation>
         </Style.Animations>
     </Style>
-    <Style Selector=":pressed /template/ Border.aeroPressed">
-        <Style.Animations>
-            <Animation FillMode="Both" Duration="0:0:0.125">
-                <KeyFrame Cue="100%">
-                    <Setter Property="Opacity" Value="1.0"/>
-                </KeyFrame>
-            </Animation>
-        </Style.Animations>
-    </Style>
-    
-    <Style Selector=":not(:checked) /template/ Border.aeroChecked">
-        <Style.Animations>
-            <Animation FillMode="Both" Duration="0:0:0.375">
-                <KeyFrame Cue="100%">
-                    <Setter Property="Opacity" Value="0.0"/>
-                </KeyFrame>
-            </Animation>
-        </Style.Animations>
-    </Style>
-    <Style Selector=":checked /template/ Border.aeroChecked">
-        <Style.Animations>
-            <Animation FillMode="Both" Duration="0:0:0.125">
-                <KeyFrame Cue="100%">
-                    <Setter Property="Opacity" Value="1.0"/>
-                </KeyFrame>
-            </Animation>
-        </Style.Animations>
-    </Style>
-
-    <Style Selector=":not(:focus) /template/ Border.aeroFocus">
-        <Style.Animations>
-            <Animation FillMode="Both" Duration="0:0:0.375">
-                <KeyFrame Cue="100%">
-                    <Setter Property="Opacity" Value="0.0"/>
-                </KeyFrame>
-            </Animation>
-        </Style.Animations>
-    </Style>
-    <Style Selector=":focus /template/ Border.aeroFocus">
+    <Style Selector=":pointerover /template/ Border.aeroPointerover,
+                    :pressed /template/ Border.aeroPressed,
+                    :checked /template/ Border.aeroChecked,
+                    :focus /template/ Border.aeroFocus">
         <Style.Animations>
             <Animation FillMode="Both" Duration="0:0:0.125">
                 <KeyFrame Cue="100%">
@@ -107,10 +52,10 @@
     <Style Selector=":not(:disabled) /template/ Border.aeroDisabled">
         <Setter Property="IsVisible" Value="False"/>
     </Style>
-    <Style Selector=":is(Control):not(:disabled)">
+    <Style Selector=":is(TemplatedControl):not(:disabled) /template/ ContentPresenter#PART_ContentPresenter">
         <Setter Property="TextBlock.Foreground" Value="{Binding Foreground, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
     </Style>
-    <Style Selector=":is(Control):disabled">
+    <Style Selector=":is(TemplatedControl):disabled /template/ ContentPresenter#PART_ContentPresenter">
         <Setter Property="TextBlock.Foreground" Value="{DynamicResource AeroDisabledForeground}"/>
     </Style>
 

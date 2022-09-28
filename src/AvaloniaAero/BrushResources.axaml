@@ -69,6 +69,8 @@
 	<SolidColorBrush x:Key="AeroButtonDisabledBackground" Color="{DynamicResource AeroButtonDisabledBackgroundColor}" />
 	<SolidColorBrush x:Key="AeroButtonDisabledOuterBorderBrush" Color="{DynamicResource AeroButtonDisabledOuterBorderBrushColor}" />
 	<SolidColorBrush x:Key="AeroButtonDisabledInnerBorderBrush" Color="{DynamicResource AeroButtonDisabledInnerBorderBrushColor}" />
+	<SolidColorBrush x:Key="AeroButtonDisabledForeground" Color="{DynamicResource AeroButtonDisabledForegroundColor}" />
+
 	<SolidColorBrush x:Key="AeroCheckBoxIdleOuterBorderBrush" Color="{DynamicResource AeroCheckBoxIdleOuterBorderBrushColor}" />
 	<SolidColorBrush x:Key="AeroCheckBoxIdleMiddleBorderBrush" Color="{DynamicResource AeroCheckBoxIdleMiddleBorderBrushColor}" />
 	

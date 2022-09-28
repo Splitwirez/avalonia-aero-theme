@@ -1,13 +1,6 @@
-<Styles xmlns="https://github.com/avaloniaui">
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Style Selector="ToggleButton">
-        <Setter Property="Background" Value="{DynamicResource AeroButtonIdleBackground}"/>
-        <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonIdleOuterBorderBrush}"/>
-        <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="Foreground" Value="{DynamicResource AeroForeground}"/>
-        <Setter Property="HorizontalContentAlignment" Value="Center"/>
-        <Setter Property="VerticalContentAlignment" Value="Center"/>
-        <Setter Property="Padding" Value="3"/>
-        <Setter Property="FontSize" Value="{DynamicResource AeroFontSizeNormal}"/>
         <Setter Property="Template">
             <ControlTemplate>
                 <Grid>
@@ -17,21 +10,29 @@
                     <Border Classes="aeroPointerover" BorderBrush="{DynamicResource AeroButtonHoverOuterBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
                         <Border Background="{DynamicResource AeroButtonHoverBackground}" BorderBrush="{DynamicResource AeroButtonHoverInnerBorderBrush}" BorderThickness="1"/>
                     </Border>
-                    <Border Classes="aeroChecked" BorderBrush="{DynamicResource AeroButtonPressedOuterBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                    <Border Classes="aeroPressed" BorderBrush="{DynamicResource AeroButtonPressedOuterBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <Border Background="{DynamicResource AeroButtonPressedBackground}" BorderBrush="{DynamicResource AeroButtonPressedInnerBorderBrush}" BorderThickness="1,1,1,0"/>
+                    </Border>
+                    <Border Classes="aeroButtonChecked" BorderBrush="{DynamicResource AeroButtonPressedOuterBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
                         <Border Background="{DynamicResource AeroButtonPressedBackground}" BorderBrush="{DynamicResource AeroButtonPressedInnerBorderBrush}" BorderThickness="1,1,1,0"/>
                     </Border>
                     <Border Classes="aeroDisabled" BorderBrush="{DynamicResource AeroButtonDisabledOuterBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
                         <Border Background="{DynamicResource AeroButtonDisabledBackground}" BorderBrush="{DynamicResource AeroButtonDisabledInnerBorderBrush}" BorderThickness="1"/>
                     </Border>
-                    <ContentPresenter Name="PART_ContentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" Padding="{TemplateBinding Padding}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    <ContentPresenter x:Name="PART_ContentPresenter"
+                                    ContentTemplate="{TemplateBinding ContentTemplate}"
+                                    Content="{TemplateBinding Content}"
+                                    Padding="{TemplateBinding Padding}"
+                                    HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                    VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
                 </Grid>
             </ControlTemplate>
         </Setter>
     </Style>
-    <Style Selector="ToggleButton /template/ Border">
-        <Setter Property="CornerRadius" Value="3"/>
+    <Style Selector="ToggleButton:checked /template/ Border.aeroPressed">
+        <Setter Property="IsVisible" Value="False"/>
     </Style>
-    <Style Selector="ToggleButton /template/ Border > Border">
-        <Setter Property="CornerRadius" Value="2"/>
+    <Style Selector="ToggleButton:not(:checked):not(:pressed) /template/ Border.aeroButtonChecked">
+        <Setter Property="IsVisible" Value="False"/>
     </Style>
 </Styles>

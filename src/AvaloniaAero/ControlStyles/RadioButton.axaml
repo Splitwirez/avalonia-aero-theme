@@ -3,43 +3,42 @@
         <Setter Property="Foreground" Value="{DynamicResource AeroForeground}"/>
         <Setter Property="Background" Value="{DynamicResource AeroCheckBoxIdleBackground}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource AeroCheckBoxIdleOuterBorderBrush}"/>
-        <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Padding" Value="4,0,0,0"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="HorizontalContentAlignment" Value="Left"/>
         <Setter Property="Template">
             <ControlTemplate>
                 <Grid ColumnDefinitions="Auto,*">
-                    <Grid Width="12" Height="12" VerticalAlignment="Center" Grid.Column="0">
+                    <Panel Width="12" Height="12" VerticalAlignment="Center" Grid.Column="0">
                         <Border Classes="aeroIdle">
-                            <Grid>
-                                <Ellipse Stroke="{TemplateBinding BorderBrush}" StrokeThickness="1"/>
-                                <Ellipse Stroke="{DynamicResource AeroCheckBoxIdleMiddleBorderBrush}" StrokeThickness="1" Margin="1"/>
+                            <Panel>
+                                <Ellipse Fill="{TemplateBinding BorderBrush}"/>
+                                <Ellipse Fill="{DynamicResource AeroCheckBoxIdleMiddleBorderBrush}" Margin="1"/>
                                 <Ellipse Fill="{TemplateBinding Background}" Stroke="{DynamicResource AeroCheckBoxIdleInnerBorderBrush}" StrokeThickness="1" Margin="2"/>
-                            </Grid>
+                            </Panel>
                         </Border>
                         <Border Classes="aeroPointerover">
-                            <Grid>
-                                <Ellipse Stroke="{DynamicResource AeroCheckBoxHoverOuterBorderBrush}" StrokeThickness="1"/>
-                                <Ellipse Stroke="{DynamicResource AeroCheckBoxHoverMiddleBorderBrush}" StrokeThickness="1" Margin="1"/>
+                            <Panel>
+                                <Ellipse Fill="{DynamicResource AeroCheckBoxHoverOuterBorderBrush}"/>
+                                <Ellipse Fill="{DynamicResource AeroCheckBoxHoverMiddleBorderBrush}" Margin="1"/>
                                 <Ellipse Fill="{DynamicResource AeroCheckBoxHoverBackground}" Stroke="{DynamicResource AeroCheckBoxHoverInnerBorderBrush}" StrokeThickness="1" Margin="2"/>
-                            </Grid>
+                            </Panel>
                         </Border>
                         <Border Classes="aeroPressed">
-                            <Grid>
-                                <Ellipse Stroke="{DynamicResource AeroCheckBoxPressedOuterBorderBrush}" StrokeThickness="1"/>
-                                <Ellipse Stroke="{DynamicResource AeroCheckBoxPressedMiddleBorderBrush}" StrokeThickness="1" Margin="1"/>
+                            <Panel>
+                                <Ellipse Fill="{DynamicResource AeroCheckBoxPressedOuterBorderBrush}"/>
+                                <Ellipse Fill="{DynamicResource AeroCheckBoxPressedMiddleBorderBrush}" Margin="1"/>
                                 <Ellipse Fill="{DynamicResource AeroCheckBoxPressedBackground}" Stroke="{DynamicResource AeroCheckBoxPressedInnerBorderBrush}" StrokeThickness="1" Margin="2"/>
-                            </Grid>
+                            </Panel>
                         </Border>
                         <Border Classes="aeroDisabled">
-                            <Ellipse Fill="{DynamicResource AeroCheckBoxDisabledBackground}" Stroke="{DynamicResource AeroCheckBoxDisabledBorderBrush}" StrokeThickness="{TemplateBinding BorderThickness}"/>
+                            <Ellipse Fill="{DynamicResource AeroCheckBoxDisabledBackground}" Stroke="{DynamicResource AeroCheckBoxDisabledBorderBrush}" StrokeThickness="1"/>
                         </Border>
-                        <Grid Width="6" Height="6" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Panel Width="6" Height="6" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <Ellipse Name="checkMark" Width="6" Height="6" StrokeThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Uniform"/>
                             <Ellipse Name="indeterminateMark" Width="6" Height="6" StrokeThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Uniform"/>
-                        </Grid>
-                    </Grid>
+                        </Panel>
+                    </Panel>
                     <ContentPresenter Name="PART_ContentPresenter" TextBlock.Foreground="{TemplateBinding Foreground}" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Grid.Column="1"/>
                 </Grid>
             </ControlTemplate>

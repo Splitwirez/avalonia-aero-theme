@@ -12,5 +12,12 @@ namespace AvaloniaAero.Demo.ViewModels
         {
             Title = "Buttons";
         }
+
+        int _radioButtonIndex = 0;
+        public int RadioButtonIndex
+        {
+            get => _radioButtonIndex;
+            set => RASIC(ref _radioButtonIndex, value);
+        }
     }
 }

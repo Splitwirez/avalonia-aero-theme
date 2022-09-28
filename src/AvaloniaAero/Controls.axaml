@@ -31,7 +31,7 @@
     <StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/ProgressBar.xaml"/>
     
     <StyleInclude Source="avares://AvaloniaAero/ControlStyles/RadioButton.axaml"/><!--done-->
-    <StyleInclude Source="avares://AvaloniaAero/ControlStyles/RepeatButton.axaml"/><!--done-->
+    <!--StyleInclude Source="avares://AvaloniaAero/ControlStyles/RepeatButton.axaml"/--><!--done-->
 
     <StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/Separator.xaml"/>
     <StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/Slider.xaml"/>

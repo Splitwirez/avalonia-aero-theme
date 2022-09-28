@@ -3,8 +3,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:v="using:AvaloniaAero.Demo.Views"
+        xmlns:local="using:AvaloniaAero.Demo"
         mc:Ignorable="d" d:DesignWidth="398" d:DesignHeight="482"
         x:Class="AvaloniaAero.Demo.Views.ButtonsPageView">
+    <UserControl.Resources>
+        <local:RadioButtonHackConverter x:Key="RadioButtonHackConverter"/>
+    </UserControl.Resources>
     <UserControl.Styles>
         <Style Selector="RadioButton">
             <Setter Property="Content" Value="RadioButton"/>
@@ -63,10 +67,14 @@
                             IsEnabled="False"/>
             </Grid>
             
-            <RadioButton GroupName="RadiosGroup"/>
-            <RadioButton IsChecked="True"
+            
+            <RadioButton IsChecked="{Binding RadioButtonIndex, Converter={StaticResource RadioButtonHackConverter}, ConverterParameter=0}"
                         GroupName="RadiosGroup"/>
-            <RadioButton GroupName="RadiosGroup"/>
+            <RadioButton IsChecked="{Binding RadioButtonIndex, Converter={StaticResource RadioButtonHackConverter}, ConverterParameter=1}"
+                        GroupName="RadiosGroup"/>
+            <RadioButton IsChecked="{Binding RadioButtonIndex, Converter={StaticResource RadioButtonHackConverter}, ConverterParameter=2}"
+                        GroupName="RadiosGroup"/>
+            
             <RadioButton Content="Disabled RadioButton"
                         IsEnabled="False"
                         GroupName="DisabledRadiosGroup"/>
@@ -75,10 +83,12 @@
                         IsEnabled="False"
                         GroupName="DisabledRadiosGroup"/>
             
+
             <CheckBox />
             <CheckBox IsChecked="True" />
             <CheckBox IsThreeState="True"
                     IsChecked="{x:Null}" />
+            
             <CheckBox Content="Disabled CheckBox"
                     IsEnabled="False" />
             <CheckBox Content="Disabled checked CheckBox"
