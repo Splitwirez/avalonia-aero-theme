@@ -1,3 +1,3 @@
 # Aero theme for Avalonia
 
-![preview image](/readme-images/toggleswitch.png)
+![preview image](/readme-images/buttons.png)
