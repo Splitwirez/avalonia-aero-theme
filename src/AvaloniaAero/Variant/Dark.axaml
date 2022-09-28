@@ -1,0 +1,242 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<!--Brightness -100, Contrast 0; then Brightness -75, Contrast 12 in PDN-->
+	<Color x:Key="AeroForegroundColor">#FFFFFFFF</Color>
+	<Color x:Key="AeroDisabledForegroundColor">#7FFFFFFF</Color>
+
+
+
+
+	<Color x:Key="AeroWindowBackgroundColor">#FF373737</Color>
+
+
+
+
+	<Color x:Key="AeroToolTipBackgroundColor0">#FFBBBBBB</Color>
+	<Color x:Key="AeroToolTipBackgroundColor1">#FF9C9DA8</Color>
+
+	<Color x:Key="AeroToolTipBorderBrushColor">#FF202020</Color>
+
+
+
+
+	<Color x:Key="AeroButtonIdleBackgroundColor0">#FF3E3E3E</Color>
+	<Color x:Key="AeroButtonIdleBackgroundColor1">#FF373737</Color>
+	<Color x:Key="AeroButtonIdleBackgroundColor2">#FF292929</Color>
+	<Color x:Key="AeroButtonIdleBackgroundColor3">#FF1B1B1B</Color>
+
+	<Color x:Key="AeroButtonIdleOuterBorderBrushColor">#FF000000</Color>
+
+	<Color x:Key="AeroButtonIdleInnerBorderBrushColor0">#FF484848</Color>
+	<Color x:Key="AeroButtonIdleInnerBorderBrushColor1">#FF3F3F3F</Color>
+
+
+	<Color x:Key="AeroButtonHoverBackgroundColor0">#FF0C3159</Color>
+	<Color x:Key="AeroButtonHoverBackgroundColor1">#FF0A2D50</Color>
+	<Color x:Key="AeroButtonHoverBackgroundColor2">#FF08213C</Color>
+	<Color x:Key="AeroButtonHoverBackgroundColor3">#FF08192D</Color>
+
+	<Color x:Key="AeroButtonHoverOuterBorderBrushColor">#FF001729</Color>
+
+	<Color x:Key="AeroButtonHoverInnerBorderBrushColor0">#FF004A7F</Color>
+	<Color x:Key="AeroButtonHoverInnerBorderBrushColor1">#FF024375</Color>
+
+
+	<Color x:Key="AeroButtonPressedBackgroundColor0">#FF001840</Color>
+	<Color x:Key="AeroButtonPressedBackgroundColor1">#FF001437</Color>
+	<Color x:Key="AeroButtonPressedBackgroundColor2">#FF000823</Color>
+	<Color x:Key="AeroButtonPressedBackgroundColor3">#FF000014</Color>
+
+	<Color x:Key="AeroButtonPressedOuterBorderBrushColor">#FF001729</Color>
+
+	<Color x:Key="AeroButtonPressedInnerBorderBrushColor0">#FF000B27</Color>
+	<Color x:Key="AeroButtonPressedInnerBorderBrushColor1">#FF00001B</Color>
+	<Color x:Key="AeroButtonPressedInnerBorderBrushColor2">#FF00000F</Color>
+	<Color x:Key="AeroButtonPressedInnerBorderBrushColor3">#FF000009</Color>
+
+
+	<Color x:Key="AeroButtonDisabledBackgroundColor">#FF606060</Color>
+
+	<Color x:Key="AeroButtonDisabledOuterBorderBrushColor">#FF444849</Color>
+
+	<Color x:Key="AeroButtonDisabledInnerBorderBrushColor">#FF6C6C6C</Color>
+
+
+
+
+	<Color x:Key="AeroCheckBoxIdleOuterBorderBrushColor">#FF202020</Color>
+
+	<Color x:Key="AeroCheckBoxIdleMiddleBorderBrushColor">#FF3E3E3E</Color>
+
+	<Color x:Key="AeroCheckBoxIdleInnerBorderBrushColor0">#FF101010</Color>
+	<Color x:Key="AeroCheckBoxIdleInnerBorderBrushColor1">#FF313132</Color>
+
+	<Color x:Key="AeroCheckBoxIdleBackgroundColor0">#FF191C21</Color>
+	<Color x:Key="AeroCheckBoxIdleBackgroundColor1">#FF404040</Color>
+
+	<Color x:Key="AeroCheckBoxIdleCheckMarkBrushColor">#FF697FB6</Color>
+
+
+	<Color x:Key="AeroCheckBoxHoverOuterBorderBrushColor">#FF001729</Color>
+
+	<Color x:Key="AeroCheckBoxHoverMiddleBorderBrushColor">#FF004A7F</Color>
+
+	<Color x:Key="AeroCheckBoxHoverInnerBorderBrushColor0">#FF000015</Color>
+	<Color x:Key="AeroCheckBoxHoverInnerBorderBrushColor1">#FF08213C</Color>
+
+	<Color x:Key="AeroCheckBoxHoverBackgroundColor0">#FF001539</Color>
+	<Color x:Key="AeroCheckBoxHoverBackgroundColor1">#FF0C3159</Color>
+
+	<Color x:Key="AeroCheckBoxHoverCheckMarkBrushColor">#FF8EACFB</Color>
+
+
+	<Color x:Key="AeroCheckBoxPressedOuterBorderBrushColor">#FF000A1C</Color>
+
+	<Color x:Key="AeroCheckBoxPressedMiddleBorderBrushColor">#FF004075</Color>
+
+	<Color x:Key="AeroCheckBoxPressedInnerBorderBrushColor0">#FF000009</Color>
+	<Color x:Key="AeroCheckBoxPressedInnerBorderBrushColor1">#FF001530</Color>
+
+	<Color x:Key="AeroCheckBoxPressedBackgroundColor0">#FF000F34</Color>
+	<Color x:Key="AeroCheckBoxPressedBackgroundColor1">#FF01264E</Color>
+
+	<Color x:Key="AeroCheckBoxPressedCheckMarkBrushColor">#FF6788C5</Color>
+
+
+	<Color x:Key="AeroCheckBoxDisabledBorderBrushColor">#FF575757</Color>
+
+	<Color x:Key="AeroCheckBoxDisabledBackgroundColor0">#FF707070</Color>
+	<Color x:Key="AeroCheckBoxDisabledBackgroundColor1">#FF7B7B7B</Color>
+
+	<Color x:Key="AeroCheckBoxDisabledCheckMarkBrushColor">#FF3A5B98</Color>
+
+
+
+
+	<Color x:Key="AeroRadioButtonIdleCircleFillColor0">#FFC7EBFD</Color>
+	<Color x:Key="AeroRadioButtonIdleCircleFillColor1">#FF0B82C7</Color>
+
+
+	<Color x:Key="AeroRadioButtonHoverCircleFillColor0">#FF74FFFF</Color>
+	<Color x:Key="AeroRadioButtonHoverCircleFillColor1">#FF11A3F2</Color>
+
+
+	<Color x:Key="AeroRadioButtonPressedCircleFillColor0">#FF95D9FC</Color>
+	<Color x:Key="AeroRadioButtonPressedCircleFillColor1">#FF095684</Color>
+
+
+	<Color x:Key="AeroRadioButtonDisabledCircleFillColor0">#FFC7EBFD</Color>
+	<Color x:Key="AeroRadioButtonDisabledCircleFillColor1">#FF0B82C7</Color>
+
+
+
+
+	<Color x:Key="AeroTabControlBackgroundColor">#FF474747</Color>
+
+	<Color x:Key="AeroTabControlOuterBorderBrushColor">#FF474747</Color>
+
+	<Color x:Key="AeroTabControlInnerBorderBrushColor">#FF202020</Color>
+
+
+
+
+	<Color x:Key="AeroTextBoxIdleBackgroundColor">#FF575757</Color>
+
+	<Color x:Key="AeroTextBoxIdleBorderBrushColor0">#FF000000</Color>
+	<Color x:Key="AeroTextBoxIdleBorderBrushColor1">#FF3D3D3D</Color>
+
+
+	<Color x:Key="AeroTextBoxHoverBackgroundColor">#FF5D5D5D</Color>
+
+	<Color x:Key="AeroTextBoxHoverBorderBrushColor0">#FF001729</Color>
+	<Color x:Key="AeroTextBoxHoverBorderBrushColor1">#FF003966</Color>
+
+
+	<Color x:Key="AeroTextBoxFocusBackgroundColor">#FF5D5D5D</Color>
+
+	<Color x:Key="AeroTextBoxFocusBorderBrushColor0">#FF001729</Color>
+	<Color x:Key="AeroTextBoxFocusBorderBrushColor1">#FF003966</Color>
+
+
+	<Color x:Key="AeroTextBoxDisabledBackgroundColor">#FF797979</Color>
+
+	<Color x:Key="AeroTextBoxDisabledBorderBrushColor">#FF565656</Color>
+
+
+
+
+
+	<Color x:Key="AeroScrollBarButtonForegroundColor0">#E0FFFFFF</Color>
+	<Color x:Key="AeroScrollBarButtonForegroundColor1">#A0FFFFFF</Color>
+
+
+	<Color x:Key="AeroScrollBarButtonIconStrokeColor">#40000000</Color>
+
+	<Color x:Key="AeroScrollBarThumbIconStrokeColor">#FF000000</Color>
+
+	<Color x:Key="AeroHorizontalScrollBarTrackBackgroundColor0">#FF2A2A2A</Color>
+	<Color x:Key="AeroHorizontalScrollBarTrackBackgroundColor1">#FF383838</Color>
+	<Color x:Key="AeroHorizontalScrollBarTrackBackgroundColor2">#FF3B3B3B</Color>
+
+	<Color x:Key="AeroHorizontalScrollBarTrackBorderBrushColor0">#FF424242</Color>
+	<Color x:Key="AeroHorizontalScrollBarTrackBorderBrushColor1">#FF323232</Color>
+
+	<Color x:Key="AeroVerticalScrollBarTrackBackgroundColor0">#FF2A2A2A</Color>
+	<Color x:Key="AeroVerticalScrollBarTrackBackgroundColor1">#FF383838</Color>
+	<Color x:Key="AeroVerticalScrollBarTrackBackgroundColor2">#FF3B3B3B</Color>
+
+	<Color x:Key="AeroVerticalScrollBarTrackBorderBrushColor0">#FF424242</Color>
+	<Color x:Key="AeroVerticalScrollBarTrackBorderBrushColor1">#FF323232</Color>
+
+	<Color x:Key="AeroVerticalScrollBarButtonIdleBackgroundColor0">#FF3E3E3E</Color>
+	<Color x:Key="AeroVerticalScrollBarButtonIdleBackgroundColor1">#FF373737</Color>
+	<Color x:Key="AeroVerticalScrollBarButtonIdleBackgroundColor2">#FF292929</Color>
+	<Color x:Key="AeroVerticalScrollBarButtonIdleBackgroundColor3">#FF1B1B1B</Color>
+
+	<Color x:Key="AeroVerticalScrollBarButtonIdleOuterBorderBrushColor">#FF000000</Color>
+
+	<Color x:Key="AeroVerticalScrollBarButtonIdleInnerBorderBrushColor0">#FF484848</Color>
+	<Color x:Key="AeroVerticalScrollBarButtonIdleInnerBorderBrushColor1">#FF3F3F3F</Color>
+
+
+	<Color x:Key="AeroVerticalScrollBarButtonHoverBackgroundColor0">#FF0C3159</Color>
+	<Color x:Key="AeroVerticalScrollBarButtonHoverBackgroundColor1">#FF0A2D50</Color>
+	<Color x:Key="AeroVerticalScrollBarButtonHoverBackgroundColor2">#FF08213C</Color>
+	<Color x:Key="AeroVerticalScrollBarButtonHoverBackgroundColor3">#FF08192D</Color>
+
+	<Color x:Key="AeroVerticalScrollBarButtonHoverOuterBorderBrushColor">#FF001729</Color>
+
+	<Color x:Key="AeroVerticalScrollBarButtonHoverInnerBorderBrushColor0">#FF004A7F</Color>
+	<Color x:Key="AeroVerticalScrollBarButtonHoverInnerBorderBrushColor1">#FF024375</Color>
+
+
+	<Color x:Key="AeroVerticalScrollBarButtonPressedBackgroundColor0">#FF001840</Color>
+	<Color x:Key="AeroVerticalScrollBarButtonPressedBackgroundColor1">#FF001437</Color>
+	<Color x:Key="AeroVerticalScrollBarButtonPressedBackgroundColor2">#FF000823</Color>
+	<Color x:Key="AeroVerticalScrollBarButtonPressedBackgroundColor3">#FF000014</Color>
+
+	<Color x:Key="AeroVerticalScrollBarButtonPressedOuterBorderBrushColor">#FF001729</Color>
+
+	<Color x:Key="AeroVerticalScrollBarButtonPressedInnerBorderBrushColor0">#FF000B27</Color>
+	<Color x:Key="AeroVerticalScrollBarButtonPressedInnerBorderBrushColor1">#FF00001B</Color>
+	<Color x:Key="AeroVerticalScrollBarButtonPressedInnerBorderBrushColor2">#FF00000F</Color>
+	<Color x:Key="AeroVerticalScrollBarButtonPressedInnerBorderBrushColor3">#FF000009</Color>
+
+
+	<Color x:Key="AeroVerticalScrollBarButtonDisabledBackgroundColor">#FF606060</Color>
+
+	<Color x:Key="AeroVerticalScrollBarButtonDisabledOuterBorderBrushColor">#FF444849</Color>
+
+	<Color x:Key="AeroVerticalScrollBarButtonDisabledInnerBorderBrushColor">#FF6C6C6C</Color>
+
+
+	<Color x:Key="AeroScrollViewerCornerBackgroundColor">#FF373737</Color>
+
+
+
+
+	<Color x:Key="AeroToggleSwitchCheckedBackgroundColor">#FF3D505F</Color><!--002848-->
+
+	<Color x:Key="AeroToggleSwitchCheckedBorderBrushColor0">#FF001729</Color>
+	<Color x:Key="AeroToggleSwitchCheckedBorderBrushColor1">#FF003966</Color>
+</ResourceDictionary>

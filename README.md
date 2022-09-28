@@ -1,3 +1,3 @@
-# This project has moved!
+# Aero theme for Avalonia
 
-See https://github.com/Splitwirez/Mechanism-for-Avalonia
+![preview image](/readme-images/toggleswitch.png)

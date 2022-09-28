@@ -1,0 +1,43 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style Selector="Button">
+        <Setter Property="Background" Value="{DynamicResource AeroButtonIdleBackground}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonIdleOuterBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Foreground" Value="{DynamicResource AeroForeground}"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="3"/>
+        <Setter Property="FontSize" Value="{DynamicResource AeroFontSizeNormal}"/>
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid>
+                    <Border Classes="aeroIdle" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{DynamicResource AeroButtonIdleInnerBorderBrush}" BorderThickness="1"/>
+                    </Border>
+                    <Border Classes="aeroPointerover" BorderBrush="{DynamicResource AeroButtonHoverOuterBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <Border Background="{DynamicResource AeroButtonHoverBackground}" BorderBrush="{DynamicResource AeroButtonHoverInnerBorderBrush}" BorderThickness="1"/>
+                    </Border>
+                    <Border Classes="aeroPressed" BorderBrush="{DynamicResource AeroButtonPressedOuterBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <Border Background="{DynamicResource AeroButtonPressedBackground}" BorderBrush="{DynamicResource AeroButtonPressedInnerBorderBrush}" BorderThickness="1,1,1,0"/>
+                    </Border>
+                    <Border Classes="aeroDisabled" BorderBrush="{DynamicResource AeroButtonDisabledOuterBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <Border Background="{DynamicResource AeroButtonDisabledBackground}" BorderBrush="{DynamicResource AeroButtonDisabledInnerBorderBrush}" BorderThickness="1"/>
+                    </Border>
+                    <ContentPresenter x:Name="PART_ContentPresenter"
+                                    ContentTemplate="{TemplateBinding ContentTemplate}"
+                                    Content="{TemplateBinding Content}"
+                                    Padding="{TemplateBinding Padding}"
+                                    HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                    VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+    <Style Selector="Button /template/ Border">
+        <Setter Property="CornerRadius" Value="3"/>
+    </Style>
+    <Style Selector="Button /template/ Border > Border">
+        <Setter Property="CornerRadius" Value="2"/>
+    </Style>
+</Styles>

@@ -1,0 +1,122 @@
+<Styles xmlns="https://github.com/avaloniaui">
+    <Design.PreviewWith>
+        <StackPanel Orientation="Vertical" Spacing="15">
+            <ButtonSpinner Content="Right" ButtonSpinnerLocation="Right"/>
+            <ButtonSpinner Content="Left" ButtonSpinnerLocation="Left"/>
+        </StackPanel>
+    </Design.PreviewWith>
+    <Style Selector="ButtonSpinner">
+        <Setter Property="Background" Value="{DynamicResource AeroTextBoxIdleBackground}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource AeroTextBoxIdleBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Foreground" Value="{DynamicResource AeroForeground}"/>
+        <Setter Property="Padding" Value="3"/>
+        <Setter Property="FontSize" Value="{DynamicResource AeroFontSizeNormal}"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+    </Style>
+    <!--Style Selector="ButtonSpinner /template/ RepeatButton">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+    </Style>
+    <Style Selector="ButtonSpinner /template/ RepeatButton:pointerover">
+        <Setter Property="Background" Value="{DynamicResource ThemeControlMidBrush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderMidBrush}"/>
+    </Style-->
+    <Style Selector="ButtonSpinner /template/ RepeatButton#PART_IncreaseButton">
+        <Setter Property="Padding" Value="6,4,6,3"/>
+        <Setter Property="Content">
+            <Template>
+                <Path Fill="{Binding Foreground, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=RepeatButton}}"
+                            Width="7"
+                            Height="4"
+                            Stretch="Uniform"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Data="M 0 4 L 3.5 0 L 7 4"/>
+            </Template>
+        </Setter>
+    </Style>
+    <Style Selector="ButtonSpinner /template/ RepeatButton#PART_DecreaseButton">
+        <Setter Property="Padding" Value="6,3,6,4"/>
+        <Setter Property="Content">
+            <Template>
+                <Path Fill="{Binding Foreground, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=RepeatButton}}"
+                            Width="7"
+                            Height="4"
+                            Stretch="Uniform"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Data="M 0 0 L 3.5 4 L 7 0"/>
+            </Template>
+        </Setter>
+    </Style>
+    <Style Selector="ButtonSpinner:right">
+        <Setter Property="Template">
+            <ControlTemplate>
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Border Classes="aeroIdle" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3,0,0,3" Grid.Column="0"/>
+                        <Border Classes="aeroPointerover" Background="{DynamicResource AeroTextBoxHoverBackground}" BorderBrush="{DynamicResource AeroTextBoxHoverBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3,0,0,3" Grid.Column="0"/>
+                        <Border Classes="aeroFocus" Background="{DynamicResource AeroTextBoxFocusBackground}" BorderBrush="{DynamicResource AeroTextBoxFocusBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3,0,0,3" Grid.Column="0"/>
+                        <Border Classes="aeroDisabled" Background="{DynamicResource AeroTextBoxDisabledBackground}" BorderBrush="{DynamicResource AeroTextBoxDisabledBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3,0,0,3" Grid.Column="0"/>
+                        <ContentPresenter Name="PART_ContentPresenter" Grid.Column="0"
+                                                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                            Content="{TemplateBinding Content}"
+                                                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                            Margin="{TemplateBinding Padding}"/>
+                        <Grid Grid.Column="1" RowDefinitions="*,*" IsVisible="{TemplateBinding ShowButtonSpinner}">
+                            <RepeatButton Grid.Row="0" Name="PART_IncreaseButton"/>
+                            <RepeatButton Grid.Row="1" Name="PART_DecreaseButton"/>
+                        </Grid>
+                    </Grid>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+    <Style Selector="ButtonSpinner:right /template/ RepeatButton#PART_IncreaseButton /template/ Border">
+        <Setter Property="CornerRadius" Value="0,3,0,0"/>
+    </Style>
+    <Style Selector="ButtonSpinner:right /template/ RepeatButton#PART_IncreaseButton /template/ Border > Border">
+        <Setter Property="CornerRadius" Value="0,2,0,0"/>
+    </Style>
+    <Style Selector="ButtonSpinner:right /template/ RepeatButton#PART_DecreaseButton /template/ Border">
+        <Setter Property="CornerRadius" Value="0,0,3,0"/>
+    </Style>
+    <Style Selector="ButtonSpinner:right /template/ RepeatButton#PART_DecreaseButton /template/ Border > Border">
+        <Setter Property="CornerRadius" Value="0,0,2,0"/>
+    </Style>
+    <Style Selector="ButtonSpinner:left">
+        <Setter Property="Template">
+            <ControlTemplate>
+                    <Grid ColumnDefinitions="Auto,*">
+                        <Border Classes="aeroIdle" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="0,3,3,0" Grid.Column="1"/>
+                        <Border Classes="aeroPointerover" Background="{DynamicResource AeroTextBoxHoverBackground}" BorderBrush="{DynamicResource AeroTextBoxHoverBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="0,3,3,0" Grid.Column="1"/>
+                        <Border Classes="aeroFocus" Background="{DynamicResource AeroTextBoxFocusBackground}" BorderBrush="{DynamicResource AeroTextBoxFocusBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="0,3,3,0" Grid.Column="1"/>
+                        <Border Classes="aeroDisabled" Background="{DynamicResource AeroTextBoxDisabledBackground}" BorderBrush="{DynamicResource AeroTextBoxDisabledBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="0,3,3,0" Grid.Column="1"/>
+                        <ContentPresenter Name="PART_ContentPresenter" Grid.Column="1"
+                                                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                            Content="{TemplateBinding Content}"
+                                                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                            Margin="{TemplateBinding Padding}"/>
+                        <Grid Grid.Column="0" RowDefinitions="*,*" IsVisible="{TemplateBinding ShowButtonSpinner}">
+                            <RepeatButton Grid.Row="0" Name="PART_IncreaseButton"/>
+                            <RepeatButton Grid.Row="1" Name="PART_DecreaseButton"/>
+                        </Grid>
+                    </Grid>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+    <Style Selector="ButtonSpinner:left /template/ RepeatButton#PART_IncreaseButton /template/ Border">
+        <Setter Property="CornerRadius" Value="3,0,0,0"/>
+    </Style>
+    <Style Selector="ButtonSpinner:left /template/ RepeatButton#PART_IncreaseButton /template/ Border > Border">
+        <Setter Property="CornerRadius" Value="2,0,0,0"/>
+    </Style>
+    <Style Selector="ButtonSpinner:left /template/ RepeatButton#PART_DecreaseButton /template/ Border">
+        <Setter Property="CornerRadius" Value="0,0,0,3"/>
+    </Style>
+    <Style Selector="ButtonSpinner:left /template/ RepeatButton#PART_DecreaseButton /template/ Border > Border">
+        <Setter Property="CornerRadius" Value="0,0,0,2"/>
+    </Style>
+</Styles>
