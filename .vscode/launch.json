@@ -14,7 +14,15 @@
             "preLaunchTask": "build",
             "OS-COMMENT4": "If you have changed target frameworks, make sure to update the program path.",
             "program": "${workspaceFolder}/samples/AvaloniaAero.Demo.Desktop/bin/Debug/net5.0/AvaloniaAero.Demo.Desktop.dll",
-            "args": [],
+            
+            "args": [
+                /*
+                dumb hack so I don't have to break my neck until the fix for
+                https://github.com/AvaloniaUI/Avalonia/issues/9286
+                arrives in a preview or whatever
+                */
+                "--temp-monitor-hack"
+            ],
             "cwd": "${workspaceFolder}/samples/AvaloniaAero.Demo.Desktop",
             "OS-COMMENT5": "For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console",
             "console": "internalConsole",

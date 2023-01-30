@@ -12,6 +12,17 @@
         <Setter Property="Template">
             <ControlTemplate>
                 <Panel>
+                    <Border x:Name="Outer"
+                            Classes="aeroState2"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <Border x:Name="Inner"
+                                Classes="aeroState2"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{DynamicResource AeroButtonIdleInnerBorderBrush}"
+                                BorderThickness="1"/>
+                    </Border>
+                    <!--
                     <Border Classes="aeroState idle" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
                         <Border Background="{TemplateBinding Background}" BorderBrush="{DynamicResource AeroButtonIdleInnerBorderBrush}" BorderThickness="1"/>
                     </Border>
@@ -24,6 +35,7 @@
                     <Border Classes="aeroState disabled" BorderBrush="{DynamicResource AeroButtonDisabledOuterBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
                         <Border Background="{DynamicResource AeroButtonDisabledBackground}" BorderBrush="{DynamicResource AeroButtonDisabledInnerBorderBrush}" BorderThickness="1"/>
                     </Border>
+                    -->
                     <ContentPresenter x:Name="PART_ContentPresenter"
                                     ContentTemplate="{TemplateBinding ContentTemplate}"
                                     Content="{TemplateBinding Content}"
@@ -34,11 +46,44 @@
             </ControlTemplate>
         </Setter>
         
+        <!--
         <Style Selector="^ /template/ Border">
+        -->
+        <Style Selector="^ /template/ Border#Outer">
             <Setter Property="CornerRadius" Value="3"/>
         </Style>
+        <!--
         <Style Selector="^ /template/ Border > Border">
+        -->
+        <Style Selector="^ /template/ Border#Inner">
             <Setter Property="CornerRadius" Value="2"/>
+        </Style>
+
+
+        <Style Selector="^:pointerover /template/ Border#Outer">
+            <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonHoverOuterBorderBrush}" />
+        </Style>
+        <Style Selector="^:pointerover /template/ Border#Inner">
+            <Setter Property="Background" Value="{DynamicResource AeroButtonHoverBackground}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonHoverInnerBorderBrush}" />
+        </Style>
+
+
+        <Style Selector="^:pressed /template/ Border#Outer">
+            <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonPressedOuterBorderBrush}" />
+        </Style>
+        <Style Selector="^:pressed /template/ Border#Inner">
+            <Setter Property="Background" Value="{DynamicResource AeroButtonPressedBackground}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonPressedInnerBorderBrush}" />
+        </Style>
+
+
+        <Style Selector="^:disabled /template/ Border#Outer">
+            <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonDisabledOuterBorderBrush}" />
+        </Style>
+        <Style Selector="^:disabled /template/ Border#Inner">
+            <Setter Property="Background" Value="{DynamicResource AeroButtonDisabledBackground}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonDisabledInnerBorderBrush}" />
         </Style>
         <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
             <Setter Property="TextBlock.Foreground" Value="{DynamicResource AeroButtonDisabledForeground}"/>

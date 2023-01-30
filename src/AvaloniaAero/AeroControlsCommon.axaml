@@ -1,5 +1,10 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Styles.Resources>
+        <x:TimeSpan x:Key="AeroFadeDuration">0:0:0.125</x:TimeSpan>
+        <x:TimeSpan x:Key="AeroFadeOutDuration">0:0:0.375</x:TimeSpan>
+    </Styles.Resources>
+    
     <Style Selector="Border.aeroState.pointerover,
                     Border.aeroState.pressed,
                     Border.aeroState.checked">
@@ -39,5 +44,33 @@
     </Style>
     <Style Selector=":is(TemplatedControl):disabled /template/ ContentPresenter#PART_ContentPresenter">
         <Setter Property="TextBlock.Foreground" Value="{DynamicResource aeroState disabledForeground}"/>
+    </Style>
+
+    
+    <Style Selector=":is(TemplatedControl) /template/ Border.aeroState2">
+        <Setter Property="Transitions">
+            <Transitions>
+                <BrushTransition Property="Background" Duration="{StaticResource AeroFadeDuration}" />
+                <BrushTransition Property="BorderBrush" Duration="{StaticResource AeroFadeDuration}" />
+            </Transitions>
+        </Setter>
+    </Style>
+    <!--
+    <Style Selector=":is(WindowBase) :is(TemplatedControl):not(:pointerover) /template/ Border.aeroState2">
+        <Setter Property="Transitions">
+            <Transitions>
+                <BrushTransition Property="Background" Duration="{StaticResource AeroFadeOutDuration}" />
+                <BrushTransition Property="BorderBrush" Duration="{StaticResource AeroFadeOutDuration}" />
+            </Transitions>
+        </Setter>
+    </Style>
+    -->
+    <Style Selector=":is(TemplatedControl) /template/ :is(Shape).aeroState2">
+        <Setter Property="Transitions">
+            <Transitions>
+                <BrushTransition Property="Fill" Duration="{StaticResource AeroFadeDuration}" />
+                <BrushTransition Property="Stroke" Duration="{StaticResource AeroFadeDuration}" />
+            </Transitions>
+        </Setter>
     </Style>
 </Styles>

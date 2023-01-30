@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avalonia.Themes.Aero.NormalColor", "Avalonia.Themes.Aero.NormalColor\Avalonia.Themes.Aero.NormalColor.csproj", "{ECF6EA0C-77DF-464A-90BF-CCB555E2335E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvaloniaAero", "src\AvaloniaAero\AvaloniaAero.csproj", "{ECF6EA0C-77DF-464A-90BF-CCB555E2335E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avalonia.Themes.Aero.NormalColor.Sample", "Avalonia.Themes.Aero.NormalColor.Sample\Avalonia.Themes.Aero.NormalColor.Sample.csproj", "{656D4D6F-79EC-4CC5-8D3B-9F6B9E02FF60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvaloniaAero.Demo", "samples\AvaloniaAero.Demo\AvaloniaAero.Demo.csproj", "{656D4D6F-79EC-4CC5-8D3B-9F6B9E02FF60}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

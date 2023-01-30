@@ -1,6 +1,7 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ControlTheme x:Key="{x:Type ToggleButton}" TargetType="ToggleButton" BasedOn="{StaticResource {x:Type Button}}">
+        <!--
         <Setter Property="Template">
             <ControlTemplate>
                 <Panel>
@@ -34,6 +35,14 @@
         </Style>
         <Style Selector="^:not(:checked):not(:pressed) /template/ Border.aeroButtonChecked">
             <Setter Property="IsVisible" Value="False"/>
+        </Style>
+        -->
+        <Style Selector="^:checked /template/ Border#Outer">
+            <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonPressedOuterBorderBrush}" />
+        </Style>
+        <Style Selector="^:checked /template/ Border#Inner">
+            <Setter Property="Background" Value="{DynamicResource AeroButtonPressedBackground}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonPressedInnerBorderBrush}" />
         </Style>
     </ControlTheme>
 </ResourceDictionary>

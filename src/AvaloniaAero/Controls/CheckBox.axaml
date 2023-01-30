@@ -11,7 +11,10 @@
         <Setter Property="Template">
             <ControlTemplate>
                 <Grid ColumnDefinitions="Auto,*">
-                    <Panel Width="13" Height="13" VerticalAlignment="Center">
+                    <Panel VerticalAlignment="Center"
+                        Width="13"
+                        Height="13"
+                        Grid.Column="0">
                         <Border Classes="aeroState idle" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
                             <Border BorderBrush="{DynamicResource AeroCheckBoxIdleMiddleBorderBrush}" BorderThickness="1">
                                 <Border Background="{TemplateBinding Background}" BorderBrush="{DynamicResource AeroCheckBoxIdleInnerBorderBrush}" BorderThickness="1"/>
@@ -28,6 +31,7 @@
                             </Border>
                         </Border>
                         <Border Classes="aeroState disabled" Background="{DynamicResource AeroCheckBoxDisabledBackground}" BorderBrush="{DynamicResource AeroCheckBoxDisabledBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"/>
+                        
                         <Panel>
                             <Path Name="checkMark" Data="M 0 4 L 3 7 L 6 0" StrokeThickness="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <!--Width="11"
@@ -43,6 +47,25 @@
                 </Grid>
             </ControlTemplate>
         </Setter>
+        <!--
+        <Border Classes="aeroState idle" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+            <Border BorderBrush="{DynamicResource AeroCheckBoxIdleMiddleBorderBrush}" BorderThickness="1">
+                <Border Background="{TemplateBinding Background}" BorderBrush="{DynamicResource AeroCheckBoxIdleInnerBorderBrush}" BorderThickness="1"/>
+            </Border>
+        </Border>
+        <Border Classes="aeroState pointerover" BorderBrush="{DynamicResource AeroCheckBoxHoverOuterBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+            <Border BorderBrush="{DynamicResource AeroCheckBoxHoverMiddleBorderBrush}" BorderThickness="1">
+                <Border Background="{DynamicResource AeroCheckBoxHoverBackground}" BorderBrush="{DynamicResource AeroCheckBoxHoverInnerBorderBrush}" BorderThickness="1"/>
+            </Border>
+        </Border>
+        <Border Classes="aeroState pressed" BorderBrush="{DynamicResource AeroCheckBoxPressedOuterBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+            <Border BorderBrush="{DynamicResource AeroCheckBoxPressedMiddleBorderBrush}" BorderThickness="1">
+                <Border Background="{DynamicResource AeroCheckBoxPressedBackground}" BorderBrush="{DynamicResource AeroCheckBoxPressedInnerBorderBrush}" BorderThickness="1"/>
+            </Border>
+        </Border>
+        <Border Classes="aeroState disabled" Background="{DynamicResource AeroCheckBoxDisabledBackground}" BorderBrush="{DynamicResource AeroCheckBoxDisabledBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"/>
+        -->
+
     
         <Style Selector="^ /template/ Path#checkMark">
             <Setter Property="Opacity" Value="0"/>

@@ -3,6 +3,10 @@ using Avalonia.Controls;
 using Avalonia.Controls.Platform;
 using Avalonia.Markup.Xaml;
 using Avalonia.Platform;
+using Avalonia.Threading;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace AvaloniaAero.Demo.Views
 {
@@ -211,7 +215,72 @@ namespace AvaloniaAero.Demo.Views
 #if DEBUG
             win.AttachDevTools();
 #endif
+            
+            /*
+            dumb hack so I don't have to break my neck until the fix for
+            https://github.com/AvaloniaUI/Avalonia/issues/9286
+            arrives in a preview or whatever
+            */
+            if (Environment.GetCommandLineArgs().Any(x => x == "--temp-monitor-hack"))
+            {
+                win.Initialized += Window_Initialized;
+            }
             return win;
+        }
+
+        const int _WINDOW_HACK_INSET_EXTENT = 10; //15;
+        static readonly PixelPoint _WINDOW_HACK_INSET = new PixelPoint(_WINDOW_HACK_INSET_EXTENT, _WINDOW_HACK_INSET_EXTENT);
+        void Window_Initialized(object sender, EventArgs e)
+        {
+            if (!(sender is Window win))
+                return;
+
+            Dispatcher.UIThread.Post(() =>
+            {
+                var leastTall = win.Screens.All.MinBy(x => x.Bounds.Height);
+                win.Position = leastTall.Bounds.TopLeft + _WINDOW_HACK_INSET;
+            });
+            win.Initialized -= Window_Initialized;
+        }
+    }
+
+    //https://stackoverflow.com/a/914198
+    //https://github.com/morelinq/MoreLINQ
+    //thanks lol
+    public static class MoreLINQExtracts
+    {
+        public static TSource MinBy<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> selector)
+        {
+            return source.MinBy(selector, null);
+        }
+
+        public static TSource MinBy<TSource, TKey>(this IEnumerable<TSource> source,
+            Func<TSource, TKey> selector, IComparer<TKey> comparer)
+        {
+            if (source == null) throw new ArgumentNullException("source");
+            if (selector == null) throw new ArgumentNullException("selector");
+            comparer ??= Comparer<TKey>.Default;
+
+            using (var sourceIterator = source.GetEnumerator())
+            {
+                if (!sourceIterator.MoveNext())
+                {
+                    throw new InvalidOperationException("Sequence contains no elements");
+                }
+                var min = sourceIterator.Current;
+                var minKey = selector(min);
+                while (sourceIterator.MoveNext())
+                {
+                    var candidate = sourceIterator.Current;
+                    var candidateProjected = selector(candidate);
+                    if (comparer.Compare(candidateProjected, minKey) < 0)
+                    {
+                        min = candidate;
+                        minKey = candidateProjected;
+                    }
+                }
+                return min;
+            }
         }
     }
 }
