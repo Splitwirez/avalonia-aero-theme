@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net6.0-android</TargetFramework>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+	<PropertyGroup>
+		<SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
+		<ApplicationId>com.splitwirez.AvaloniaAeroDemo</ApplicationId>
+		<ApplicationVersion>1</ApplicationVersion>
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<AndroidPackageFormat>apk</AndroidPackageFormat>
+		<MSBuildEnableWorkloadResolver>true</MSBuildEnableWorkloadResolver>
+	</PropertyGroup>
+	<!--ItemGroup>
+		<AndroidResource Include="../../build/Assets/Icon.png">
+			<Link>Resources/drawable/Icon.png</Link>
+		</AndroidResource>
+	</ItemGroup-->
+
+	<PropertyGroup Condition="'$(RunAOTCompilation)'=='' and '$(Configuration)'=='Release' and '$(TF_BUILD)'==''">
+		<RunAOTCompilation>True</RunAOTCompilation>
+	</PropertyGroup>
+
+	<!-- PropertyGroup Condition="'$(RunAOTCompilation)'=='True'">
+		<EnableLLVM>True</EnableLLVM>
+		<AndroidAotAdditionalArguments>no-write-symbols,nodebug</AndroidAotAdditionalArguments>
+		<AndroidAotMode>Hybrid</AndroidAotMode>
+		<AndroidGenerateJniMarshalMethods>True</AndroidGenerateJniMarshalMethods>
+	</PropertyGroup -->
+
+	<PropertyGroup Condition="'$(AndroidEnableProfiler)'=='True'">
+		<IsEmulator Condition="'$(IsEmulator)' == ''">True</IsEmulator>
+		<DebugSymbols>True</DebugSymbols>
+	</PropertyGroup>
+
+	<ItemGroup Condition="'$(IsEmulator)'!='True'">
+		<AndroidEnvironment Include="environment.device.txt" />
+	</ItemGroup>
+	<ItemGroup Condition="'$(IsEmulator)'=='True'">
+		<AndroidEnvironment  Include="environment.emulator.txt" />
+	</ItemGroup>
+
+	<Import Project="../../build/Avalonia.props" />
+    <ItemGroup>
+		<PackageReference Include="Avalonia.Android" Version="$(AvaloniaVer)" />
+		<ProjectReference Include="../AvaloniaAero.Demo/AvaloniaAero.Demo.csproj" />
+	</ItemGroup>
+</Project>

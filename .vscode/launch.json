@@ -13,9 +13,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             "OS-COMMENT4": "If you have changed target frameworks, make sure to update the program path.",
-            "program": "${workspaceFolder}/samples/AvaloniaAero.Demo/bin/Debug/netcoreapp2.1/AvaloniaAero.Demo.dll",
+            "program": "${workspaceFolder}/samples/AvaloniaAero.Demo.Desktop/bin/Debug/net5.0/AvaloniaAero.Demo.Desktop.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/samples/AvaloniaAero.Demo",
+            "cwd": "${workspaceFolder}/samples/AvaloniaAero.Demo.Desktop",
             "OS-COMMENT5": "For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console",
             "console": "internalConsole",
             "stopAtEntry": false

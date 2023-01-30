@@ -1,15 +1,24 @@
 <Project Sdk="Microsoft.NET.Sdk">
+	<Import Project="../../build/dotnet6.props" />
 	<PropertyGroup>
-		<TargetFramework>netstandard2.0</TargetFramework>
+		<TargetFrameworks>$(ExtraTargetFrameworks)netstandard2.0</TargetFrameworks>
 		<LangVersion>8.0</LangVersion>
 	</PropertyGroup>
+	<!--PropertyGroup Condition="$(DefineConstants.Contains(DOTNET_SDK_6_0))"-->
 	<ItemGroup>
-		<AvaloniaResource Include="Assets\**" />
-		<AvaloniaResource Include="Resources\**" />
+		<AvaloniaResource Include="Assets/**" />
+		<AvaloniaResource Include="Resources/**" />
+		<!--
 		<AvaloniaResource Include="*.xaml" />
-		<AvaloniaResource Include="**\*.xaml" />
+		<AvaloniaResource Include="**/*.xaml" />
+		-->
+		<!--
 		<AvaloniaResource Include="*.axaml" />
-		<AvaloniaResource Include="**\*.axaml" />
+		<AvaloniaResource Include="**/*.axaml" />
+		-->
 	</ItemGroup>
-	<Import Project="..\..\build\Avalonia.props" />
+	<Import Project="../../build/Avalonia.props" />
+	<ItemGroup>
+		<!--PackageReference Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVer)" /-->
+	</ItemGroup>
 </Project>

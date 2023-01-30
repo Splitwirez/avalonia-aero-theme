@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+	<style name="AvaloniaAeroDemo">
+	</style>
+	<style name="AvaloniaAeroDemo.NoActionBar" parent="@style/Theme.AppCompat.NoActionBar">
+		<item name="android:windowActionBar">false</item>
+		<item name="android:windowNoTitle">true</item>
+	</style>
+	<style name="AvaloniaAeroDemo.Splash" parent ="AvaloniaAeroDemo.NoActionBar">
+		<item name="android:windowBackground">@drawable/splash</item>
+		<item name="android:windowContentOverlay">@null</item>
+	</style>
+</resources>

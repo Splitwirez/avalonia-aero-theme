@@ -1,0 +1,43 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style Selector="Border.aeroState.pointerover,
+                    Border.aeroState.pressed,
+                    Border.aeroState.checked">
+        <Setter Property="Opacity" Value="0"/>
+    </Style>
+
+    <Style Selector=":not(:pointerover) /template/ Border.aeroState.pointerover,
+                    :not(:pressed) /template/ Border.aeroState.pressed,
+                    :not(:checked) /template/ Border.aeroState.checked,
+                    :not(:focus) /template/ Border.aeroState.focus">
+        <Style.Animations><!--:not(.aeroState.checked)-->
+            <Animation FillMode="Both" Duration="0:0:0.375">
+                <KeyFrame Cue="100%">
+                    <Setter Property="Opacity" Value="0.0"/>
+                </KeyFrame>
+            </Animation>
+        </Style.Animations>
+    </Style>
+    <Style Selector=":pointerover /template/ Border.aeroState.pointerover,
+                    :pressed /template/ Border.aeroState.pressed,
+                    :checked /template/ Border.aeroState.checked,
+                    :focus /template/ Border.aeroState.focus">
+        <Style.Animations>
+            <Animation FillMode="Both" Duration="0:0:0.125">
+                <KeyFrame Cue="100%">
+                    <Setter Property="Opacity" Value="1.0"/>
+                </KeyFrame>
+            </Animation>
+        </Style.Animations>
+    </Style>
+
+    <Style Selector=":not(:disabled) /template/ Border.aeroState.disabled">
+        <Setter Property="IsVisible" Value="False"/>
+    </Style>
+    <Style Selector=":is(TemplatedControl):not(:disabled) /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="TextBlock.Foreground" Value="{Binding Foreground, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+    </Style>
+    <Style Selector=":is(TemplatedControl):disabled /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="TextBlock.Foreground" Value="{DynamicResource aeroState disabledForeground}"/>
+    </Style>
+</Styles>

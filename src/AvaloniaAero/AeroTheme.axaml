@@ -1,0 +1,32 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        x:Class="AvaloniaAero.AeroTheme">
+    <Styles.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceInclude Source="avares://AvaloniaAero/CommonResources.axaml"/>
+                <ResourceInclude Source="avares://AvaloniaAero/BrushResources.axaml"/>
+                <!--ResourceInclude Source="avares://AvaloniaAero/Accents/BaseLight.axaml"/-->
+            </ResourceDictionary.MergedDictionaries>
+
+            <ResourceInclude x:Key="DarkVariant" Source="avares://AvaloniaAero/Variant/Dark.axaml" />
+            <ResourceInclude x:Key="LightVariant" Source="avares://AvaloniaAero/Variant/Light.axaml" />
+            <StyleInclude x:Key="DarkStyles" Source="avares://AvaloniaAero/Variant/DarkStyles.axaml" />
+            <StyleInclude x:Key="LightStyles" Source="avares://AvaloniaAero/Variant/LightStyles.axaml" />
+        </ResourceDictionary>
+    </Styles.Resources>
+    
+    <!--TEMP Fluent placeholders-->
+    <!--
+    <StyleInclude Source="avares://AvaloniaAero/FluentPlaceholders/Accents/AccentColors.xaml" />
+	<StyleInclude Source="avares://AvaloniaAero/FluentPlaceholders/Accents/BaseLight.xaml" />
+	<StyleInclude Source="avares://AvaloniaAero/FluentPlaceholders/Accents/Base.xaml" />
+	<!- -StyleInclude Source="avares://AvaloniaAero/FluentPlaceholders/Accents/FluentBaseLight.xaml" /- ->
+	<StyleInclude Source="avares://AvaloniaAero/FluentPlaceholders/Accents/FluentControlResourcesLight.xaml" />
+    -->
+    
+    <StyleInclude Source="avares://AvaloniaAero/AeroControlsCommon.axaml" />
+    <StyleInclude Source="avares://AvaloniaAero/AeroControls.axaml" />
+</Styles>
