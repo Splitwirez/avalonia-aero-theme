@@ -87,15 +87,15 @@
         </Style>
         <Style Selector="^:pointerover /template/ Ellipse#indeterminateMark">
             <Setter Property="Fill" Value="{DynamicResource AeroRadioButtonHoverCircleFill}"/>
-            <Setter Property="Fill" Value="{DynamicResource AeroCheckBoxHoverCheckMarkBrush}"/>
+            <Setter Property="Stroke" Value="{DynamicResource AeroCheckBoxHoverCheckMarkBrush}"/>
         </Style>
         <Style Selector="^:pressed /template/ Ellipse#indeterminateMark">
             <Setter Property="Fill" Value="{DynamicResource AeroRadioButtonPressedCircleFill}"/>
-            <Setter Property="Fill" Value="{DynamicResource AeroCheckBoxPressedCheckMarkBrush}"/>
+            <Setter Property="Stroke" Value="{DynamicResource AeroCheckBoxPressedCheckMarkBrush}"/>
         </Style>
         <Style Selector="^:disabled /template/ Ellipse#indeterminateMark">
             <Setter Property="Fill" Value="{DynamicResource AeroRadioButtonDisabledCircleFill}"/>
-            <Setter Property="Fill" Value="{DynamicResource AeroCheckBoxDisabledCheckMarkBrush}"/>
+            <Setter Property="Stroke" Value="{DynamicResource AeroCheckBoxDisabledCheckMarkBrush}"/>
         </Style>
         <Style Selector="^:not(:indeterminate) /template/ Ellipse#indeterminateMark">
             <Style.Animations>

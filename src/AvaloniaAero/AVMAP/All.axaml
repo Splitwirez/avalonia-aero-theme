@@ -1,0 +1,17 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceInclude Source="avares://AvaloniaAero/AVMAP/Metrics.axaml"/>
+		<ResourceInclude Source="avares://AvaloniaAero/AVMAP/Brushes.axaml"/>
+
+		<!--TEMP Fluent placeholders-->
+		<ResourceInclude Source="avares://AvaloniaAero/FluentPlaceholders/Accents/AccentColors.axaml" />
+		<ResourceInclude Source="avares://AvaloniaAero/FluentPlaceholders/Accents/Base.axaml" />
+		<ResourceInclude Source="avares://AvaloniaAero/FluentPlaceholders/Accents/FluentControlResources.axaml" />
+
+		
+		<!--
+		<ResourceInclude Source="avares://AvaloniaAero/Variant/AeroVariant.axaml" />
+		-->
+	</ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

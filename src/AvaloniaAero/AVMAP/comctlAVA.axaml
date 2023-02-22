@@ -68,9 +68,7 @@
                 <ResourceInclude Source="avares://AvaloniaAero/FluentPlaceholders/Controls/TreeViewItem.axaml" />
                 <ResourceInclude Source="avares://AvaloniaAero/FluentPlaceholders/Controls/WindowNotificationManager.axaml" />
                 
-                <!--
                 <ResourceInclude Source="avares://AvaloniaAero/Controls/Window.axaml" />
-                -->
                 
                 <ResourceInclude Source="avares://AvaloniaAero/FluentPlaceholders/Controls/ComboBox.axaml" />
                 <ResourceInclude Source="avares://AvaloniaAero/FluentPlaceholders/Controls/ComboBoxItem.axaml" />
@@ -106,7 +104,7 @@
     <StyleInclude Source="avares://AvaloniaAero/Controls/TextBox.axaml" />
     <!--ToggleButton-->
     <!--ToggleSwitch-->
-    <StyleInclude Source="avares://AvaloniaAero/Controls/Window.axaml" />
+    <!--Window-->
 
     <!--
     <StyleInclude Source="avares://AvaloniaAero/Controls/Button.axaml" />

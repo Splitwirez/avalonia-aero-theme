@@ -8,4 +8,6 @@
     <sys:Double x:Key="AeroScrollBarThickness">17</sys:Double>
     <sys:Double x:Key="AeroSmallScrollBarThickness">7</sys:Double>
     <sys:Double x:Key="AeroScrollBarThumbThickness">17</sys:Double>
+
+    <FontFamily x:Key="ContentControlThemeFontFamily">avares://AvaloniaAero/Fonts#Inter</FontFamily>
 </ResourceDictionary>

@@ -6,7 +6,10 @@
 	</PropertyGroup>
 	<!--PropertyGroup Condition="$(DefineConstants.Contains(DOTNET_SDK_6_0))"-->
 	<ItemGroup>
-		<AvaloniaResource Include="Assets/**" />
+		<AvaloniaResource Include="AVMAP/*.axaml" />
+
+		<AvaloniaResource Include="Fonts/**" />
+		<AvaloniaResource Include="Fonts2/**" />
 		<AvaloniaResource Include="Resources/**" />
 		<!--
 		<AvaloniaResource Include="*.xaml" />

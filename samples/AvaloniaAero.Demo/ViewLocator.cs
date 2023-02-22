@@ -9,14 +9,14 @@ namespace AvaloniaAero.Demo
     {
         public bool SupportsRecycling => false;
 
-        public IControl Build(object data)
+        public Control Build(object data)
         {
-            IControl ret = null;
+            Control ret = null;
             
             var type = ((ViewModelBase)data).GetViewTypeName();
             
             if (type != null)
-                ret = (IControl)Activator.CreateInstance(type);
+                ret = (Control)Activator.CreateInstance(type);
             
             return (ret != null)
                 ? ret

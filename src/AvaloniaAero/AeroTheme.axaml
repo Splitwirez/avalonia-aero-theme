@@ -5,28 +5,54 @@
         x:Class="AvaloniaAero.AeroTheme">
     <Styles.Resources>
         <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceInclude Source="avares://AvaloniaAero/CommonResources.axaml"/>
-                <ResourceInclude Source="avares://AvaloniaAero/BrushResources.axaml"/>
-                <!--ResourceInclude Source="avares://AvaloniaAero/Accents/BaseLight.axaml"/-->
-            </ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Default">
+                <!--
+                    <ResourceDictionary.MergedDictionaries>
+                        <ResourceInclude Source="avares://AvaloniaAero/AVMAP/All.axaml" />
+                    </ResourceDictionary.MergedDictionaries>
+                </ResourceDictionary>
 
-            <ResourceInclude x:Key="DarkVariant" Source="avares://AvaloniaAero/Variant/Dark.axaml" />
-            <ResourceInclude x:Key="LightVariant" Source="avares://AvaloniaAero/Variant/Light.axaml" />
-            <StyleInclude x:Key="DarkStyles" Source="avares://AvaloniaAero/Variant/DarkStyles.axaml" />
-            <StyleInclude x:Key="LightStyles" Source="avares://AvaloniaAero/Variant/LightStyles.axaml" />
+                <ResourceDictionary x:Key="Light">
+                -->
+                    <ResourceDictionary.MergedDictionaries>
+                        <ResourceInclude Source="avares://AvaloniaAero/AVMAP/All.axaml" />
+                        <ResourceInclude Source="avares://AvaloniaAero/Variant/Light.axaml" />
+                    </ResourceDictionary.MergedDictionaries>
+                </ResourceDictionary>
+
+                <ResourceDictionary x:Key="Dark">
+                    <ResourceDictionary.MergedDictionaries>
+                        <ResourceInclude Source="avares://AvaloniaAero/AVMAP/All.axaml" />
+                        <ResourceInclude Source="avares://AvaloniaAero/Variant/Dark.axaml" />
+                    </ResourceDictionary.MergedDictionaries>
+                </ResourceDictionary>
+            
+            <!--
+                <ResourceInclude x:Key="Default" Source="avares://AvaloniaAero/Variant/Light.axaml" />
+                <ResourceInclude x:Key="Dark" Source="avares://AvaloniaAero/Variant/Dark.axaml" />
+            -->
+            <!--
+                <ResourceDictionary x:Key="Default">
+                    <ResourceDictionary.MergedDictionaries>
+                        <ResourceInclude Source="avares://AvaloniaAero/Variant/Dark.axaml" />
+                    </ResourceDictionary.MergedDictionaries>
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="Light">
+                    <ResourceDictionary.MergedDictionaries>
+                        <ResourceInclude Source="avares://AvaloniaAero/Variant/Light.axaml" />
+                    </ResourceDictionary.MergedDictionaries>
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="Dark">
+                    <ResourceDictionary.MergedDictionaries>
+                        <ResourceInclude Source="avares://AvaloniaAero/Variant/Dark.axaml" />
+                    </ResourceDictionary.MergedDictionaries>
+                </ResourceDictionary>
+            -->
+            </ResourceDictionary.ThemeDictionaries>
         </ResourceDictionary>
     </Styles.Resources>
     
-    <!--TEMP Fluent placeholders-->
-    <!--
-    <StyleInclude Source="avares://AvaloniaAero/FluentPlaceholders/Accents/AccentColors.xaml" />
-	<StyleInclude Source="avares://AvaloniaAero/FluentPlaceholders/Accents/BaseLight.xaml" />
-	<StyleInclude Source="avares://AvaloniaAero/FluentPlaceholders/Accents/Base.xaml" />
-	<!- -StyleInclude Source="avares://AvaloniaAero/FluentPlaceholders/Accents/FluentBaseLight.xaml" /- ->
-	<StyleInclude Source="avares://AvaloniaAero/FluentPlaceholders/Accents/FluentControlResourcesLight.xaml" />
-    -->
-    
-    <StyleInclude Source="avares://AvaloniaAero/AeroControlsCommon.axaml" />
-    <StyleInclude Source="avares://AvaloniaAero/AeroControls.axaml" />
+    <StyleInclude Source="avares://AvaloniaAero/AVMAP/StyleTrailMix.axaml" />
+    <StyleInclude Source="avares://AvaloniaAero/AVMAP/comctlAVA.axaml" />
 </Styles>
