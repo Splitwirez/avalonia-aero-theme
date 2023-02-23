@@ -6,53 +6,36 @@
     <Styles.Resources>
         <ResourceDictionary>
             <ResourceDictionary.ThemeDictionaries>
+                <!-- Light variant includes (light should be the "default", yes?) -->
                 <ResourceDictionary x:Key="Default">
+                    <ResourceDictionary.MergedDictionaries>
+                        <ResourceInclude Source="avares://AvaloniaAero/AVMAP/All.axaml" />
+                        <ResourceInclude Source="avares://AvaloniaAero/Variant/Light.axaml" />
+                    </ResourceDictionary.MergedDictionaries>
+                </ResourceDictionary>
+
+                <!-- Epic include fail -->
                 <!--
+                <ResourceDictionary x:Key="Light">
                     <ResourceDictionary.MergedDictionaries>
                         <ResourceInclude Source="avares://AvaloniaAero/AVMAP/All.axaml" />
+                        <ResourceInclude Source="avares://AvaloniaAero/Variant/Light.axaml" />
                     </ResourceDictionary.MergedDictionaries>
                 </ResourceDictionary>
-
-                <ResourceDictionary x:Key="Light">
                 -->
-                    <ResourceDictionary.MergedDictionaries>
-                        <ResourceInclude Source="avares://AvaloniaAero/AVMAP/All.axaml" />
-                        <ResourceInclude Source="avares://AvaloniaAero/Variant/Light.axaml" />
-                    </ResourceDictionary.MergedDictionaries>
-                </ResourceDictionary>
 
+                <!-- Dark theme variant includes -->
                 <ResourceDictionary x:Key="Dark">
                     <ResourceDictionary.MergedDictionaries>
                         <ResourceInclude Source="avares://AvaloniaAero/AVMAP/All.axaml" />
                         <ResourceInclude Source="avares://AvaloniaAero/Variant/Dark.axaml" />
                     </ResourceDictionary.MergedDictionaries>
                 </ResourceDictionary>
-            
-            <!--
-                <ResourceInclude x:Key="Default" Source="avares://AvaloniaAero/Variant/Light.axaml" />
-                <ResourceInclude x:Key="Dark" Source="avares://AvaloniaAero/Variant/Dark.axaml" />
-            -->
-            <!--
-                <ResourceDictionary x:Key="Default">
-                    <ResourceDictionary.MergedDictionaries>
-                        <ResourceInclude Source="avares://AvaloniaAero/Variant/Dark.axaml" />
-                    </ResourceDictionary.MergedDictionaries>
-                </ResourceDictionary>
-                <ResourceDictionary x:Key="Light">
-                    <ResourceDictionary.MergedDictionaries>
-                        <ResourceInclude Source="avares://AvaloniaAero/Variant/Light.axaml" />
-                    </ResourceDictionary.MergedDictionaries>
-                </ResourceDictionary>
-                <ResourceDictionary x:Key="Dark">
-                    <ResourceDictionary.MergedDictionaries>
-                        <ResourceInclude Source="avares://AvaloniaAero/Variant/Dark.axaml" />
-                    </ResourceDictionary.MergedDictionaries>
-                </ResourceDictionary>
-            -->
             </ResourceDictionary.ThemeDictionaries>
         </ResourceDictionary>
     </Styles.Resources>
     
+    <!-- Styles included here -->
     <StyleInclude Source="avares://AvaloniaAero/AVMAP/StyleTrailMix.axaml" />
     <StyleInclude Source="avares://AvaloniaAero/AVMAP/comctlAVA.axaml" />
 </Styles>
