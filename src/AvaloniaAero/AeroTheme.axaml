@@ -24,7 +24,7 @@
                 </ResourceDictionary>
                 -->
 
-                <!-- Dark theme variant includes -->
+                <!-- Dark variant includes -->
                 <ResourceDictionary x:Key="Dark">
                     <ResourceDictionary.MergedDictionaries>
                         <ResourceInclude Source="avares://AvaloniaAero/AVMAP/All.axaml" />
