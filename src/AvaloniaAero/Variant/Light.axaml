@@ -241,4 +241,29 @@
 
 	<Color x:Key="AeroToggleSwitchCheckedBorderBrushColor0">#FF2C628B</Color>
 	<Color x:Key="AeroToggleSwitchCheckedBorderBrushColor1">#FF49A4E5</Color>
+
+
+
+
+	<Color x:Key="AeroMenuBarBackgroundColor0">#FFD4DBED</Color>
+	<Color x:Key="AeroMenuBarBackgroundColor1">#FFE1E6F6</Color>
+
+	<Color x:Key="AeroMenuBarShineColor0">#FAFFFFFF</Color>
+	<Color x:Key="AeroMenuBarShineColor1">#62FFFFFF</Color>
+	
+	<Color x:Key="AeroMenuBarSideBorderBrushColor0">#FFE9ECF6</Color>
+	<Color x:Key="AeroMenuBarSideBorderBrushColor1">#FFF0F2FA</Color>
+	
+	<Color x:Key="AeroMenuBarBottomOuterBorderBrushColor">#FFF0F0F0</Color>
+	
+	<Color x:Key="AeroMenuBarBottomInnerBorderBrushColor">#FFB6BCCC</Color>
+
+
+
+
+	<Color x:Key="AeroMenuBarItemHoverBackgroundColor">#10FFFFFF</Color>
+	<Color x:Key="AeroMenuBarItemHoverBorderBrushColor">#40000000</Color>
+	
+	<Color x:Key="AeroMenuBarItemSelectedBackgroundColor">#20000000</Color>
+	<Color x:Key="AeroMenuBarItemSelectedBorderBrushColor">#A0000000</Color>
 </ResourceDictionary>

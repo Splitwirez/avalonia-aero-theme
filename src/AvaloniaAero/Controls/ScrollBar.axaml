@@ -1,6 +1,7 @@
 <Styles xmlns="https://github.com/avaloniaui"
                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                xmlns:sys="using:System">
+                xmlns:sys="using:System"
+                xmlns:ae="using:AvaloniaAero">
     <Styles.Resources>
         <QuinticEaseInOut x:Key="AeroScrollExpandEase"/>
         <sys:TimeSpan x:Key="AeroScrollExpandDuration">0:0:0.25</sys:TimeSpan>
@@ -118,7 +119,11 @@
         </Setter>
     </Style>
 
-    <Style Selector="ScrollBar[AllowAutoHide=true] /template/ Border.repeatBackground">
+    <Style Selector="ScrollBar[AllowAutoHide=false] /template/ Border.repeatBackground">
+        <Setter Property="IsVisible" Value="{Binding ViewportSize, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=OneWay, Converter={x:Static ae:DoubleIsNaNConverter.IsNotNaN}}"/>
+    </Style>
+    <Style Selector="ScrollBar[AllowAutoHide=false][Maximum=0] /template/ Border.repeatBackground,
+                    ScrollBar[AllowAutoHide=true] /template/ Border.repeatBackground">
         <Setter Property="IsVisible" Value="False"/>
     </Style>
 
@@ -279,6 +284,12 @@
         </Setter>
     </Style>
     <Style Selector="ScrollBar[AllowAutoHide=false] /template/ RepeatButton.repeat /template/ Border.aeroState.idle">
+        <Setter Property="IsVisible" Value="False"/>
+    </Style>
+    <Style Selector="ScrollBar /template/ RepeatButton.repeat /template/ Border.aeroState.pointerover">
+        <Setter Property="IsVisible" Value="{Binding ViewportSize, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ScrollBar}}, Mode=OneWay, Converter={x:Static ae:DoubleIsNaNConverter.IsNotNaN}}"/>
+    </Style>
+    <Style Selector="ScrollBar[Maximum=0] /template/ RepeatButton.repeat /template/ Border.aeroState.pointerover">
         <Setter Property="IsVisible" Value="False"/>
     </Style>
     

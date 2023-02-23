@@ -27,7 +27,9 @@
                 <ResourceInclude Source="avares://AvaloniaAero/FluentPlaceholders/Controls/ListBox.axaml" />
                 <ResourceInclude Source="avares://AvaloniaAero/FluentPlaceholders/Controls/ListBoxItem.axaml" />
                 <ResourceInclude Source="avares://AvaloniaAero/FluentPlaceholders/Controls/MenuScrollViewer.axaml" />
-                <ResourceInclude Source="avares://AvaloniaAero/FluentPlaceholders/Controls/Menu.axaml" />
+
+                <ResourceInclude Source="avares://AvaloniaAero/Controls/Menu.axaml" />
+                
                 <ResourceInclude Source="avares://AvaloniaAero/FluentPlaceholders/Controls/MenuItem.axaml" />
                 <ResourceInclude Source="avares://AvaloniaAero/FluentPlaceholders/Controls/MenuFlyoutPresenter.axaml" />
                 <ResourceInclude Source="avares://AvaloniaAero/FluentPlaceholders/Controls/NativeMenuBar.axaml" />

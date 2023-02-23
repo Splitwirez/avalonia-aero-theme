@@ -281,4 +281,31 @@
 		<GradientStop Offset="0" Color="{DynamicResource AeroToggleSwitchCheckedBorderBrushColor0}" />
 		<GradientStop Offset="1" Color="{DynamicResource AeroToggleSwitchCheckedBorderBrushColor1}" />
 	</LinearGradientBrush>
+
+
+
+
+	<LinearGradientBrush x:Key="AeroMenuBarBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroMenuBarBackgroundColor0}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroMenuBarBackgroundColor1}" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="AeroMenuBarShine" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroMenuBarShineColor0}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroMenuBarShineColor1}" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="AeroMenuBarSideBorderBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroMenuBarSideBorderBrushColor0}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroMenuBarSideBorderBrushColor1}" />
+	</LinearGradientBrush>
+	<SolidColorBrush x:Key="AeroMenuBarBottomOuterBorderBrush" Color="{DynamicResource AeroMenuBarBottomOuterBorderBrushColor}" />
+	<SolidColorBrush x:Key="AeroMenuBarBottomInnerBorderBrush" Color="{DynamicResource AeroMenuBarBottomInnerBorderBrushColor}" />
+
+
+
+
+	<SolidColorBrush x:Key="AeroMenuBarItemHoverBackground" Color="{DynamicResource AeroMenuBarItemHoverBackgroundColor}" />
+	<SolidColorBrush x:Key="AeroMenuBarItemHoverBorderBrush" Color="{DynamicResource AeroMenuBarItemHoverBorderBrushColor}" />
+
+	<SolidColorBrush x:Key="AeroMenuBarItemSelectedBackground" Color="{DynamicResource AeroMenuBarItemSelectedBackgroundColor}" />
+	<SolidColorBrush x:Key="AeroMenuBarItemSelectedBorderBrush" Color="{DynamicResource AeroMenuBarItemSelectedBorderBrushColor}" />
 </ResourceDictionary>
