@@ -74,7 +74,7 @@
             <!--/Panel-->
         </DockPanel>
         <TabControl x:Name="PagesTabControl"
-                    Items="{Binding Pages}"
+                    ItemsSource="{Binding Pages}"
                     Margin="6,7,4,6">
             <TabControl.ItemTemplate>
                 <DataTemplate>

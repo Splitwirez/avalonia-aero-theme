@@ -10,7 +10,7 @@ using System.Linq;
 
 namespace AvaloniaAero.Demo.Views
 {
-    public class MainView : UserControl
+    public partial class MainView : UserControl
     {
         public static readonly StyledProperty<SizeToContent> SizeToContentProperty =
             Window.SizeToContentProperty.AddOwner<MainView>();
@@ -42,10 +42,8 @@ namespace AvaloniaAero.Demo.Views
         public static readonly StyledProperty<WindowIcon?> IconProperty =
             Window.IconProperty.AddOwner<MainView>();
 
-        public static readonly DirectProperty<MainView, WindowStartupLocation> WindowStartupLocationProperty =
-            Window.WindowStartupLocationProperty.AddOwner<MainView>(
-                o => o.WindowStartupLocation,
-                (o, v) => o.WindowStartupLocation = v);
+        public static readonly StyledProperty<WindowStartupLocation> WindowStartupLocationProperty =
+            Window.WindowStartupLocationProperty.AddOwner<MainView>();
         public static readonly StyledProperty<bool> CanResizeProperty =
             Window.CanResizeProperty.AddOwner<MainView>();
         public SizeToContent SizeToContent
@@ -147,11 +145,10 @@ namespace AvaloniaAero.Demo.Views
             get => GetValue(IconProperty);
             set => SetValue(IconProperty, value);
         }
-        private WindowStartupLocation _windowStartupLocation;
         public WindowStartupLocation WindowStartupLocation
         {
-            get => _windowStartupLocation;
-            set => SetAndRaise(WindowStartupLocationProperty, ref _windowStartupLocation, value);
+            get => GetValue(WindowStartupLocationProperty);
+            set => SetValue(WindowStartupLocationProperty, value);
         }
 
 

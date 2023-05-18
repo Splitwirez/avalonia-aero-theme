@@ -6,8 +6,9 @@
 
 		<!--TEMP Fluent placeholders-->
 		<ResourceInclude Source="avares://AvaloniaAero/FluentPlaceholders/Accents/AccentColors.axaml" />
-		<ResourceInclude Source="avares://AvaloniaAero/FluentPlaceholders/Accents/Base.axaml" />
-		<ResourceInclude Source="avares://AvaloniaAero/FluentPlaceholders/Accents/FluentControlResources.axaml" />
+		<ResourceInclude Source="avares://Avalonia.Themes.Fluent/Accents/BaseColorsPalette.xaml" />
+		<ResourceInclude Source="avares://Avalonia.Themes.Fluent/Accents/BaseResources.xaml" />
+		<ResourceInclude Source="avares://Avalonia.Themes.Fluent/Accents/FluentControlResources.xaml" />
 
 		
 		<!--

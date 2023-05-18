@@ -22,6 +22,6 @@
 	</ItemGroup>
 	<Import Project="../../build/Avalonia.props" />
 	<ItemGroup>
-		<!--PackageReference Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVer)" /-->
+		<PackageReference Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVer)" />
 	</ItemGroup>
 </Project>

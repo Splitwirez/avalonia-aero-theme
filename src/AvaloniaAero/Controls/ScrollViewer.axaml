@@ -5,41 +5,54 @@
         <Setter Property="Template">
             <ControlTemplate>
                 <Grid ColumnDefinitions="*,Auto" RowDefinitions="*,Auto">
-                    <ScrollContentPresenter Name="PART_ContentPresenter"
-                                                                    Grid.Row="0"
-                                                                    Grid.Column="0"
-                                                                    Background="{TemplateBinding Background}"
-                                                                    CanHorizontallyScroll="{TemplateBinding CanHorizontallyScroll}"
-                                                                    CanVerticallyScroll="{TemplateBinding CanVerticallyScroll}"
-                                                                    Content="{TemplateBinding Content}"
-                                                                    Extent="{TemplateBinding Extent, Mode=TwoWay}"
-                                                                    Margin="{TemplateBinding Padding}"
-                                                                    Offset="{TemplateBinding Offset, Mode=TwoWay}"
-                                                                    Viewport="{TemplateBinding Viewport, Mode=TwoWay}">
+                    <ScrollContentPresenter x:Name="PART_ContentPresenter"
+                                            Grid.Row="0"
+                                            Grid.Column="0"
+                                            Background="{TemplateBinding Background}"
+                                            HorizontalSnapPointsType="{TemplateBinding HorizontalSnapPointsType}"
+                                            VerticalSnapPointsType="{TemplateBinding VerticalSnapPointsType}"
+                                            HorizontalSnapPointsAlignment="{TemplateBinding HorizontalSnapPointsAlignment}"
+                                            VerticalSnapPointsAlignment="{TemplateBinding VerticalSnapPointsAlignment}"
+                                            Padding="{TemplateBinding Padding}">
+                                        <!--
+                                            Margin="{TemplateBinding Padding}"
+                                            Content="{TemplateBinding Content}"
+                                            Extent="{TemplateBinding Extent, Mode=TwoWay}"
+                                            Offset="{TemplateBinding Offset, Mode=TwoWay}"
+                                            Viewport="{TemplateBinding Viewport, Mode=TwoWay}"
+                                        -->
+                                        <!--
+                                            CanHorizontallyScroll="{TemplateBinding CanHorizontallyScroll}"
+                                            CanVerticallyScroll="{TemplateBinding CanVerticallyScroll}"
+                                        -->
                         <ScrollContentPresenter.GestureRecognizers>
-                            <ScrollGestureRecognizer 
-                                CanHorizontallyScroll="{TemplateBinding CanHorizontallyScroll}"
-                                CanVerticallyScroll="{TemplateBinding CanVerticallyScroll}" />
-                        </ScrollContentPresenter.GestureRecognizers>    
+                            <ScrollGestureRecognizer IsScrollInertiaEnabled="{Binding IsScrollInertiaEnabled, RelativeSource={RelativeSource TemplatedParent}}"
+                                                    CanHorizontallyScroll="{Binding CanHorizontallyScroll, ElementName=PART_ContentPresenter}"
+                                                    CanVerticallyScroll="{Binding CanVerticallyScroll, ElementName=PART_ContentPresenter}" />
+                        </ScrollContentPresenter.GestureRecognizers>
                     </ScrollContentPresenter>
-                    <ScrollBar Name="horizontalScrollBar"
-                                        AllowAutoHide="{TemplateBinding AllowAutoHide}"
+                    <ScrollBar Name="PART_HorizontalScrollBar"
                                         Orientation="Horizontal"
+                                        Grid.Row="1"
+                                        Focusable="False" />
+                    <!--
+                                        AllowAutoHide="{TemplateBinding AllowAutoHide}"
                                         Maximum="{TemplateBinding HorizontalScrollBarMaximum}"
                                         Value="{TemplateBinding HorizontalScrollBarValue, Mode=TwoWay}"
                                         ViewportSize="{TemplateBinding HorizontalScrollBarViewportSize}"
                                         Visibility="{TemplateBinding HorizontalScrollBarVisibility}"
-                                        Grid.Row="1"
-                                        Focusable="False"/>
-                    <ScrollBar Name="verticalScrollBar"
-                                        AllowAutoHide="{TemplateBinding AllowAutoHide}"
+                    -->
+                    <ScrollBar Name="PART_VerticalScrollBar"
                                         Orientation="Vertical"
+                                        Grid.Column="1"
+                                        Focusable="False"/>
+                    <!--
+                                        AllowAutoHide="{TemplateBinding AllowAutoHide}"
                                         Maximum="{TemplateBinding VerticalScrollBarMaximum}"
                                         Value="{TemplateBinding VerticalScrollBarValue, Mode=TwoWay}"
                                         ViewportSize="{TemplateBinding VerticalScrollBarViewportSize}"
                                         Visibility="{TemplateBinding VerticalScrollBarVisibility}"
-                                        Grid.Column="1"
-                                        Focusable="False"/>
+                    -->
                     <Panel Grid.Row="1" Grid.Column="1" Background="{DynamicResource AeroScrollViewerCornerBackground}"/>
                 </Grid>
             </ControlTemplate>

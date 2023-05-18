@@ -17,7 +17,7 @@ using System.Reflection;
 
 namespace AvaloniaAero.Demo.Views
 {
-    public class TestPageView : UserControl
+    public partial class TestPageView : UserControl
     {
         CaptionButtons _testCaptionButtons = null;
         TitleBar _testTitleBar = null;
