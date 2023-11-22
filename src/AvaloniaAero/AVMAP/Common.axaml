@@ -4,7 +4,6 @@
 			xmlns:accents="using:Placeholder.Themes.Fluent.Accents">
 	<ResourceDictionary.MergedDictionaries>
 		<ResourceInclude Source="avares://AvaloniaAero/AVMAP/Metrics.axaml"/>
-		<ResourceInclude Source="avares://AvaloniaAero/AVMAP/Brushes.axaml"/>
 
 		<!--TEMP Fluent placeholders-->
 		<ResourceInclude Source="avares://Placeholder.Themes.Fluent/Accents/BaseColorsPalette.xaml" />

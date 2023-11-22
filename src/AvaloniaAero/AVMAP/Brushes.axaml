@@ -202,18 +202,18 @@
 		<GradientStop Offset="1" Color="{DynamicResource AeroScrollBarTrackBackgroundColor2}" />
 	</GradientStops>
 	<LinearGradientBrush x:Key="AeroHorizontalScrollBarTrackBackground" StartPoint="0%,0%" EndPoint="0%,100%"
-						GradientStops="{StaticResource AeroScrollBarTrackBackgroundStops}" />
+						GradientStops="{DynamicResource AeroScrollBarTrackBackgroundStops}" />
 	<LinearGradientBrush x:Key="AeroVerticalScrollBarTrackBackground" StartPoint="0%,0%" EndPoint="100%,0%"
-						GradientStops="{StaticResource AeroScrollBarTrackBackgroundStops}" />
+						GradientStops="{DynamicResource AeroScrollBarTrackBackgroundStops}" />
 
 	<GradientStops x:Key="AeroScrollBarTrackBorderBrushStops">
 		<GradientStop Offset="0" Color="{DynamicResource AeroScrollBarTrackBorderBrushColor0}" />
 		<GradientStop Offset="1" Color="{DynamicResource AeroScrollBarTrackBorderBrushColor1}" />
 	</GradientStops>
 	<LinearGradientBrush x:Key="AeroHorizontalScrollBarTrackBorderBrush" StartPoint="0%,0%" EndPoint="0%,100%"
-						GradientStops="{StaticResource AeroScrollBarTrackBorderBrushStops}" />
+						GradientStops="{DynamicResource AeroScrollBarTrackBorderBrushStops}" />
 	<LinearGradientBrush x:Key="AeroVerticalScrollBarTrackBorderBrush" StartPoint="0%,0%" EndPoint="100%,0%"
-						GradientStops="{StaticResource AeroScrollBarTrackBorderBrushStops}" />
+						GradientStops="{DynamicResource AeroScrollBarTrackBorderBrushStops}" />
 
 
 	<LinearGradientBrush x:Key="AeroVerticalScrollBarButtonIdleBackground" StartPoint="0%,0%" EndPoint="100%,0%">

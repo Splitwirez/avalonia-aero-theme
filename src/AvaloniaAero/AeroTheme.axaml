@@ -5,30 +5,26 @@
         x:Class="AvaloniaAero.AeroTheme">
     <Styles.Resources>
         <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceInclude Source="avares://AvaloniaAero/AVMAP/Common.axaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+
             <ResourceDictionary.ThemeDictionaries>
                 <!-- Light variant includes (light should be the "default", yes?) -->
                 <ResourceDictionary x:Key="Default">
                     <ResourceDictionary.MergedDictionaries>
-                        <ResourceInclude Source="avares://AvaloniaAero/AVMAP/All.axaml" />
                         <ResourceInclude Source="avares://AvaloniaAero/Variant/Light.axaml" />
+                        <ResourceInclude Source="avares://AvaloniaAero/AVMAP/Brushes.axaml"/>
                     </ResourceDictionary.MergedDictionaries>
                 </ResourceDictionary>
-
-                <!-- Epic include fail -->
-                <!--
-                <ResourceDictionary x:Key="Light">
-                    <ResourceDictionary.MergedDictionaries>
-                        <ResourceInclude Source="avares://AvaloniaAero/AVMAP/All.axaml" />
-                        <ResourceInclude Source="avares://AvaloniaAero/Variant/Light.axaml" />
-                    </ResourceDictionary.MergedDictionaries>
-                </ResourceDictionary>
-                -->
+                
 
                 <!-- Dark variant includes -->
                 <ResourceDictionary x:Key="Dark">
                     <ResourceDictionary.MergedDictionaries>
-                        <ResourceInclude Source="avares://AvaloniaAero/AVMAP/All.axaml" />
                         <ResourceInclude Source="avares://AvaloniaAero/Variant/Dark.axaml" />
+                        <ResourceInclude Source="avares://AvaloniaAero/AVMAP/Brushes.axaml"/>
                     </ResourceDictionary.MergedDictionaries>
                 </ResourceDictionary>
             </ResourceDictionary.ThemeDictionaries>
