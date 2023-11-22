@@ -48,9 +48,7 @@
                 <ResourceInclude Source="avares://Placeholder.Themes.Fluent/Controls/SplitView.xaml" />
                 
                 <ResourceInclude Source="avares://AvaloniaAero/Controls/TabControl.axaml" />
-                <!--
                 <ResourceInclude Source="avares://AvaloniaAero/Controls/TabItem.axaml" />
-                -->
                 
                 <ResourceInclude Source="avares://Placeholder.Themes.Fluent/Controls/TabStrip.xaml" />
                 <ResourceInclude Source="avares://Placeholder.Themes.Fluent/Controls/TabStripItem.xaml" />
@@ -97,7 +95,7 @@
     <!--CheckBox-->
     <!--StyleInclude Source="avares://AvaloniaAero/Controls/NumericUpDown.axaml" /-->
     <!--TabControl-->
-    <StyleInclude Source="avares://AvaloniaAero/Controls/TabItem.axaml" />
+    <!--TabItem-->
     <StyleInclude Source="avares://AvaloniaAero/Controls/TextBox.axaml" />
     <!--ToggleButton-->
     <!--ToggleSwitch-->
