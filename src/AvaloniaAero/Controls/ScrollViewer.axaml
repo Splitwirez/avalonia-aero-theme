@@ -15,9 +15,9 @@
                                             VerticalSnapPointsAlignment="{TemplateBinding VerticalSnapPointsAlignment}"
                                             Padding="{TemplateBinding Padding}">
                         <ScrollContentPresenter.GestureRecognizers>
-                            <ScrollGestureRecognizer IsScrollInertiaEnabled="{Binding IsScrollInertiaEnabled, RelativeSource={RelativeSource TemplatedParent}}"
-                                                    CanHorizontallyScroll="{Binding CanHorizontallyScroll, ElementName=PART_ContentPresenter}"
-                                                    CanVerticallyScroll="{Binding CanVerticallyScroll, ElementName=PART_ContentPresenter}" />
+                            <ScrollGestureRecognizer CanHorizontallyScroll="{Binding CanHorizontallyScroll, ElementName=PART_ContentPresenter}"
+                                                    CanVerticallyScroll="{Binding CanVerticallyScroll, ElementName=PART_ContentPresenter}"
+                                                    IsScrollInertiaEnabled="{Binding (ScrollViewer.IsScrollInertiaEnabled), ElementName=PART_ContentPresenter}" />
                         </ScrollContentPresenter.GestureRecognizers>
                     </ScrollContentPresenter>
                     <ScrollBar Name="PART_HorizontalScrollBar"
