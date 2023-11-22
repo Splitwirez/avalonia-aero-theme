@@ -36,11 +36,13 @@ namespace AvaloniaAero.Demo.Views
         public static readonly StyledProperty<WindowState> WindowStateProperty =
             Window.WindowStateProperty.AddOwner<MainView>();
 
+#nullable enable
         public static readonly StyledProperty<string?> TitleProperty =
             Window.TitleProperty.AddOwner<MainView>();
 
         public static readonly StyledProperty<WindowIcon?> IconProperty =
             Window.IconProperty.AddOwner<MainView>();
+#nullable restore
 
         public static readonly StyledProperty<WindowStartupLocation> WindowStartupLocationProperty =
             Window.WindowStartupLocationProperty.AddOwner<MainView>();
@@ -52,6 +54,7 @@ namespace AvaloniaAero.Demo.Views
             set => SetValue(SizeToContentProperty, value);
         }
 
+#nullable enable
         /// <summary>
         /// Gets or sets the title of the window.
         /// </summary>
@@ -60,6 +63,7 @@ namespace AvaloniaAero.Demo.Views
             get => GetValue(TitleProperty);
             set => SetValue(TitleProperty, value);
         }
+#nullable restore
 
         /// <summary>
         /// Gets or sets if the ClientArea is Extended into the Window Decorations (chrome or border).
@@ -137,6 +141,7 @@ namespace AvaloniaAero.Demo.Views
             set => SetValue(CanResizeProperty, value);
         }
 
+#nullable enable
         /// <summary>
         /// Gets or sets the icon of the window.
         /// </summary>
@@ -145,6 +150,8 @@ namespace AvaloniaAero.Demo.Views
             get => GetValue(IconProperty);
             set => SetValue(IconProperty, value);
         }
+#nullable restore
+
         public WindowStartupLocation WindowStartupLocation
         {
             get => GetValue(WindowStartupLocationProperty);
@@ -169,12 +176,6 @@ namespace AvaloniaAero.Demo.Views
         }
 
         public MainView()
-            /*: this(PlatformManager.CreateWindow())
-        {
-        }
-
-        public MainWindow(IWindowImpl impl)
-            : base(impl)*/
         {
             InitializeComponent();
         }
@@ -205,14 +206,12 @@ namespace AvaloniaAero.Demo.Views
                 [!Window.WidthProperty] = this[!MainView.WindowWidthProperty],
                 [!Window.HeightProperty] = this[!MainView.WindowHeightProperty],
             };
-            /*win.Width = WindowWidth;
-            win.Height  = WindowHeight;
-            win[!Window.WidthProperty] = this[!MainView.WindowWidthProperty];
-            win[!Window.HeightProperty] = this[!MainView.WindowHeightProperty];*/
+            
 #if DEBUG
             win.AttachDevTools();
 #endif
             
+#if MULTIMONITOR_NECK_SNAP_PREVENTION_HACK
             /*
             dumb hack so I don't have to break my neck until the fix for
             https://github.com/AvaloniaUI/Avalonia/issues/9286
@@ -222,9 +221,12 @@ namespace AvaloniaAero.Demo.Views
             {
                 win.Initialized += Window_Initialized;
             }
+#endif
+
             return win;
         }
 
+#if MULTIMONITOR_NECK_SNAP_PREVENTION_HACK
         const int _WINDOW_HACK_INSET_EXTENT = 10; //15;
         static readonly PixelPoint _WINDOW_HACK_INSET = new PixelPoint(_WINDOW_HACK_INSET_EXTENT, _WINDOW_HACK_INSET_EXTENT);
         void Window_Initialized(object sender, EventArgs e)
@@ -234,50 +236,27 @@ namespace AvaloniaAero.Demo.Views
 
             Dispatcher.UIThread.Post(() =>
             {
-                var leastTall = win.Screens.All.MinBy(x => x.Bounds.Height);
-                win.Position = leastTall.Bounds.TopLeft + _WINDOW_HACK_INSET;
+                Screen leastTall = null;
+                double leastTallHeight = double.MaxValue;
+                var screens = win.Screens.All;
+
+                foreach (var screen in screens)
+                {
+                    var screenHeight = screen.Bounds.Height;
+                    if (screenHeight < leastTallHeight)
+                    {
+                        leastTall = screen;
+                        leastTallHeight = screenHeight;
+                    }
+                }
+                
+                if (leastTall != null)
+                {
+                    win.Position = leastTall.Bounds.TopLeft + _WINDOW_HACK_INSET;
+                }
             });
             win.Initialized -= Window_Initialized;
         }
-    }
-
-    //https://stackoverflow.com/a/914198
-    //https://github.com/morelinq/MoreLINQ
-    //thanks lol
-    public static class MoreLINQExtracts
-    {
-        public static TSource MinBy<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> selector)
-        {
-            return source.MinBy(selector, null);
-        }
-
-        public static TSource MinBy<TSource, TKey>(this IEnumerable<TSource> source,
-            Func<TSource, TKey> selector, IComparer<TKey> comparer)
-        {
-            if (source == null) throw new ArgumentNullException("source");
-            if (selector == null) throw new ArgumentNullException("selector");
-            comparer ??= Comparer<TKey>.Default;
-
-            using (var sourceIterator = source.GetEnumerator())
-            {
-                if (!sourceIterator.MoveNext())
-                {
-                    throw new InvalidOperationException("Sequence contains no elements");
-                }
-                var min = sourceIterator.Current;
-                var minKey = selector(min);
-                while (sourceIterator.MoveNext())
-                {
-                    var candidate = sourceIterator.Current;
-                    var candidateProjected = selector(candidate);
-                    if (comparer.Compare(candidateProjected, minKey) < 0)
-                    {
-                        min = candidate;
-                        minKey = candidateProjected;
-                    }
-                }
-                return min;
-            }
-        }
+#endif
     }
 }

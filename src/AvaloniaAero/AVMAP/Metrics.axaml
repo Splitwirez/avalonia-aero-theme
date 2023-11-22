@@ -6,10 +6,17 @@
     <sys:Double x:Key="AeroFontSizeLarge">16</sys:Double>
 
     <StaticResource x:Key="ControlContentThemeFontSize" ResourceKey="AeroFontSizeNormal" />
-
-    <sys:Double x:Key="AeroScrollBarThickness">17</sys:Double>
-    <sys:Double x:Key="AeroSmallScrollBarThickness">7</sys:Double>
-    <sys:Double x:Key="AeroScrollBarThumbThickness">17</sys:Double>
-
+    
     <FontFamily x:Key="ContentControlThemeFontFamily">avares://AvaloniaAero/Fonts#Inter</FontFamily>
+
+
+
+
+    <sys:Double x:Key="AeroScrollBarThickness">18</sys:Double>
+    <sys:Double x:Key="AeroSmallScrollBarThickness">9</sys:Double>
+    <sys:Double x:Key="AeroScrollBarLineButtonExtent">16</sys:Double>
+    <StaticResource x:Key="AeroScrollBarThumbMinimumExtent" ResourceKey="AeroScrollBarLineButtonExtent" />
+    
+    <QuinticEaseInOut x:Key="AeroScrollExpandEase"/>
+    <sys:TimeSpan x:Key="AeroScrollExpandDuration">0:0:0.25</sys:TimeSpan>
 </ResourceDictionary>

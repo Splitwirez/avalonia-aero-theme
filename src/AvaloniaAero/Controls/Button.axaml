@@ -22,20 +22,6 @@
                                 BorderBrush="{DynamicResource AeroButtonIdleInnerBorderBrush}"
                                 BorderThickness="1"/>
                     </Border>
-                    <!--
-                    <Border Classes="aeroState idle" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
-                        <Border Background="{TemplateBinding Background}" BorderBrush="{DynamicResource AeroButtonIdleInnerBorderBrush}" BorderThickness="1"/>
-                    </Border>
-                    <Border Classes="aeroState pointerover" BorderBrush="{DynamicResource AeroButtonHoverOuterBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
-                        <Border Background="{DynamicResource AeroButtonHoverBackground}" BorderBrush="{DynamicResource AeroButtonHoverInnerBorderBrush}" BorderThickness="1"/>
-                    </Border>
-                    <Border Classes="aeroState pressed" BorderBrush="{DynamicResource AeroButtonPressedOuterBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
-                        <Border Background="{DynamicResource AeroButtonPressedBackground}" BorderBrush="{DynamicResource AeroButtonPressedInnerBorderBrush}" BorderThickness="1,1,1,0"/>
-                    </Border>
-                    <Border Classes="aeroState disabled" BorderBrush="{DynamicResource AeroButtonDisabledOuterBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
-                        <Border Background="{DynamicResource AeroButtonDisabledBackground}" BorderBrush="{DynamicResource AeroButtonDisabledInnerBorderBrush}" BorderThickness="1"/>
-                    </Border>
-                    -->
                     <ContentPresenter x:Name="PART_ContentPresenter"
                                     ContentTemplate="{TemplateBinding ContentTemplate}"
                                     Content="{TemplateBinding Content}"
@@ -46,20 +32,15 @@
             </ControlTemplate>
         </Setter>
         
-        <!--
-        <Style Selector="^ /template/ Border">
-        -->
         <Style Selector="^ /template/ Border#Outer">
             <Setter Property="CornerRadius" Value="3"/>
         </Style>
-        <!--
-        <Style Selector="^ /template/ Border > Border">
-        -->
         <Style Selector="^ /template/ Border#Inner">
             <Setter Property="CornerRadius" Value="2"/>
         </Style>
 
 
+        <!-- pointerover (hover) state -->
         <Style Selector="^:pointerover /template/ Border#Outer">
             <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonHoverOuterBorderBrush}" />
         </Style>
@@ -69,6 +50,7 @@
         </Style>
 
 
+        <!-- pressed state -->
         <Style Selector="^:pressed /template/ Border#Outer">
             <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonPressedOuterBorderBrush}" />
         </Style>
@@ -78,6 +60,7 @@
         </Style>
 
 
+        <!-- disabled state -->
         <Style Selector="^:disabled /template/ Border#Outer">
             <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonDisabledOuterBorderBrush}" />
         </Style>

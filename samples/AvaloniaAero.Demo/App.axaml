@@ -7,16 +7,7 @@
         <local:ViewLocator/>
     </Application.DataTemplates>
     
-    <!--Application.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceInclude Source="avares://AvaloniaAero/Variant/Light.axaml"/>
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Application.Resources-->
-    
     <Application.Styles>
-        <!--StyleInclude Source="avares://AvaloniaAero/AeroBase.axaml"/-->
         <aero:AeroTheme />
     </Application.Styles>
 </Application>

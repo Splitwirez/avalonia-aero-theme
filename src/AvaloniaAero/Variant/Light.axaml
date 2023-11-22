@@ -176,19 +176,12 @@
 
 	<Color x:Key="AeroScrollBarThumbIconStrokeColor">#FFFFFFFF</Color>
 
-	<Color x:Key="AeroHorizontalScrollBarTrackBackgroundColor0">#FFE3E3E3</Color>
-	<Color x:Key="AeroHorizontalScrollBarTrackBackgroundColor1">#FFEFEFEF</Color>
-	<Color x:Key="AeroHorizontalScrollBarTrackBackgroundColor2">#FFF2F2F2</Color>
+	<Color x:Key="AeroScrollBarTrackBackgroundColor0">#FFE3E3E3</Color>
+	<Color x:Key="AeroScrollBarTrackBackgroundColor1">#FFEFEFEF</Color>
+	<Color x:Key="AeroScrollBarTrackBackgroundColor2">#FFF2F2F2</Color>
 
-	<Color x:Key="AeroHorizontalScrollBarTrackBorderBrushColor0">#FFF8F8F8</Color>
-	<Color x:Key="AeroHorizontalScrollBarTrackBorderBrushColor1">#FFEAEAEA</Color>
-
-	<Color x:Key="AeroVerticalScrollBarTrackBackgroundColor0">#FFE3E3E3</Color>
-	<Color x:Key="AeroVerticalScrollBarTrackBackgroundColor1">#FFEFEFEF</Color>
-	<Color x:Key="AeroVerticalScrollBarTrackBackgroundColor2">#FFF2F2F2</Color>
-
-	<Color x:Key="AeroVerticalScrollBarTrackBorderBrushColor0">#FFF8F8F8</Color>
-	<Color x:Key="AeroVerticalScrollBarTrackBorderBrushColor1">#FFEAEAEA</Color>
+	<Color x:Key="AeroScrollBarTrackBorderBrushColor0">#FFF8F8F8</Color>
+	<Color x:Key="AeroScrollBarTrackBorderBrushColor1">#FFEAEAEA</Color>
 
 	<Color x:Key="AeroVerticalScrollBarButtonIdleBackgroundColor0">#FFF2F2F2</Color>
 	<Color x:Key="AeroVerticalScrollBarButtonIdleBackgroundColor1">#FFEBEBEB</Color>

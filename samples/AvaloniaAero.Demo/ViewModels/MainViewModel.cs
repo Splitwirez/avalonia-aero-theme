@@ -18,7 +18,7 @@ namespace AvaloniaAero.Demo.ViewModels
             new ToggleSwitchPageViewModel(),
             new ScrollViewerPageViewModel(),
             new BoxesPageViewModel(),
-            new SpinnersPageViewModel(),
+            //new SpinnersPageViewModel(),
             //new TestPageViewModel(),
         };
         public ObservableCollection<PageViewModelBase> Pages
@@ -35,8 +35,8 @@ namespace AvaloniaAero.Demo.ViewModels
             set => RASIC(ref _currentPage, value);
         }
 
-        bool _areLightsOn = true;
         
+        bool _areLightsOn = Application.Current.RequestedThemeVariant != ThemeVariant.Dark;
         public bool AreLightsOn
         {
             get => _areLightsOn;
