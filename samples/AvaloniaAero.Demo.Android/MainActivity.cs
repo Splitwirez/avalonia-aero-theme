@@ -11,7 +11,8 @@ namespace AvaloniaAero.Demo
     public class SplashActivity : AvaloniaSplashActivity<App>*/
 
     //[Activity(Label = "AvaloniaAero.Demo", Theme = "@style/AvaloniaAeroDemo.NoActionBar", Icon = "@drawable/AppIcon", LaunchMode = LaunchMode.SingleTop, ConfigurationChanges = (ConfigChanges.Orientation | ConfigChanges.ScreenSize))]
-    [Activity(Label = "AvaloniaAero.Demo", Theme = "@style/AvaloniaAeroDemo.NoActionBar", Icon = "@drawable/AppIcon", MainLauncher = true, ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize | ConfigChanges.UiMode)]
+    //[Activity(Label = "AvaloniaAero.Demo", Theme = "@style/AvaloniaAeroDemo.NoActionBar", Icon = "@drawable/AppIcon", MainLauncher = true, ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize | ConfigChanges.UiMode)]
+    [Activity(Label = "AvaloniaAero.Demo", Theme = "@style/AvaloniaAeroDemo.Splash", Icon = "@drawable/AppIcon", MainLauncher = true, ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize | ConfigChanges.UiMode)]
     public class MainActivity : AvaloniaMainActivity<App>
     {
         /*protected override AppBuilder CustomizeAppBuilder(AppBuilder builder)
