@@ -43,7 +43,7 @@
         <Setter Property="TextBlock.Foreground" Value="{Binding Foreground, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
     </Style>
     <Style Selector=":is(TemplatedControl):disabled /template/ ContentPresenter#PART_ContentPresenter">
-        <Setter Property="TextBlock.Foreground" Value="{DynamicResource aeroState disabledForeground}"/>
+        <Setter Property="TextBlock.Foreground" Value="{DynamicResource AeroDisabledForeground}"/>
     </Style>
 
     

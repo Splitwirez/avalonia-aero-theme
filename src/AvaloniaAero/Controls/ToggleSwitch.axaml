@@ -54,7 +54,7 @@
                                         Content="{TemplateBinding OffContent}"
                                         ContentTemplate="{TemplateBinding OffContentTemplate}"
                                         HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
 
                         <ContentPresenter x:Name="PART_OnContentPresenter"
                                         Grid.RowSpan="3"
@@ -62,32 +62,17 @@
                                         Content="{TemplateBinding OnContent}"
                                         ContentTemplate="{TemplateBinding OnContentTemplate}"
                                         HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
 
-                        <Panel Grid.Row="1"
-                            Height="22"
-                            Width="56">
-                            <Border Classes="aeroState idle"
-                                    Background="{DynamicResource AeroTextBoxIdleBackground}"
-                                    BorderBrush="{DynamicResource AeroTextBoxIdleBorderBrush}"
-                                    BorderThickness="1"
-                                    CornerRadius="10"/>
-                            <Border Classes="aeroState pointerover"
-                                    Background="{DynamicResource AeroTextBoxHoverBackground}"
-                                    BorderBrush="{DynamicResource AeroTextBoxHoverBorderBrush}"
-                                    BorderThickness="1"
-                                    CornerRadius="10"/>
-                            <Border Classes="aeroState checked"
-                                    Background="{DynamicResource AeroToggleSwitchCheckedBackground}"
-                                    BorderBrush="{DynamicResource AeroToggleSwitchCheckedBorderBrush}"
-                                    BorderThickness="1"
-                                    CornerRadius="10"/>
-                            <Border Classes="aeroState disabled"
-                                    Background="{DynamicResource AeroTextBoxDisabledBackground}"
-                                    BorderBrush="{DynamicResource AeroTextBoxDisabledBorderBrush}"
-                                    BorderThickness="1"
-                                    CornerRadius="10"/>
-                        </Panel>
+                        <Border x:Name="Bg"
+                                Classes="aeroState2"
+                                Background="{DynamicResource AeroTextBoxIdleBackground}"
+                                BorderBrush="{DynamicResource AeroTextBoxIdleBorderBrush}"
+                                BorderThickness="1"
+                                CornerRadius="10"
+                                Height="22"
+                                Width="56"
+                                Grid.Row="1" />
 
                         <Canvas x:Name="PART_SwitchKnob" Grid.Row="1"
                                 HorizontalAlignment="Left"
@@ -98,52 +83,15 @@
                                 HorizontalAlignment="Left"
                                 Width="32"
                                 Height="16">
-                                <Border Classes="aeroState idle"
+                                <Border x:Name="KnobOuter" Classes="aeroState2"
                                         BorderBrush="{DynamicResource AeroButtonIdleOuterBorderBrush}"
                                         BorderThickness="1"
-                                        CornerRadius="8"
-                                        IsVisible="{Binding !IsPressed, RelativeSource={RelativeSource Mode=TemplatedParent}}">
-                                    <Border Background="{DynamicResource AeroButtonIdleBackground}"
+                                        CornerRadius="8">
+                                    <Border x:Name="KnobInner" Classes="aeroState2"
+                                            Background="{DynamicResource AeroButtonIdleBackground}"
                                             BorderBrush="{DynamicResource AeroButtonIdleInnerBorderBrush}"
                                             BorderThickness="1"
-                                            CornerRadius="6"/>
-                                </Border>
-                                <Border Classes="aeroState idle"
-                                        BorderBrush="{DynamicResource AeroButtonHoverOuterBorderBrush}"
-                                        BorderThickness="1"
-                                        CornerRadius="8"
-                                        IsVisible="{TemplateBinding IsPressed}">
-                                    <Border Background="{DynamicResource AeroButtonHoverBackground}"
-                                            BorderBrush="{DynamicResource AeroButtonHoverInnerBorderBrush}"
-                                            BorderThickness="1"
-                                            CornerRadius="6"/>
-                                </Border>
-                                <Border Classes="aeroState pointerover"
-                                        BorderBrush="{DynamicResource AeroButtonHoverOuterBorderBrush}"
-                                        BorderThickness="1"
-                                        CornerRadius="8">
-                                    <Border Background="{DynamicResource AeroButtonHoverBackground}"
-                                            BorderBrush="{DynamicResource AeroButtonHoverInnerBorderBrush}"
-                                            BorderThickness="1"
-                                            CornerRadius="6"/>
-                                </Border>
-                                <Border Classes="aeroState pressed"
-                                        BorderBrush="{DynamicResource AeroButtonPressedOuterBorderBrush}"
-                                        BorderThickness="1"
-                                        CornerRadius="8">
-                                    <Border Background="{DynamicResource AeroButtonPressedBackground}"
-                                            BorderBrush="{DynamicResource AeroButtonPressedInnerBorderBrush}"
-                                            BorderThickness="1,1,1,0"
-                                            CornerRadius="6"/>
-                                </Border>
-                                <Border Classes="aeroState disabled"
-                                        BorderBrush="{DynamicResource AeroButtonDisabledOuterBorderBrush}"
-                                        BorderThickness="1"
-                                        CornerRadius="8">
-                                    <Border Background="{DynamicResource AeroButtonDisabledBackground}"
-                                            BorderBrush="{DynamicResource AeroButtonDisabledInnerBorderBrush}"
-                                            BorderThickness="1"
-                                            CornerRadius="6"/>
+                                            CornerRadius="6" />
                                 </Border>
                             </Panel>
                         </Canvas>
@@ -153,35 +101,85 @@
         </Setter>
 
 
+        <!-- pointerover (hover) state -->
+        <Style Selector="^:pointerover">
+            <Style Selector="^ /template/ Border#Bg">
+                <Setter Property="Background" Value="{DynamicResource AeroTextBoxHoverBackground}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource AeroTextBoxHoverBorderBrush}" />
+            </Style>
+            
+            <Style Selector="^ /template/ Border#KnobOuter">
+                <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonHoverOuterBorderBrush}" />
+            </Style>
+            <Style Selector="^ /template/ Border#KnobInner">
+                <Setter Property="Background" Value="{DynamicResource AeroButtonHoverBackground}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonHoverInnerBorderBrush}" />
+            </Style>
+        </Style>
 
 
-        <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+        <!-- pressed state -->
+        <Style Selector="^:pressed">
+            <Style Selector="^ /template/ Border#KnobOuter">
+                <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonPressedOuterBorderBrush}" />
+            </Style>
+            <Style Selector="^ /template/ Border#KnobInner">
+                <Setter Property="Background" Value="{DynamicResource AeroButtonPressedBackground}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonPressedInnerBorderBrush}" />
+            </Style>
+        </Style>
+
+
+        <!-- unchecked state -->
+        <Style Selector="^:unchecked">
+            <Style Selector="^ /template/ ContentPresenter#PART_OnContentPresenter">
+                <Setter Property="Opacity" Value="0" />
+                <Setter Property="IsHitTestVisible" Value="False" />
+            </Style>
+        </Style>
+
+
+        <!-- checked state -->
+        <Style Selector="^:checked">
+            <Style Selector="^ /template/ Border#Bg">
+                <Setter Property="Background" Value="{DynamicResource AeroToggleSwitchCheckedBackground}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource AeroToggleSwitchCheckedBorderBrush}" />
+            </Style>
+            <Style Selector="^ /template/ ContentPresenter#PART_OffContentPresenter">
+                <Setter Property="Opacity" Value="0" />
+                <Setter Property="IsHitTestVisible" Value="False" />
+            </Style>
+        </Style>
+
+
+        <!-- disabled state -->
+        <Style Selector="^:disabled">
+            <Style Selector="^ /template/ Border#Bg">
+                <Setter Property="Background" Value="{DynamicResource AeroTextBoxDisabledBackground}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource AeroTextBoxDisabledBorderBrush}" />
+            </Style>
+            
+            <Style Selector="^ /template/ Border#KnobOuter">
+                <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonDisabledOuterBorderBrush}" />
+            </Style>
+            <Style Selector="^ /template/ Border#KnobInner">
+                <Setter Property="Background" Value="{DynamicResource AeroButtonDisabledBackground}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonDisabledInnerBorderBrush}" />
+            </Style>
+        </Style>
+
+
+
+
+
+        <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter:not(:empty)">
             <Setter Property="Margin" Value="{DynamicResource ToggleSwitchTopHeaderMargin}" />
-        </Style>
-        <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter:empty">
-            <Setter Property="Margin" Value="0" />
-        </Style>
-
-
-        <Style Selector="^:checked /template/ ContentPresenter#PART_OffContentPresenter">
-            <Setter Property="Opacity" Value="0"/>
-        </Style>
-        <Style Selector="^:checked /template/ ContentPresenter#PART_OnContentPresenter">
-            <Setter Property="Opacity" Value="1"/>
-        </Style>
-
-
-        <Style Selector="^:unchecked /template/ ContentPresenter#PART_OffContentPresenter">
-            <Setter Property="Opacity" Value="1"/>
-        </Style>
-        <Style Selector="^:unchecked /template/ ContentPresenter#PART_OnContentPresenter">
-            <Setter Property="Opacity" Value="0"/>
         </Style>
 
         <Style Selector="^:not(:dragging) /template/ Panel#PART_MovingKnobs">
             <Setter Property="Transitions">
                 <Transitions>
-                    <DoubleTransition Property="Canvas.Left" Duration="0:0:0.25" Easing="QuinticEaseOut"/>
+                    <DoubleTransition Property="Canvas.Left" Duration="0:0:0.25" Easing="QuinticEaseOut" />
                 </Transitions>
             </Setter>
         </Style>

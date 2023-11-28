@@ -20,7 +20,7 @@
                                 Classes="aeroState2"
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{DynamicResource AeroButtonIdleInnerBorderBrush}"
-                                BorderThickness="1"/>
+                                BorderThickness="1" />
                     </Border>
                     <ContentPresenter x:Name="PART_ContentPresenter"
                                     ContentTemplate="{TemplateBinding ContentTemplate}"
@@ -41,35 +41,41 @@
 
 
         <!-- pointerover (hover) state -->
-        <Style Selector="^:pointerover /template/ Border#Outer">
-            <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonHoverOuterBorderBrush}" />
-        </Style>
-        <Style Selector="^:pointerover /template/ Border#Inner">
-            <Setter Property="Background" Value="{DynamicResource AeroButtonHoverBackground}" />
-            <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonHoverInnerBorderBrush}" />
+        <Style Selector="^:pointerover">
+            <Style Selector="^ /template/ Border#Outer">
+                <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonHoverOuterBorderBrush}" />
+            </Style>
+            <Style Selector="^ /template/ Border#Inner">
+                <Setter Property="Background" Value="{DynamicResource AeroButtonHoverBackground}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonHoverInnerBorderBrush}" />
+            </Style>
         </Style>
 
 
         <!-- pressed state -->
-        <Style Selector="^:pressed /template/ Border#Outer">
-            <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonPressedOuterBorderBrush}" />
-        </Style>
-        <Style Selector="^:pressed /template/ Border#Inner">
-            <Setter Property="Background" Value="{DynamicResource AeroButtonPressedBackground}" />
-            <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonPressedInnerBorderBrush}" />
+        <Style Selector="^:pressed">
+            <Style Selector="^ /template/ Border#Outer">
+                <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonPressedOuterBorderBrush}" />
+            </Style>
+            <Style Selector="^ /template/ Border#Inner">
+                <Setter Property="Background" Value="{DynamicResource AeroButtonPressedBackground}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonPressedInnerBorderBrush}" />
+            </Style>
         </Style>
 
 
         <!-- disabled state -->
-        <Style Selector="^:disabled /template/ Border#Outer">
-            <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonDisabledOuterBorderBrush}" />
-        </Style>
-        <Style Selector="^:disabled /template/ Border#Inner">
-            <Setter Property="Background" Value="{DynamicResource AeroButtonDisabledBackground}" />
-            <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonDisabledInnerBorderBrush}" />
-        </Style>
-        <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
-            <Setter Property="TextBlock.Foreground" Value="{DynamicResource AeroButtonDisabledForeground}"/>
+        <Style Selector="^:disabled">
+            <Style Selector="^ /template/ Border#Outer">
+                <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonDisabledOuterBorderBrush}" />
+            </Style>
+            <Style Selector="^ /template/ Border#Inner">
+                <Setter Property="Background" Value="{DynamicResource AeroButtonDisabledBackground}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonDisabledInnerBorderBrush}" />
+            </Style>
+            <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+                <Setter Property="TextBlock.Foreground" Value="{DynamicResource AeroButtonDisabledForeground}"/>
+            </Style>
         </Style>
     </ControlTheme>
 </ResourceDictionary>
