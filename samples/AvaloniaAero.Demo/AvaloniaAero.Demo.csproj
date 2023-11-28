@@ -1,5 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk">
-    <Import Project="../../build/dotnet6.props" />
+    <Import Project="../../build/dotnet-version.props" />
     <PropertyGroup>
         <OutputType>Library</OutputType>
         <TargetFrameworks>$(ExtraTargetFrameworks)netstandard2.0</TargetFrameworks>

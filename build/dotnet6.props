@@ -1,8 +1,0 @@
-<Project>
-	<PropertyGroup>
-		<ExtraTargetFrameworks></ExtraTargetFrameworks>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(UseDotnet6SDK)'=='True'">
-		<ExtraTargetFrameworks>net6.0;</ExtraTargetFrameworks>
-	</PropertyGroup>
-</Project>

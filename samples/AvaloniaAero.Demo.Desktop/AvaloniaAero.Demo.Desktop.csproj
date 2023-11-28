@@ -1,5 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk">
-    <Import Project="../../build/dotnet6.props" />
+    <Import Project="../../build/dotnet-version.props" />
     <PropertyGroup>
         <OutputType>WinExe</OutputType>
         <TargetFrameworks>$(ExtraTargetFrameworks)net5.0</TargetFrameworks>

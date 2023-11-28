@@ -1,0 +1,8 @@
+<Project>
+	<PropertyGroup>
+		<ExtraTargetFrameworks></ExtraTargetFrameworks>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(AdditionalTargetFrameworks)' != ''">
+		<ExtraTargetFrameworks>$(AdditionalTargetFrameworks);</ExtraTargetFrameworks>
+	</PropertyGroup>
+</Project>
