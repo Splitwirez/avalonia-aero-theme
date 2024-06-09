@@ -16,7 +16,6 @@
 		<AvaloniaResource Include="Fonts2/**" />
 		<AvaloniaResource Include="Resources/**" />
 
-		
-		<ProjectReference Include="../Placeholder.Themes.Fluent/Placeholder.Themes.Fluent.csproj" />
+		<ProjectReference Include="../AvaloniaAero.Placeholders.Themes.Fluent/AvaloniaAero.Placeholders.Themes.Fluent.csproj" />
 	</ItemGroup>
 </Project>

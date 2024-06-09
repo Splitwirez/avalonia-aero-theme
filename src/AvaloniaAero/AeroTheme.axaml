@@ -33,5 +33,5 @@
     
     <!-- Styles included here -->
     <StyleInclude Source="avares://AvaloniaAero/AVMAP/StyleTrailMix.axaml" />
-    <StyleInclude Source="avares://AvaloniaAero/AVMAP/comctlAVA.axaml" />
+    <StyleInclude Source="avares://AvaloniaAero/AVMAP/Controls.axaml" />
 </Styles>

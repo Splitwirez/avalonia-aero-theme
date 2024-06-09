@@ -1,5 +1,6 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
-            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			x:ClassModifier="Internal">
 	<!--Brightness -100, Contrast 0; then Brightness -75, Contrast 12 in PDN-->
 	<Color x:Key="AeroForegroundColor">#FFFFFFFF</Color>
 	<Color x:Key="AeroDisabledForegroundColor">#FF7F7F7F</Color>
@@ -163,6 +164,10 @@
 	<Color x:Key="AeroTextBoxDisabledBackgroundColor">#FF797979</Color>
 
 	<Color x:Key="AeroTextBoxDisabledBorderBrushColor">#FF565656</Color>
+
+
+	<Color x:Key="AeroTextBoxErrorBorderBrushColor0">#FF510000</Color>
+	<Color x:Key="AeroTextBoxErrorBorderBrushColor1">#FF800000</Color>
 
 
 

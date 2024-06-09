@@ -1,16 +1,17 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-			xmlns:fluent="using:Placeholder.Themes.Fluent"
-			xmlns:accents="using:Placeholder.Themes.Fluent.Accents">
+			xmlns:fluent="using:AvaloniaAero.Placeholders.Themes.Fluent"
+			xmlns:accents="using:AvaloniaAero.Placeholders.Themes.Fluent.Accents"
+			x:ClassModifier="Internal">
 	<ResourceDictionary.MergedDictionaries>
 		<ResourceInclude Source="avares://AvaloniaAero/AVMAP/Metrics.axaml"/>
 
 		<!--TEMP Fluent placeholders-->
-		<ResourceInclude Source="avares://Placeholder.Themes.Fluent/Accents/BaseColorsPalette.xaml" />
+		<ResourceInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Accents/BaseColorsPalette.xaml" />
 		<accents:SystemAccentColors />
 		<fluent:ColorPaletteResourcesCollection />
 
-		<ResourceInclude Source="avares://Placeholder.Themes.Fluent/Accents/BaseResources.xaml" />
-		<ResourceInclude Source="avares://Placeholder.Themes.Fluent/Accents/FluentControlResources.xaml" />
+		<ResourceInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Accents/BaseResources.xaml" />
+		<ResourceInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Accents/FluentControlResources.xaml" />
 	</ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

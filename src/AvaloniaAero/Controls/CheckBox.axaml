@@ -117,10 +117,9 @@
                 <Setter Property="Background" Value="{DynamicResource AeroCheckBoxDisabledBackground}" />
                 <Setter Property="BorderBrush" Value="{DynamicResource AeroCheckBoxDisabledBorderBrush}" />
             </Style>
-            <Style Selector="^ /template/ Border#Mid">
-                <Setter Property="BorderBrush" Value="Transparent" />
-            </Style>
-            <Style Selector="^ /template/ Border#Inner">
+            <Style Selector="^ /template/ Border#Mid,
+                            ^ /template/ Border#Inner">
+                <Setter Property="Background" Value="Transparent" />
                 <Setter Property="BorderBrush" Value="Transparent" />
             </Style>
 

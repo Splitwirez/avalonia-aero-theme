@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
 using Avalonia;
 using Avalonia.Styling;
-using AvaloniaAero;
-using AvaloniaAero.Demo;
 
 namespace AvaloniaAero.Demo.ViewModels
 {
@@ -15,9 +11,10 @@ namespace AvaloniaAero.Demo.ViewModels
         ObservableCollection<PageViewModelBase> _pages = new ObservableCollection<PageViewModelBase>()
         {
             new ButtonsPageViewModel(),
-            new ToggleSwitchPageViewModel(),
+            //new ListBoxPageViewModel(),
             new ScrollViewerPageViewModel(),
-            new BoxesPageViewModel(),
+            new TextBoxPageViewModel(),
+            new ToggleSwitchPageViewModel(),
             //new SpinnersPageViewModel(),
             //new TestPageViewModel(),
         };

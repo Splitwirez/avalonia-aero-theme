@@ -1,5 +1,6 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
-            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			x:ClassModifier="Internal">
 	<SolidColorBrush x:Key="AeroForeground" Color="{DynamicResource AeroForegroundColor}" />
 	<SolidColorBrush x:Key="AeroDisabledForeground" Color="{DynamicResource AeroDisabledForegroundColor}" />
 
@@ -184,6 +185,11 @@
 
 	<SolidColorBrush x:Key="AeroTextBoxDisabledBackground" Color="{DynamicResource AeroTextBoxDisabledBackgroundColor}" />
 	<SolidColorBrush x:Key="AeroTextBoxDisabledBorderBrush" Color="{DynamicResource AeroTextBoxDisabledBorderBrushColor}" />
+	
+	<LinearGradientBrush x:Key="AeroTextBoxErrorBorderBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroTextBoxErrorBorderBrushColor0}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroTextBoxErrorBorderBrushColor1}" />
+	</LinearGradientBrush>
 	
     
     

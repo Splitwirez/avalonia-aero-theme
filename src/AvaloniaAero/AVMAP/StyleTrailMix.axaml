@@ -1,5 +1,6 @@
 <Styles xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:ClassModifier="Internal">
     <Styles.Resources>
         <x:TimeSpan x:Key="AeroFadeDuration">0:0:0.125</x:TimeSpan>
         <x:TimeSpan x:Key="AeroFadeOutDuration">0:0:0.375</x:TimeSpan>
