@@ -264,4 +264,9 @@
 	
 	<Color x:Key="AeroMenuBarItemSelectedBackgroundColor">#20000000</Color>
 	<Color x:Key="AeroMenuBarItemSelectedBorderBrushColor">#A0000000</Color>
+
+
+
+
+	<Color x:Key="AeroGroupBoxBorderBrushColor">#FFD5DFE5</Color>
 </ResourceDictionary>

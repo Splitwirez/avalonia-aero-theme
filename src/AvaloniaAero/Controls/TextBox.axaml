@@ -106,8 +106,8 @@
         <Setter Property="FontSize" Value="{DynamicResource AeroFontSizeNormal}"/>
         <Setter Property="SelectionBrush" Value="{DynamicResource HighlightBrush}"/>
         <Setter Property="SelectionForegroundBrush" Value="{DynamicResource HighlightForegroundBrush}"/>
+        <Setter Property="CornerRadius" Value="{DynamicResource AeroControlCornerRadius}" />
         <!--
-        <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
         <Setter Property="MinHeight" Value="{DynamicResource TextControlThemeMinHeight}" />
         <Setter Property="MinWidth" Value="{DynamicResource TextControlThemeMinWidth}" />
         -->
@@ -118,13 +118,15 @@
             <ControlTemplate>
                 <DataValidationErrors>
                     <Panel>
-                        <Border x:Name="PART_BorderElement"
+                        <Border x:Name="BgElement"
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
-                                CornerRadius="3"
+                                CornerRadius="{TemplateBinding CornerRadius}" />
+                        <!--
                                 MinWidth="{TemplateBinding MinWidth}"
-                                MinHeight="{TemplateBinding MinHeight}" />
+                                MinHeight="{TemplateBinding MinHeight}"
+                        -->
                         <Grid ColumnDefinitions="Auto,*,Auto"
                             Margin="{TemplateBinding BorderThickness}">
                             <ContentPresenter Grid.Column="0"
@@ -190,7 +192,7 @@
 
         <!-- Disabled State -->
         <Style Selector="^:disabled">
-            <Style Selector="^ /template/ Border#PART_BorderElement">
+            <Style Selector="^ /template/ Border#BgElement">
                 <Setter Property="Background" Value="{DynamicResource AeroTextBoxDisabledBackground}" />
                 <Setter Property="BorderBrush" Value="{DynamicResource AeroTextBoxDisabledBorderBrush}" />
             </Style>
@@ -200,9 +202,9 @@
             </Style>
         </Style>
 
-        <!-- PointerOver State-->
+        <!-- PointerOver State -->
         <Style Selector="^:pointerover">
-            <Style Selector="^ /template/ Border#PART_BorderElement">
+            <Style Selector="^ /template/ Border#BgElement">
                 <Setter Property="BorderBrush" Value="{DynamicResource AeroTextBoxHoverBorderBrush}"/>
                 <Setter Property="Background" Value="{DynamicResource AeroTextBoxHoverBackground}" />
             </Style>
@@ -210,13 +212,14 @@
 
         <!-- Focused State -->
         <Style Selector="^:focus">
-            <Style Selector="^ /template/ Border#PART_BorderElement">
+            <Style Selector="^ /template/ Border#BgElement">
                 <Setter Property="Background" Value="{DynamicResource AeroTextBoxFocusBackground}" />
                 <Setter Property="BorderBrush" Value="{DynamicResource AeroTextBoxFocusBorderBrush}" />
             </Style>
         </Style>
 
-        <Style Selector="^:error /template/ Border#PART_BorderElement">
+        <!-- Error State -->
+        <Style Selector="^:error /template/ Border#BgElement">
             <Setter Property="BorderBrush" Value="{DynamicResource AeroTextBoxErrorBorderBrush}" />
         </Style>
 

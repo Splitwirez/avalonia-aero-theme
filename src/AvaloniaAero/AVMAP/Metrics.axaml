@@ -6,6 +6,8 @@
     <sys:Double x:Key="AeroFontSizeNormal">12</sys:Double>
     <sys:Double x:Key="AeroFontSizeLarge">16</sys:Double>
 
+    <CornerRadius x:Key="AeroControlCornerRadius">3</CornerRadius>
+
     <StaticResource x:Key="ControlContentThemeFontSize" ResourceKey="AeroFontSizeNormal" />
     
     <FontFamily x:Key="ContentControlThemeFontFamily">avares://AvaloniaAero/Fonts#Inter</FontFamily>

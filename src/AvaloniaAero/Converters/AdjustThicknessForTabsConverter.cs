@@ -7,7 +7,7 @@ using Avalonia.Data.Converters;
 
 namespace AvaloniaAero
 {
-    public class AdjustThicknessForTabsConverter : IMultiValueConverter
+    internal class AdjustThicknessForTabsConverter : IMultiValueConverter
     {
         static readonly AdjustThicknessForTabsConverter _instance = new();
         public static AdjustThicknessForTabsConverter Instance

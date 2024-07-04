@@ -12,10 +12,11 @@ namespace AvaloniaAero.Demo.ViewModels
         {
             new ButtonsPageViewModel(),
             //new ListBoxPageViewModel(),
+            new MenusPageViewModel(),
             new ScrollViewerPageViewModel(),
+            new SpinnersPageViewModel(),
             new TextBoxPageViewModel(),
             new ToggleSwitchPageViewModel(),
-            //new SpinnersPageViewModel(),
             //new TestPageViewModel(),
         };
         public ObservableCollection<PageViewModelBase> Pages

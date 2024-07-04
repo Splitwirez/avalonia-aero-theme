@@ -1,36 +1,33 @@
-<UserControl xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:v="using:AvaloniaAero.Demo.Views"
-        xmlns:local="using:AvaloniaAero.Demo"
-        mc:Ignorable="d" d:DesignWidth="398" d:DesignHeight="482"
-        x:Class="AvaloniaAero.Demo.Views.ButtonsPageView">
+<UserControl x:Class="AvaloniaAero.Demo.Views.ButtonsPageView"
+            xmlns="https://github.com/avaloniaui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:v="using:AvaloniaAero.Demo.Views"
+            xmlns:local="using:AvaloniaAero.Demo">
     <UserControl.Resources>
-        <local:RadioButtonHackConverter x:Key="RadioButtonHackConverter"/>
+        <local:RadioButtonHackConverter x:Key="RadioButtonHackConverter" />
     </UserControl.Resources>
     <UserControl.Styles>
         <Style Selector="RadioButton">
-            <Setter Property="Content" Value="RadioButton"/>
+            <Setter Property="Content" Value="RadioButton" />
         </Style>
         <Style Selector="RadioButton[IsChecked=true]">
-            <Setter Property="Content" Value="Checked RadioButton"/>
+            <Setter Property="Content" Value="Checked RadioButton" />
         </Style>
 
         <Style Selector="CheckBox">
-            <Setter Property="Content" Value="CheckBox"/>
+            <Setter Property="Content" Value="CheckBox" />
         </Style>
         <Style Selector="CheckBox[IsChecked=true]">
-            <Setter Property="Content" Value="Checked CheckBox"/>
+            <Setter Property="Content" Value="Checked CheckBox" />
         </Style>
         <Style Selector="CheckBox[IsThreeState=true]">
-            <Setter Property="Content" Value="Null three-state CheckBox"/>
+            <Setter Property="Content" Value="Null three-state CheckBox" />
         </Style>
         <Style Selector="CheckBox[IsThreeState=true][IsChecked=true]">
-            <Setter Property="Content" Value="Checked three-state CheckBox"/>
+            <Setter Property="Content" Value="Checked three-state CheckBox" />
         </Style>
         <Style Selector="CheckBox[IsThreeState=true][IsChecked=false]">
-            <Setter Property="Content" Value="Three-state CheckBox"/>
+            <Setter Property="Content" Value="Three-state CheckBox" />
         </Style>
     </UserControl.Styles>
     <ScrollViewer>
@@ -40,48 +37,48 @@
                     Spacing="10"
                     Margin="4">
             <Grid HorizontalAlignment="Left"
-                    ColumnDefinitions="*,10,*"
-                    RowDefinitions="*,10,*,10,*">
+                    RowDefinitions="*,10,*"
+                    ColumnDefinitions="*,10,*,10,*">
                 <Grid.Styles>
                     <Style Selector=":is(Button):disabled">
-                        <Setter Property="Grid.Column" Value="2"/>
+                        <Setter Property="Grid.Row" Value="2" />
                     </Style>
                     <Style Selector="RepeatButton">
-                        <Setter Property="Grid.Row" Value="2"/>
+                        <Setter Property="Grid.Column" Value="2" />
                     </Style>
                     <Style Selector="ToggleButton">
-                        <Setter Property="Grid.Row" Value="4"/>
+                        <Setter Property="Grid.Column" Value="4" />
                     </Style>
                 </Grid.Styles>
                 
-                <Button Content="Button"/>
+                <Button Content="Button" />
                 <Button Content="Disabled Button"
-                        IsEnabled="False"/>
+                        IsEnabled="False" />
                 
-                <RepeatButton Content="RepeatButton"/>
+                <RepeatButton Content="RepeatButton" />
                 <RepeatButton Content="Disabled RepeatButton"
-                            IsEnabled="False"/>
+                            IsEnabled="False" />
                 
-                <ToggleButton Content="ToggleButton"/>
+                <ToggleButton Content="ToggleButton" />
                 <ToggleButton Content="Disabled ToggleButton"
-                            IsEnabled="False"/>
+                            IsEnabled="False" />
             </Grid>
             
             
             <RadioButton IsChecked="{Binding RadioButtonIndex, Converter={StaticResource RadioButtonHackConverter}, ConverterParameter=0}"
-                        GroupName="RadiosGroup"/>
+                        GroupName="RadiosGroup" />
             <RadioButton IsChecked="{Binding RadioButtonIndex, Converter={StaticResource RadioButtonHackConverter}, ConverterParameter=1}"
-                        GroupName="RadiosGroup"/>
+                        GroupName="RadiosGroup" />
             <RadioButton IsChecked="{Binding RadioButtonIndex, Converter={StaticResource RadioButtonHackConverter}, ConverterParameter=2}"
-                        GroupName="RadiosGroup"/>
+                        GroupName="RadiosGroup" />
             
             <RadioButton Content="Disabled RadioButton"
                         IsEnabled="False"
-                        GroupName="DisabledRadiosGroup"/>
+                        GroupName="DisabledRadiosGroup" />
             <RadioButton Content="Disabled checked RadioButton"
                         IsChecked="True"
                         IsEnabled="False"
-                        GroupName="DisabledRadiosGroup"/>
+                        GroupName="DisabledRadiosGroup" />
             
 
             <CheckBox />

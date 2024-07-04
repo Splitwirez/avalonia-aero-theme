@@ -1,0 +1,77 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:v="using:AvaloniaAero.Demo.Views"
+        xmlns:local="using:AvaloniaAero.Demo"
+        mc:Ignorable="d" d:DesignWidth="398" d:DesignHeight="482"
+        x:Class="AvaloniaAero.Demo.Views.MenusPageView">
+    <UserControl.Styles>
+        <Style Selector=":is(Control)#ContextMenusRegion,
+                        :is(Control)#ContextMenusRegion > Border">
+            <Setter Property="Margin" Value="8" />
+        </Style>
+        <Style Selector=":is(Control)#ContextMenusRegion > Border">
+            <Setter Property="Background" Value="#20808080" />
+            <Setter Property="Padding" Value="8" />
+        </Style>
+        <Style Selector=":is(Control)#ContextMenusRegion > Border > TextBlock">
+            <Setter Property="TextWrapping" Value="Wrap" />
+        </Style>
+    </UserControl.Styles>
+    <DockPanel LastChildFill="False">
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File"
+                    IsEnabled="False" />
+            <MenuItem Header="Edit"
+                    IsEnabled="False" />
+            <MenuItem Header="View"
+                    IsEnabled="False" />
+            <MenuItem Header="Help">
+                <MenuItem Header="MenuItem" />
+                <Separator />
+                <MenuItem Header="Disabled MenuItem"
+                        IsEnabled="False" />
+            </MenuItem>
+        </Menu>
+        <!--
+        <UniformGrid x:Name="ContextMenusRegion">
+            <Border>
+                <TextBlock Text="Right-click for ContextMenu" />
+                <Border.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="MenuItem" />
+                        <Separator />
+                        <MenuItem Header="Disabled MenuItem"
+                                IsEnabled="False" />
+                    </ContextMenu>
+                </Border.ContextMenu>
+            </Border>
+            <Border>
+                <TextBlock Text="Right-click for MenuFlyout" />
+                <Border.ContextFlyout>
+                    <MenuFlyout>
+                        <MenuItem Header="MenuItem" />
+                        <Separator />
+                        <MenuItem Header="Disabled MenuItem"
+                                IsEnabled="False" />
+                    </MenuFlyout>
+                </Border.ContextFlyout>
+            </Border>
+            <!- -
+            <Border>
+                <TextBlock Text="Right-click for AttachedFlyout" />
+                <FlyoutBase.AttachedFlyout>
+                    <MenuFlyout>
+                        <MenuItem Header="MenuItem" />
+                        <Separator />
+                        <MenuItem Header="Disabled MenuItem"
+                                IsEnabled="False" />
+                    </MenuFlyout>
+                </FlyoutBase.AttachedFlyout>
+            </Border>
+            - ->
+        </UniformGrid>
+        -->
+    </DockPanel>
+</UserControl>

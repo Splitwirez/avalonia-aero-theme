@@ -311,4 +311,9 @@
 
 	<SolidColorBrush x:Key="AeroMenuBarItemSelectedBackground" Color="{DynamicResource AeroMenuBarItemSelectedBackgroundColor}" />
 	<SolidColorBrush x:Key="AeroMenuBarItemSelectedBorderBrush" Color="{DynamicResource AeroMenuBarItemSelectedBorderBrushColor}" />
+
+
+
+
+	<SolidColorBrush x:Key="AeroGroupBoxBorderBrush" Color="{DynamicResource AeroGroupBoxBorderBrushColor}" />
 </ResourceDictionary>
