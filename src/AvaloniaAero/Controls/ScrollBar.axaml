@@ -1,7 +1,7 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
-                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                xmlns:sys="using:System"
-                xmlns:ae="using:AvaloniaAero">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:aecnv="using:AvaloniaAero.Converters"
+                    x:ClassModifier="Internal">
     <ControlTheme x:Key="AeroScrollBarThumbBase" TargetType="Thumb">
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Template">
@@ -377,7 +377,7 @@
         </Style>
 
         <Style Selector="^[AllowAutoHide=False] /template/ Border.repeatBackground">
-            <Setter Property="IsVisible" Value="{Binding ViewportSize, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=OneWay, Converter={x:Static ae:DoubleIsNaNConverter.IsNotNaN}}"/>
+            <Setter Property="IsVisible" Value="{Binding ViewportSize, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=OneWay, Converter={x:Static aecnv:DoubleIsNaNConverter.IsNotNaN}}"/>
         </Style>
         <Style Selector="^[AllowAutoHide=False][Maximum=0] /template/ Border.repeatBackground,
                         ^[AllowAutoHide=True] /template/ Border.repeatBackground">

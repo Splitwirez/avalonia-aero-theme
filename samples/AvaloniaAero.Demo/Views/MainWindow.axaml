@@ -1,0 +1,16 @@
+<Window x:Class="AvaloniaAero.Demo.Views.MainWindow"
+        xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        
+        MinWidth="398"
+        MinHeight="482"
+        
+        Width="408"
+        Height="482"
+        
+        CanResize="True"
+        
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Windows Aero for Avalonia Sample"
+
+        DataContext="{Binding $self.Content.DataContext, Mode=OneWay}" />

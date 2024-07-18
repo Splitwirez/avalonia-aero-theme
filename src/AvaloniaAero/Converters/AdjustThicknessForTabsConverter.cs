@@ -5,15 +5,12 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Data.Converters;
 
-namespace AvaloniaAero
+namespace AvaloniaAero.Converters
 {
-    internal class AdjustThicknessForTabsConverter : IMultiValueConverter
+    public class AdjustThicknessForTabsConverter
+        : IMultiValueConverter
     {
-        static readonly AdjustThicknessForTabsConverter _instance = new();
-        public static AdjustThicknessForTabsConverter Instance
-        {
-            get => _instance;
-        }
+        public static AdjustThicknessForTabsConverter Instance { get; } = new();
         private AdjustThicknessForTabsConverter()
         { }
 

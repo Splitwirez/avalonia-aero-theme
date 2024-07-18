@@ -1,7 +1,8 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:aero="using:AvaloniaAero">
-    <aero:AdjustCornerRadiusConverter x:Key="AeroButtonInnerCornerRadiiConverter" Amount="-1" />
+                    xmlns:aecnv="using:AvaloniaAero.Converters"
+                    x:ClassModifier="Internal">
+    <aecnv:AdjustCornerRadiusConverter x:Key="AeroButtonInnerCornerRadiiConverter" Amount="-1" />
 
     <ControlTheme x:Key="{x:Type Button}" TargetType="Button">
         <Setter Property="Background" Value="{DynamicResource AeroButtonIdleBackground}" />

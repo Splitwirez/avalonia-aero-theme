@@ -3,9 +3,9 @@ using System.Globalization;
 using Avalonia;
 using Avalonia.Data.Converters;
 
-namespace AvaloniaAero
+namespace AvaloniaAero.Converters
 {
-    internal class AdjustCornerRadiusConverter
+    public class AdjustCornerRadiusConverter
         : IValueConverter
     {
         public double Amount { get; set; } = 0.0;

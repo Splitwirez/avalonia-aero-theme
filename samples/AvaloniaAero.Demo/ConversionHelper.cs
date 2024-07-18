@@ -1,6 +1,6 @@
 using System;
 
-namespace AvaloniaAero
+namespace AvaloniaAero.Demo
 {
     internal static class ConversionHelper
     {

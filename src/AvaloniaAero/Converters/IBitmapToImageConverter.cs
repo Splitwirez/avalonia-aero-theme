@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if NO
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -8,9 +9,10 @@ using Avalonia.Controls;
 using Avalonia.Data.Converters;
 using Avalonia.Media.Imaging;
 
-namespace AvaloniaAero
+namespace AvaloniaAero.Converters
 {
-    internal class IBitmapToImageConverter : IValueConverter
+    internal class IBitmapToImageConverter
+        : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -26,3 +28,4 @@ namespace AvaloniaAero
         }
     }
 }
+#endif

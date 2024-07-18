@@ -2,9 +2,10 @@ using System;
 using System.Globalization;
 using Avalonia.Data.Converters;
 
-namespace AvaloniaAero
+namespace AvaloniaAero.Converters
 {
-    internal class DoubleIsNaNConverter : IValueConverter
+    internal class DoubleIsNaNConverter
+        : IValueConverter
     {
         public static readonly DoubleIsNaNConverter IsNaN = new DoubleIsNaNConverter(true);
         public static readonly DoubleIsNaNConverter IsNotNaN = new DoubleIsNaNConverter(false);

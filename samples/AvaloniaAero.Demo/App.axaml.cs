@@ -6,13 +6,12 @@ using Avalonia.Markup.Xaml;
 using Avalonia.Platform;
 using AvaloniaAero.Demo.ViewModels;
 using AvaloniaAero.Demo.Views;
-using Moq;
 using System;
-using System.Reflection;
 
 namespace AvaloniaAero.Demo
 {
-    public class App : Application
+    public class App
+        : Application
     {
         public override void Initialize()
         {
@@ -25,15 +24,24 @@ namespace AvaloniaAero.Demo
             {
                 DataContext = new MainViewModel()
             };
-            
+
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
-                desktop.MainWindow = mainView.CreateWindow();
+                desktop.MainWindow = new MainWindow(mainView);
+                /*
+                new Window()
+                {
+                    Content = mainView,
+                    [!DataContextProperty] = mainView[!DataContextProperty],
+                };
+                */
             }
 			else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewLifetime)
 			{
 				singleViewLifetime.MainView = mainView;
 			}
+            
+            
 
             base.OnFrameworkInitializationCompleted();
         }

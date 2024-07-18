@@ -5,11 +5,9 @@ using Avalonia.Data.Converters;
 
 namespace AvaloniaAero.Demo
 {
-    public class RadioButtonHackConverter : IValueConverter
+    public class RadioButtonHackConverter
+        : IValueConverter
     {
-        
-
-
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (!ConversionHelper.TryGetDouble(value, out double val))

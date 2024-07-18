@@ -1,19 +1,6 @@
-<UserControl xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:vm="using:AvaloniaAero.Demo.ViewModels"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="398" d:DesignHeight="482"
-        x:Class="AvaloniaAero.Demo.Views.MainView"
-        Icon="/Assets/avalonia-logo.ico"
-        Title="Windows Aero for Avalonia Sample"
-        WindowWidth="398"
-        WindowHeight="482"
-        CanResize="False">
-    <Design.DataContext>
-        <vm:MainViewModel/>
-    </Design.DataContext>
-
+<UserControl x:Class="AvaloniaAero.Demo.Views.MainView"
+            xmlns="https://github.com/avaloniaui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <UserControl.Styles>
         <Style Selector="CheckBox.lightSwitch[IsChecked=true]">
             <Setter Property="Content" Value="Lights on"/>

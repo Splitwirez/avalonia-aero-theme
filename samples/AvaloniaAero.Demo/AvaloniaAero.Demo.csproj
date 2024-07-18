@@ -4,6 +4,7 @@
         <OutputType>Library</OutputType>
         <TargetFrameworks>$(ExtraTargetFrameworks)netstandard2.0</TargetFrameworks>
 		<LangVersion>8.0</LangVersion>
+        <Nullable>disable</Nullable>
     </PropertyGroup>
     <ItemGroup>
         <Folder Include="Models/" />
@@ -15,9 +16,7 @@
         <PackageReference Include="Avalonia.Diagnostics" Version="$(AvaloniaVer)" />
         <PackageReference Include="Avalonia.ReactiveUI" Version="$(AvaloniaVer)" />
         <PackageReference Include="Moq" Version="4.14.1" />
-    </ItemGroup>
-    <ItemGroup>
+
         <ProjectReference Include="../../src/AvaloniaAero/AvaloniaAero.csproj" />
-        <Compile Include="../../src/AvaloniaAero/Converters/ConversionHelper.cs" />
     </ItemGroup>
 </Project>

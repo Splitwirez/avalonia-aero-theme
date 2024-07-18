@@ -1,6 +1,7 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:aero="using:AvaloniaAero">
+                    xmlns:aecnv="using:AvaloniaAero.Converters"
+                    x:ClassModifier="Internal">
     <ControlTheme x:Key="{x:Type TabItem}" TargetType="TabItem">
         <Setter Property="Background" Value="{DynamicResource AeroButtonIdleBackground}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource AeroTabControlInnerBorderBrush}"/>
@@ -25,7 +26,7 @@
                             Classes="aeroState2"
                             BorderBrush="{TemplateBinding BorderBrush}">
                         <Border.BorderThickness>
-                            <MultiBinding Converter="{x:Static aero:AdjustThicknessForTabsConverter.Instance}">
+                            <MultiBinding Converter="{x:Static aecnv:AdjustThicknessForTabsConverter.Instance}">
                                 <MultiBinding.Bindings>
                                     <Binding Path="BorderThickness"
                                             RelativeSource="{RelativeSource Mode=TemplatedParent}"

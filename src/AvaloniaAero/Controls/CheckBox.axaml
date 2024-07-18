@@ -1,5 +1,6 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    x:ClassModifier="Internal">
     <ControlTheme x:Key="AeroCheckBoxBaseStyle" TargetType="{x:Type ToggleButton}">
         <Setter Property="Foreground" Value="{DynamicResource AeroForeground}"/>
         <Setter Property="Background" Value="{DynamicResource AeroCheckBoxIdleBackground}"/>
