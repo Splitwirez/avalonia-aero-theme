@@ -2,7 +2,7 @@
 	<PropertyGroup>
 		<ExtraTargetFrameworks></ExtraTargetFrameworks>
 	</PropertyGroup>
-	<PropertyGroup Condition="'$(AdditionalTargetFrameworks)' != ''">
+        <PropertyGroup Condition=" ('$(VisualStudioMajorVersion)' != '') AND ('$(VisualStudioMajorVersion)' >= '17') ">
 		<ExtraTargetFrameworks>$(AdditionalTargetFrameworks);</ExtraTargetFrameworks>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(VisualStudioVersion)'=='17.0'">
