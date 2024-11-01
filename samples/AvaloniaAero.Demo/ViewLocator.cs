@@ -5,7 +5,8 @@ using AvaloniaAero.Demo.ViewModels;
 
 namespace AvaloniaAero.Demo
 {
-    public class ViewLocator : IDataTemplate
+    public class ViewLocator
+        : IDataTemplate
     {
         public bool SupportsRecycling => false;
 

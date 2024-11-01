@@ -5,26 +5,19 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "OS-COMMENT1": "Use IntelliSense to find out which attributes exist for C# debugging",
-            "OS-COMMENT2": "Use hover for the description of the existing attributes",
-            "OS-COMMENT3": "For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md",
+            /* Use IntelliSense to find out which attributes exist for C# debugging
+             * Use hover for the description of the existing attributes
+             * For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
+             */
             "name": ".NET Core Launch (console)",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "OS-COMMENT4": "If you have changed target frameworks, make sure to update the program path.",
+            // If you have changed target frameworks, make sure to update the program path.
             "program": "${workspaceFolder}/samples/AvaloniaAero.Demo.Desktop/bin/Debug/net5.0/AvaloniaAero.Demo.Desktop.dll",
-            
-            "args": [
-                /*
-                dumb hack so I don't have to break my neck until the fix for
-                https://github.com/AvaloniaUI/Avalonia/issues/9286
-                arrives in a preview or whatever
-                */
-                "--temp-monitor-hack"
-            ],
+            "args": [],
             "cwd": "${workspaceFolder}/samples/AvaloniaAero.Demo.Desktop",
-            "OS-COMMENT5": "For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console",
+            // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
             "console": "internalConsole",
             "stopAtEntry": false
         },

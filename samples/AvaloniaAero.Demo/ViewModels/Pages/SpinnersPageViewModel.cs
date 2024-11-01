@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Location = Avalonia.Controls.Location;
 
 namespace AvaloniaAero.Demo.ViewModels
 {
-    public class SpinnersPageViewModel : PageViewModelBase
+    public class SpinnersPageViewModel
+        : PageViewModelBase
     {
         static readonly string[] _mountains = new[]
         {
@@ -22,12 +22,6 @@ namespace AvaloniaAero.Demo.ViewModels
             "Annapurna"
         };
 
-
-        public SpinnersPageViewModel()
-            : base()
-        {
-            Title = "Spinners";
-        }
 
         double _doubleValue = 0;
         public double DoubleValue

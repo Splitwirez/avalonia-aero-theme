@@ -9,5 +9,17 @@
     
     <Application.Styles>
         <aero:AeroTheme />
+        <Style Selector="Window,TabControl">
+            <Setter Property="Transitions">
+                <Transitions>
+                    <BrushTransition Property="Background" Duration="{StaticResource AeroFadeDuration}" />
+                </Transitions>
+            </Setter>
+        </Style>
     </Application.Styles>
+    <Application.Resources>
+        <ControlTheme x:Key="{x:Type HeaderedContentControl}"
+                    TargetType="{x:Type HeaderedContentControl}"
+                    BasedOn="{StaticResource GroupBox}" />
+    </Application.Resources>
 </Application>

@@ -269,4 +269,26 @@
 
 
 	<Color x:Key="AeroGroupBoxBorderBrushColor">#FFD5DFE5</Color>
+
+
+
+
+	<Color x:Key="AeroProgressBarFrameBackgroundColor">#FFFBFBFB</Color>
+
+	<Color x:Key="AeroProgressBarFrameOuterBorderBrushColor0">#FFB2B2B2</Color>
+	<Color x:Key="AeroProgressBarFrameOuterBorderBrushColor1">#FF8C8C8C</Color>
+
+	<Color x:Key="AeroProgressBarFrameInnerBorderBrushColor0">#FFF1F1F1</Color>
+	<Color x:Key="AeroProgressBarFrameInnerBorderBrushColor1">#FFD1D1D1</Color>
+
+	<Color x:Key="AeroProgressBarFillColor">#FF00D328</Color>
+	<!--
+	<Color x:Key="AeroProgressBarFillFallbackColor0">#FF02AE22</Color>
+	<StaticResource x:Key="AeroProgressBarFillFallbackColor1" ResourceKey="AeroProgressBarFillColor" />
+	-->
+	<Color x:Key="AeroProgressBarFillFallbackColor0">#FFFF00FF</Color>
+	<Color x:Key="AeroProgressBarFillFallbackColor1">#FF00FF00</Color>
+
+	<Color x:Key="AeroProgressBarFillShineColor0">#DAFFFFFF</Color>
+	<Color x:Key="AeroProgressBarFillShineColor1">#A0FFFFFF</Color>
 </ResourceDictionary>

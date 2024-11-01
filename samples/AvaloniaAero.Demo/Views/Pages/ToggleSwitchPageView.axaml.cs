@@ -4,7 +4,8 @@ using Avalonia.Markup.Xaml;
 
 namespace AvaloniaAero.Demo.Views
 {
-    public partial class ToggleSwitchPageView : UserControl
+    public partial class ToggleSwitchPageView
+        : UserControl
     {
         public ToggleSwitchPageView()
         {

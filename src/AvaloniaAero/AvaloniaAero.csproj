@@ -8,6 +8,9 @@
 		-->
 	</PropertyGroup>
 	<Import Project="../../build/Avalonia.props" />
+	<ItemGroup>
+		<PackageReference Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVer)" />
+	</ItemGroup>
 	
 	<ItemGroup>
 		<AvaloniaResource Include="AVMAP/*.axaml" />
@@ -15,7 +18,5 @@
 		<AvaloniaResource Include="Fonts/**" />
 		<AvaloniaResource Include="Fonts2/**" />
 		<AvaloniaResource Include="Resources/**" />
-
-		<ProjectReference Include="../AvaloniaAero.Placeholders.Themes.Fluent/AvaloniaAero.Placeholders.Themes.Fluent.csproj" />
 	</ItemGroup>
 </Project>

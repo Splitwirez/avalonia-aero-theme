@@ -1,13 +1,14 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using AvaloniaAero.Demo.ViewModels;
 
 namespace AvaloniaAero.Demo.Views
 {
-    public partial class ScrollViewerPageView
+    public partial class ProgressBarPageView
         : UserControl
     {
-        public ScrollViewerPageView()
+        public ProgressBarPageView()
         {
             InitializeComponent();
         }

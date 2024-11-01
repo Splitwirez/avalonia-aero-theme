@@ -6,13 +6,16 @@ using Avalonia.Styling;
 
 namespace AvaloniaAero.Demo.ViewModels
 {
-    public class MainViewModel : ViewModelBase
+    public class MainViewModel
+        : ViewModelBase
     {
         ObservableCollection<PageViewModelBase> _pages = new ObservableCollection<PageViewModelBase>()
         {
+            new ThemeOverviewPageViewModel(),
             new ButtonsPageViewModel(),
             //new ListBoxPageViewModel(),
             new MenusPageViewModel(),
+            new ProgressBarPageViewModel(),
             new ScrollViewerPageViewModel(),
             new SpinnersPageViewModel(),
             new TextBoxPageViewModel(),

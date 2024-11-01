@@ -5,7 +5,8 @@ using AvaloniaAero.Demo.ViewModels;
 
 namespace AvaloniaAero.Demo.Views
 {
-    public partial class SpinnersPageView : UserControl
+    public partial class SpinnersPageView
+        : UserControl
     {
         public SpinnersPageView()
         {

@@ -1,5 +1,4 @@
 using System;
-using System.Numerics;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
@@ -16,13 +15,6 @@ namespace AvaloniaAero.Demo.Views
                 return;
             
             Content = ctrl;
-            
-            /*
-            double w = Math.Max(MinWidth, ctrl.MinWidth);
-            Width = w;
-            double h = Math.Max(MinHeight, ctrl.MinHeight);
-            Height = h;
-            */
         }
 
         public MainWindow()
@@ -30,6 +22,7 @@ namespace AvaloniaAero.Demo.Views
         {
             InitializeComponent();
 #if DEBUG
+            Title += $" (dotnet {Environment.Version})";
             this.AttachDevTools();
 #endif
         }

@@ -7,19 +7,53 @@
         mc:Ignorable="d" d:DesignWidth="398" d:DesignHeight="482"
         x:Class="AvaloniaAero.Demo.Views.MenusPageView">
     <UserControl.Styles>
-        <Style Selector=":is(Control)#ContextMenusRegion,
-                        :is(Control)#ContextMenusRegion > Border">
-            <Setter Property="Margin" Value="8" />
+        <Style Selector=":is(Panel).contextMenusRegion > HeaderedContentControl">
+            <Setter Property="Margin" Value="4" />
         </Style>
-        <Style Selector=":is(Control)#ContextMenusRegion > Border">
-            <Setter Property="Background" Value="#20808080" />
-            <Setter Property="Padding" Value="8" />
+        <Style Selector=":is(Panel).contextMenusRegion > HeaderedContentControl > :is(Panel)">
+            <Setter Property="Background" Value="#01000000" />
         </Style>
-        <Style Selector=":is(Control)#ContextMenusRegion > Border > TextBlock">
-            <Setter Property="TextWrapping" Value="Wrap" />
+        <Style Selector=":is(Panel).contextMenusRegion > HeaderedContentControl > :is(Panel) > TextBox,
+                        TextBox.contextMenuLabel">
+            <Setter Property="IsReadOnly" Value="True" />
+            <Setter Property="IsHitTestVisible" Value="False" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
         </Style>
     </UserControl.Styles>
-    <DockPanel LastChildFill="False">
+    <UserControl.Resources>
+        <x:String x:Key="LeftClickPrompt">Click me!</x:String>
+        <x:String x:Key="RightClickPrompt">Right-click me!</x:String>
+
+        <ContextMenu x:Key="DemoContextMenu">
+            <MenuItem Header="ContextMenu item" />
+            <MenuItem Header="Item with children">
+                <MenuItem Header="Sub-item" />
+            </MenuItem>
+        </ContextMenu>
+        <MenuFlyout x:Key="DemoMenuFlyout">
+            <MenuItem Header="MenuFlyout item" />
+            <MenuItem Header="Item with children">
+                <MenuItem Header="Sub-item" />
+            </MenuItem>
+        </MenuFlyout>
+
+        <ControlTheme x:Key="ContextMenuTypeContainer"
+                    TargetType="{x:Type ContentControl}">
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <Panel Margin="8"
+                        Background="#01000000"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        Border.ContextFlyout="{Binding Mode=OneWay}">
+                        <TextBox Classes="contextMenuLabel" />
+                    </Panel>
+                </ControlTemplate>
+            </Setter>
+        </ControlTheme>
+    </UserControl.Resources>
+    <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File"
                     IsEnabled="False" />
@@ -34,44 +68,36 @@
                         IsEnabled="False" />
             </MenuItem>
         </Menu>
-        <!--
-        <UniformGrid x:Name="ContextMenusRegion">
-            <Border>
-                <TextBlock Text="Right-click for ContextMenu" />
-                <Border.ContextMenu>
-                    <ContextMenu>
-                        <MenuItem Header="MenuItem" />
-                        <Separator />
-                        <MenuItem Header="Disabled MenuItem"
-                                IsEnabled="False" />
-                    </ContextMenu>
-                </Border.ContextMenu>
-            </Border>
-            <Border>
-                <TextBlock Text="Right-click for MenuFlyout" />
-                <Border.ContextFlyout>
-                    <MenuFlyout>
-                        <MenuItem Header="MenuItem" />
-                        <Separator />
-                        <MenuItem Header="Disabled MenuItem"
-                                IsEnabled="False" />
-                    </MenuFlyout>
-                </Border.ContextFlyout>
-            </Border>
-            <!- -
-            <Border>
-                <TextBlock Text="Right-click for AttachedFlyout" />
-                <FlyoutBase.AttachedFlyout>
-                    <MenuFlyout>
-                        <MenuItem Header="MenuItem" />
-                        <Separator />
-                        <MenuItem Header="Disabled MenuItem"
-                                IsEnabled="False" />
-                    </MenuFlyout>
-                </FlyoutBase.AttachedFlyout>
-            </Border>
-            - ->
-        </UniformGrid>
-        -->
+        <Grid Classes="contextMenusRegion"
+            Margin="4"
+            RowDefinitions="1*,4,2*"
+            ColumnDefinitions="*,4,*">
+            <HeaderedContentControl Header="Button.Flyout"
+                                    Grid.Column="0"
+                                    Grid.Row="0">
+                <Button Content="{DynamicResource LeftClickPrompt}"
+                        Flyout="{DynamicResource DemoMenuFlyout}" />
+            </HeaderedContentControl>
+            <HeaderedContentControl Header="SplitButton.Flyout"
+                                    Grid.Column="2"
+                                    Grid.Row="0">
+                <SplitButton Content="{DynamicResource LeftClickPrompt}"
+                        Flyout="{DynamicResource DemoMenuFlyout}" />
+            </HeaderedContentControl>
+            <HeaderedContentControl Header="Control.ContextMenu"
+                                    Grid.Column="0"
+                                    Grid.Row="2">
+                <Panel ContextMenu="{DynamicResource DemoContextMenu}">
+                    <TextBox Text="{DynamicResource RightClickPrompt}" />
+                </Panel>
+            </HeaderedContentControl>
+            <HeaderedContentControl Header="Control.ContextFlyout"
+                                    Grid.Column="2"
+                                    Grid.Row="2">
+                <Panel ContextFlyout="{DynamicResource DemoMenuFlyout}">
+                    <TextBox Text="{DynamicResource RightClickPrompt}" />
+                </Panel>
+            </HeaderedContentControl>
+        </Grid>
     </DockPanel>
 </UserControl>

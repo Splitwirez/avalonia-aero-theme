@@ -3,11 +3,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         x:Class="AvaloniaAero.AeroTheme">
+	<FluentTheme DensityStyle="Compact" />
     <Styles.Resources>
         <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceInclude Source="avares://AvaloniaAero/AVMAP/Common.axaml" />
-            </ResourceDictionary.MergedDictionaries>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceInclude Source="avares://AvaloniaAero/AVMAP/Metrics.axaml"/>
+			</ResourceDictionary.MergedDictionaries>
 
 
             <ResourceDictionary.ThemeDictionaries>

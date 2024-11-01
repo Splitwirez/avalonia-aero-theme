@@ -12,7 +12,7 @@ namespace AvaloniaAero.Converters
     {
         public static AdjustThicknessForTabsConverter Instance { get; } = new();
         private AdjustThicknessForTabsConverter()
-        { }
+        {}
 
 
         protected static readonly Thickness _ZERO = new(0);

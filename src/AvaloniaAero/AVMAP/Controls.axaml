@@ -1,19 +1,23 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         x:ClassModifier="Internal">
+    <!--
     <StyleInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Controls/FluentControls.xaml" />
+    -->
     <Styles.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <!--
-                <ResourceInclude Source="avares://AvaloniaAero/Controls/Button.axaml" />
+                <ResourceInclude Source="avares://AvaloniaAero/ControlStyles/Button.axaml" />
                 -->
-                <ResourceInclude Source="avares://AvaloniaAero/Controls/Button_RepeatButton_ToggleButton.axaml" />
-                <ResourceInclude Source="avares://AvaloniaAero/Controls/RadioButton.axaml" />
-                <ResourceInclude Source="avares://AvaloniaAero/Controls/ButtonSpinner.axaml" />
+                <ResourceInclude Source="avares://AvaloniaAero/ControlStyles/Button_RepeatButton_ToggleButton.axaml" />
+                <ResourceInclude Source="avares://AvaloniaAero/ControlStyles/RadioButton.axaml" />
+                <ResourceInclude Source="avares://AvaloniaAero/ControlStyles/ButtonSpinner.axaml" />
                 <!--
                 <ResourceInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Controls/Expander.xaml" />
-                <ResourceInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Controls/ProgressBar.xaml" />
+                -->
+                <ResourceInclude Source="avares://AvaloniaAero/ControlStyles/ProgressBar.axaml" />
+                <!--
                 <ResourceInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Controls/AutoCompleteBox.xaml" />
                 <ResourceInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Controls/ButtonSpinner.xaml" />
                 <ResourceInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Controls/Calendar.xaml" />
@@ -24,12 +28,12 @@
                 <ResourceInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Controls/CaptionButtons.xaml" />
                 <ResourceInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Controls/Carousel.xaml" />
                 -->
-                <ResourceInclude Source="avares://AvaloniaAero/Controls/CheckBox.axaml" />
+                <ResourceInclude Source="avares://AvaloniaAero/ControlStyles/CheckBox.axaml" />
                 <!--
                 <ResourceInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Controls/FlyoutPresenter.xaml" />
                 <ResourceInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Controls/GridSplitter.xaml" />
                 -->
-                <ResourceInclude Source="avares://AvaloniaAero/Controls/HeaderedContentControl.axaml" />
+                <ResourceInclude Source="avares://AvaloniaAero/ControlStyles/HeaderedContentControl.axaml" />
                 <!--
                 <ResourceInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Controls/ItemsControl.xaml" />
                 <ResourceInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Controls/Label.xaml" />
@@ -37,36 +41,36 @@
                 <ResourceInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Controls/ListBoxItem.xaml" />
                 <ResourceInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Controls/MenuScrollViewer.xaml" />
                 -->
-                <ResourceInclude Source="avares://AvaloniaAero/Controls/Menu.axaml" />
+                <ResourceInclude Source="avares://AvaloniaAero/ControlStyles/Menu.axaml" />
                 <!--
                 <ResourceInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Controls/MenuItem.xaml" />
                 <ResourceInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Controls/MenuFlyoutPresenter.xaml" />
                 <ResourceInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Controls/NativeMenuBar.xaml" />
                 <ResourceInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Controls/NotificationCard.xaml" />
                 -->
-                <ResourceInclude Source="avares://AvaloniaAero/Controls/NumericUpDown.axaml" />
+                <ResourceInclude Source="avares://AvaloniaAero/ControlStyles/NumericUpDown.axaml" />
                 <!--
                 <ResourceInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Controls/OverlayPopupHost.xaml" />
                 <ResourceInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Controls/PopupRoot.xaml" />
                 <ResourceInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Controls/PathIcon.xaml" />
                 -->
                 <!-- RepeatButton -->
-                <ResourceInclude Source="avares://AvaloniaAero/Controls/ScrollBar.axaml" />
-                <ResourceInclude Source="avares://AvaloniaAero/Controls/ScrollViewer.axaml" />
+                <ResourceInclude Source="avares://AvaloniaAero/ControlStyles/ScrollBar.axaml" />
+                <ResourceInclude Source="avares://AvaloniaAero/ControlStyles/ScrollViewer.axaml" />
                 <!--
                 <ResourceInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Controls/Separator.xaml" />
                 <ResourceInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Controls/SplitButton.xaml" />
                 <ResourceInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Controls/SplitView.xaml" />
                 -->
-                <ResourceInclude Source="avares://AvaloniaAero/Controls/TabControl.axaml" />
-                <ResourceInclude Source="avares://AvaloniaAero/Controls/TabItem.axaml" />
+                <ResourceInclude Source="avares://AvaloniaAero/ControlStyles/TabControl.axaml" />
+                <ResourceInclude Source="avares://AvaloniaAero/ControlStyles/TabItem.axaml" />
                 <!--
                 <ResourceInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Controls/TabStrip.xaml" />
                 <ResourceInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Controls/TabStripItem.xaml" />
                 -->
-                <ResourceInclude Source="avares://AvaloniaAero/Controls/TextBox.axaml" />
+                <ResourceInclude Source="avares://AvaloniaAero/ControlStyles/TextBox.axaml" />
                 <!-- ToggleButton -->
-                <ResourceInclude Source="avares://AvaloniaAero/Controls/ToggleSwitch.axaml" />
+                <ResourceInclude Source="avares://AvaloniaAero/ControlStyles/ToggleSwitch.axaml" />
                 <!--
                 <ResourceInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Controls/ToolTip.xaml" />
                 <ResourceInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Controls/TitleBar.xaml" />
@@ -75,7 +79,7 @@
                 <ResourceInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Controls/TreeViewItem.xaml" />
                 <ResourceInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Controls/WindowNotificationManager.xaml" />
                 -->
-                <ResourceInclude Source="avares://AvaloniaAero/Controls/Window.axaml" />
+                <ResourceInclude Source="avares://AvaloniaAero/ControlStyles/Window.axaml" />
                 <!--
                 <ResourceInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Controls/ComboBox.xaml" />
                 <ResourceInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Controls/ComboBoxItem.xaml" />

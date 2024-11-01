@@ -47,6 +47,7 @@
         </DockPanel>
         <TabControl x:Name="PagesTabControl"
                     ItemsSource="{Binding Pages}"
+                    SelectedIndex="1"
                     Margin="6,7,4,6">
             <TabControl.ItemTemplate>
                 <DataTemplate>

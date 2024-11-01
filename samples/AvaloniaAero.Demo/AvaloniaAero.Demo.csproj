@@ -3,8 +3,10 @@
     <PropertyGroup>
         <OutputType>Library</OutputType>
         <TargetFrameworks>$(ExtraTargetFrameworks)netstandard2.0</TargetFrameworks>
-		<LangVersion>8.0</LangVersion>
+		<LangVersion>9.0</LangVersion>
         <Nullable>disable</Nullable>
+        <DefineConstants>DEMO_APP;$(DefineConstants)</DefineConstants>
+		<EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
     </PropertyGroup>
     <ItemGroup>
         <Folder Include="Models/" />
@@ -16,7 +18,16 @@
         <PackageReference Include="Avalonia.Diagnostics" Version="$(AvaloniaVer)" />
         <PackageReference Include="Avalonia.ReactiveUI" Version="$(AvaloniaVer)" />
         <PackageReference Include="Moq" Version="4.14.1" />
+		<PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="$(AvaloniaVer)" />
 
         <ProjectReference Include="../../src/AvaloniaAero/AvaloniaAero.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+		<EmbeddedResource Include="../../src/AvaloniaAero/ControlStyles/*.axaml">
+            <LogicalName>ControlStyles/%(FileName)</LogicalName>
+            <!--
+            <LogicalName>ControlStyles/%(FileName)%(Extension)</LogicalName>
+            -->
+        </EmbeddedResource>
     </ItemGroup>
 </Project>

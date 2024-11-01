@@ -9,7 +9,8 @@
                 "build",
                 "${workspaceFolder}/samples/AvaloniaAero.Demo.Desktop/AvaloniaAero.Demo.Desktop.csproj",
                 "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
+                "/consoleloggerparameters:NoSummary",
+                "--framework", "net5.0",
             ],
             "problemMatcher": "$msCompile"
         },

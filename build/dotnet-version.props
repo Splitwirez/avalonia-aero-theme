@@ -5,7 +5,7 @@
         <PropertyGroup Condition=" ('$(VisualStudioMajorVersion)' != '') AND ('$(VisualStudioMajorVersion)' >= '17') ">
 		<ExtraTargetFrameworks>$(AdditionalTargetFrameworks);</ExtraTargetFrameworks>
 	</PropertyGroup>
-	<PropertyGroup Condition="'$(VisualStudioVersion)'=='17.0'">
+	<PropertyGroup Condition="$([MSBuild]::VersionGreaterThanOrEquals('$(NETCoreSdkVersion)', '8.0')) AND '$(VisualStudioVersion)'=='17.0'">
 		<ExtraTargetFrameworks>net8.0;</ExtraTargetFrameworks>
 	</PropertyGroup>
 </Project>

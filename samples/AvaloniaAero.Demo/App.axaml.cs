@@ -1,12 +1,9 @@
+using System;
 using Avalonia;
-using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
-using Avalonia.Controls.Platform;
 using Avalonia.Markup.Xaml;
-using Avalonia.Platform;
 using AvaloniaAero.Demo.ViewModels;
 using AvaloniaAero.Demo.Views;
-using System;
 
 namespace AvaloniaAero.Demo
 {
