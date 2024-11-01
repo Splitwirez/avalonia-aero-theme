@@ -1,8 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
-    <Import Project="../../build/dotnet6.props" />
+    <Import Project="../../build/dotnet-version.props" />
     <PropertyGroup>
         <OutputType>WinExe</OutputType>
-        <!--TargetFrameworks>$(ExtraTargetFrameworks)netcoreapp2.1;netcoreapp3.1;net5.0;net461</TargetFrameworks-->
         <TargetFrameworks>$(ExtraTargetFrameworks)net5.0</TargetFrameworks>
     </PropertyGroup>
     <ItemGroup>

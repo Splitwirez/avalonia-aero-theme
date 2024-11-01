@@ -5,47 +5,37 @@ using Avalonia.Data.Converters;
 
 namespace AvaloniaAero.Demo
 {
-    public class RadioButtonHackConverter : IValueConverter
+    public class RadioButtonHackConverter
+        : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if
-            (
-                (
-                    (value is int val)
-                    || int.TryParse(value.ToString(), out val)
-                )
-                &&
-                (
-                    (parameter is int param)
-                    || int.TryParse(parameter.ToString(), out param)
-                )
-            )
-            {
-                return val == param;
-            }
-            return false;
+            if (!ConversionHelper.TryGetDouble(value, out double val))
+                return false;
+                
+            if (!ConversionHelper.TryGetDouble(parameter, out double param))
+                return false;
+            
+            return ((int)val) == ((int)param);
         }
 
+
+
+
+        static readonly object _ConvertBack_DEFAULT = BindingOperations.DoNothing;
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if
-            (
-                (
-                    (value is bool val)
-                    || bool.TryParse(value.ToString(), out val)
-                )
-                &&
-                (
-                    (parameter is int param)
-                    || int.TryParse(parameter.ToString(), out param)
-                )
-            )
-            {
-                if (val)
-                    return param;
-            }
-            return BindingOperations.DoNothing;
+            if (!ConversionHelper.TryGetBool(value, out bool val))
+                return _ConvertBack_DEFAULT;
+
+            if (!ConversionHelper.TryGetDouble(value, out double param))
+                return _ConvertBack_DEFAULT;
+
+            
+            if (val)
+                return (int)param;
+            
+            return _ConvertBack_DEFAULT;
         }
     }
 }

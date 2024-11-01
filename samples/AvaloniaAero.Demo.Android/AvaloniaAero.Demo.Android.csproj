@@ -1,7 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="../../build/dotnet-version.props" />
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
-		<TargetFramework>net6.0-android</TargetFramework>
+		<TargetFrameworks>$(ExtraTargetFrameworks)net7.0-android</TargetFrameworks>
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
 	<PropertyGroup>
@@ -18,32 +19,24 @@
 		</AndroidResource>
 	</ItemGroup-->
 
-	<PropertyGroup Condition="'$(RunAOTCompilation)'=='' and '$(Configuration)'=='Release' and '$(TF_BUILD)'==''">
+	<PropertyGroup Condition="'$(RunAOTCompilation)'=='' and '$(Configuration)'=='Release' and '$(TestPublish)'!='True'">
 		<RunAOTCompilation>True</RunAOTCompilation>
 	</PropertyGroup>
-
-	<!-- PropertyGroup Condition="'$(RunAOTCompilation)'=='True'">
-		<EnableLLVM>True</EnableLLVM>
-		<AndroidAotAdditionalArguments>no-write-symbols,nodebug</AndroidAotAdditionalArguments>
-		<AndroidAotMode>Hybrid</AndroidAotMode>
-		<AndroidGenerateJniMarshalMethods>True</AndroidGenerateJniMarshalMethods>
-	</PropertyGroup -->
 
 	<PropertyGroup Condition="'$(AndroidEnableProfiler)'=='True'">
 		<IsEmulator Condition="'$(IsEmulator)' == ''">True</IsEmulator>
 		<DebugSymbols>True</DebugSymbols>
 	</PropertyGroup>
 
-	<ItemGroup Condition="'$(IsEmulator)'!='True'">
-		<AndroidEnvironment Include="environment.device.txt" />
-	</ItemGroup>
-	<ItemGroup Condition="'$(IsEmulator)'=='True'">
-		<AndroidEnvironment  Include="environment.emulator.txt" />
+	<ItemGroup>
+		<AndroidEnvironment Condition="'$(IsEmulator)'!='True'" Include="environment.device.txt" />
+		<AndroidEnvironment Condition="'$(IsEmulator)'=='True'" Include="environment.emulator.txt" />
 	</ItemGroup>
 
 	<Import Project="../../build/Avalonia.props" />
     <ItemGroup>
 		<PackageReference Include="Avalonia.Android" Version="$(AvaloniaVer)" />
+		<PackageReference Include="Xamarin.AndroidX.Core.SplashScreen" Version="1.0.1.4" />
 		<ProjectReference Include="../AvaloniaAero.Demo/AvaloniaAero.Demo.csproj" />
 	</ItemGroup>
 </Project>

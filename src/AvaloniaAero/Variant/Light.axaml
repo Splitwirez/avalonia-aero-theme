@@ -1,8 +1,9 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
-            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			x:ClassModifier="Internal">
 
 	<Color x:Key="AeroForegroundColor">#FF000000</Color>
-	<Color x:Key="aeroState disabledForegroundColor">#FF7F7F7F</Color>
+	<Color x:Key="AeroDisabledForegroundColor">#FF7F7F7F</Color>
 
 
 
@@ -165,6 +166,10 @@
 	<Color x:Key="AeroTextBoxDisabledBorderBrushColor">#FFADB2B5</Color>
 
 
+	<Color x:Key="AeroTextBoxErrorBorderBrushColor0">#FFAF3B3B</Color>
+	<Color x:Key="AeroTextBoxErrorBorderBrushColor1">#FFFF5656</Color>
+
+
 
 
 
@@ -176,19 +181,12 @@
 
 	<Color x:Key="AeroScrollBarThumbIconStrokeColor">#FFFFFFFF</Color>
 
-	<Color x:Key="AeroHorizontalScrollBarTrackBackgroundColor0">#FFE3E3E3</Color>
-	<Color x:Key="AeroHorizontalScrollBarTrackBackgroundColor1">#FFEFEFEF</Color>
-	<Color x:Key="AeroHorizontalScrollBarTrackBackgroundColor2">#FFF2F2F2</Color>
+	<Color x:Key="AeroScrollBarTrackBackgroundColor0">#FFE3E3E3</Color>
+	<Color x:Key="AeroScrollBarTrackBackgroundColor1">#FFEFEFEF</Color>
+	<Color x:Key="AeroScrollBarTrackBackgroundColor2">#FFF2F2F2</Color>
 
-	<Color x:Key="AeroHorizontalScrollBarTrackBorderBrushColor0">#FFF8F8F8</Color>
-	<Color x:Key="AeroHorizontalScrollBarTrackBorderBrushColor1">#FFEAEAEA</Color>
-
-	<Color x:Key="AeroVerticalScrollBarTrackBackgroundColor0">#FFE3E3E3</Color>
-	<Color x:Key="AeroVerticalScrollBarTrackBackgroundColor1">#FFEFEFEF</Color>
-	<Color x:Key="AeroVerticalScrollBarTrackBackgroundColor2">#FFF2F2F2</Color>
-
-	<Color x:Key="AeroVerticalScrollBarTrackBorderBrushColor0">#FFF8F8F8</Color>
-	<Color x:Key="AeroVerticalScrollBarTrackBorderBrushColor1">#FFEAEAEA</Color>
+	<Color x:Key="AeroScrollBarTrackBorderBrushColor0">#FFF8F8F8</Color>
+	<Color x:Key="AeroScrollBarTrackBorderBrushColor1">#FFEAEAEA</Color>
 
 	<Color x:Key="AeroVerticalScrollBarButtonIdleBackgroundColor0">#FFF2F2F2</Color>
 	<Color x:Key="AeroVerticalScrollBarButtonIdleBackgroundColor1">#FFEBEBEB</Color>
@@ -241,4 +239,56 @@
 
 	<Color x:Key="AeroToggleSwitchCheckedBorderBrushColor0">#FF2C628B</Color>
 	<Color x:Key="AeroToggleSwitchCheckedBorderBrushColor1">#FF49A4E5</Color>
+
+
+
+
+	<Color x:Key="AeroMenuBarBackgroundColor0">#FFD4DBED</Color>
+	<Color x:Key="AeroMenuBarBackgroundColor1">#FFE1E6F6</Color>
+
+	<Color x:Key="AeroMenuBarShineColor0">#FAFFFFFF</Color>
+	<Color x:Key="AeroMenuBarShineColor1">#62FFFFFF</Color>
+	
+	<Color x:Key="AeroMenuBarSideBorderBrushColor0">#FFE9ECF6</Color>
+	<Color x:Key="AeroMenuBarSideBorderBrushColor1">#FFF0F2FA</Color>
+	
+	<Color x:Key="AeroMenuBarBottomOuterBorderBrushColor">#FFF0F0F0</Color>
+	
+	<Color x:Key="AeroMenuBarBottomInnerBorderBrushColor">#FFB6BCCC</Color>
+
+
+
+
+	<Color x:Key="AeroMenuBarItemHoverBackgroundColor">#10FFFFFF</Color>
+	<Color x:Key="AeroMenuBarItemHoverBorderBrushColor">#40000000</Color>
+	
+	<Color x:Key="AeroMenuBarItemSelectedBackgroundColor">#20000000</Color>
+	<Color x:Key="AeroMenuBarItemSelectedBorderBrushColor">#A0000000</Color>
+
+
+
+
+	<Color x:Key="AeroGroupBoxBorderBrushColor">#FFD5DFE5</Color>
+
+
+
+
+	<Color x:Key="AeroProgressBarFrameBackgroundColor">#FFFBFBFB</Color>
+
+	<Color x:Key="AeroProgressBarFrameOuterBorderBrushColor0">#FFB2B2B2</Color>
+	<Color x:Key="AeroProgressBarFrameOuterBorderBrushColor1">#FF8C8C8C</Color>
+
+	<Color x:Key="AeroProgressBarFrameInnerBorderBrushColor0">#FFF1F1F1</Color>
+	<Color x:Key="AeroProgressBarFrameInnerBorderBrushColor1">#FFD1D1D1</Color>
+
+	<Color x:Key="AeroProgressBarFillColor">#FF00D328</Color>
+	<!--
+	<Color x:Key="AeroProgressBarFillFallbackColor0">#FF02AE22</Color>
+	<StaticResource x:Key="AeroProgressBarFillFallbackColor1" ResourceKey="AeroProgressBarFillColor" />
+	-->
+	<Color x:Key="AeroProgressBarFillFallbackColor0">#FFFF00FF</Color>
+	<Color x:Key="AeroProgressBarFillFallbackColor1">#FF00FF00</Color>
+
+	<Color x:Key="AeroProgressBarFillShineColor0">#DAFFFFFF</Color>
+	<Color x:Key="AeroProgressBarFillShineColor1">#A0FFFFFF</Color>
 </ResourceDictionary>

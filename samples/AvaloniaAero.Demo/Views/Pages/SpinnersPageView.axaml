@@ -1,37 +1,77 @@
-<UserControl xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:v="using:AvaloniaAero.Demo.Views"
-        mc:Ignorable="d" d:DesignWidth="398" d:DesignHeight="482"
-        x:Class="AvaloniaAero.Demo.Views.SpinnersPageView">
-    <Grid ColumnDefinitions="86,10,86"
-        RowDefinitions="21,10,21,10,21,10,21">
-        <Grid.Styles>
-            <Style Selector=":is(Control):disabled">
-                <Setter Property="Grid.Column" Value="2"/>
-            </Style>
-            <Style Selector="ButtonSpinner">
-                <Setter Property="Grid.Row" Value="0"/>
-            </Style>
-            <Style Selector="ButtonSpinner[ButtonSpinnerLocation=Left]">
-                <Setter Property="Grid.Row" Value="2"/>
-            </Style>
-            <Style Selector="NumericUpDown">
-                <Setter Property="Grid.Row" Value="4"/>
-            </Style>
-            <Style Selector="NumericUpDown[ButtonSpinnerLocation=Left]">
-                <Setter Property="Grid.Row" Value="6"/>
-            </Style>
-        </Grid.Styles>
+<UserControl x:Class="AvaloniaAero.Demo.Views.SpinnersPageView"
+            xmlns="https://github.com/avaloniaui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:sys="using:System">
+    <UserControl.Styles>
+        <Style Selector="ButtonSpinner">
+            <Setter Property="Content" Value="{Binding SpunText}" />
+            <Setter Property="AllowSpin" Value="{Binding $parent[UserControl].DataContext.AllowSpin, Mode=OneWay}" />
+            <Setter Property="ShowButtonSpinner" Value="{Binding $parent[UserControl].DataContext.ShowButtonSpinner, Mode=OneWay}" />
+            <Setter Property="ButtonSpinnerLocation" Value="{Binding $parent[UserControl].DataContext.SelectedSpinnerLocation, Mode=OneWay}" />
+        </Style>
 
-        <ButtonSpinner/>
-        <ButtonSpinner IsEnabled="False"/>
-        <ButtonSpinner ButtonSpinnerLocation="Left"/>
-        <ButtonSpinner ButtonSpinnerLocation="Left" IsEnabled="False"/>
-        <NumericUpDown/>
-        <NumericUpDown IsEnabled="False"/>
-        <NumericUpDown ButtonSpinnerLocation="Left"/>
-        <NumericUpDown ButtonSpinnerLocation="Left" IsEnabled="False"/>
-    </Grid>
+        <Style Selector="NumericUpDown">
+            <Setter Property="AllowSpin" Value="{Binding AllowSpin, Mode=OneWay}" />
+            <Setter Property="ShowButtonSpinner" Value="{Binding ShowButtonSpinner, Mode=OneWay}" />
+            <Setter Property="ButtonSpinnerLocation" Value="{Binding SelectedSpinnerLocation, Mode=OneWay}" />
+        </Style>
+        <!--
+        <Style Selector="ButtonSpinner > TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Text" Value="{Binding DataContext.SpunText, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ButtonSpinner}}, Mode=OneWay}" />
+        </Style>
+        -->
+    </UserControl.Styles>
+    <DockPanel>
+        <StackPanel Orientation="Vertical"
+                    Spacing="4"
+                    DockPanel.Dock="Bottom">
+            <CheckBox IsChecked="{Binding AllowSpin, Mode=TwoWay}">AllowSpin</CheckBox>
+            <CheckBox IsChecked="{Binding ShowButtonSpinner, Mode=TwoWay}">ShowButtonSpinner</CheckBox>
+            <ComboBox SelectedItem="{Binding SelectedSpinnerLocation, Mode=TwoWay}"
+                    ItemsSource="{Binding SpinnerLocations, Mode=TwoWay}" />
+        </StackPanel>
+        <ScrollViewer>
+            <StackPanel Orientation="Vertical"
+                        Spacing="4">
+                <HeaderedContentControl Header="ButtonSpinner">
+                    <StackPanel Orientation="Vertical"
+                                Spacing="4">
+                        <ButtonSpinner DataContext="{Binding SpinnerVM1}"
+                                    Spin="Spinner_Spin" />
+                        <ButtonSpinner DataContext="{Binding SpinnerVM2}"
+                                    Spin="Spinner_Spin">
+                            <DataValidationErrors.Error>
+                                <sys:Exception /> 
+                            </DataValidationErrors.Error>
+                        </ButtonSpinner>
+                    </StackPanel>
+                </HeaderedContentControl>
+                <HeaderedContentControl Header="NumericUpDown">
+                    <StackPanel Orientation="Vertical"
+                                Spacing="4">
+                        <NumericUpDown x:Name="DoubleUpDown"
+                                    Minimum="0"
+                                    Maximum="10"
+                                    Increment="0.5"
+                                    Value="{Binding DoubleValue}"
+                                    Watermark="Enter text"
+                                    FormatString="{Binding SelectedFormat.Value}" />
+                        <NumericUpDown x:Name="ValidationUpDown"
+                                    Minimum="0"
+                                    Maximum="10"
+                                    Increment="0.5"
+                                    VerticalAlignment="Center"
+                                    Watermark="Enter text"
+                                    FormatString="{Binding SelectedFormat.Value}">
+                            <DataValidationErrors.Error>
+                                <sys:Exception /> 
+                            </DataValidationErrors.Error>
+                        </NumericUpDown>
+                    </StackPanel>
+                </HeaderedContentControl>
+            </StackPanel>
+        </ScrollViewer>
+    </DockPanel>
 </UserControl>

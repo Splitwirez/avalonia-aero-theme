@@ -1,0 +1,188 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    x:ClassModifier="Internal">
+    
+    <Thickness x:Key="ToggleSwitchTopHeaderMargin">0,0,0,6</Thickness>
+    <GridLength x:Key="ToggleSwitchPreContentMargin">6</GridLength>
+    <GridLength x:Key="ToggleSwitchPostContentMargin">6</GridLength>
+    <x:Double x:Key="ToggleSwitchThemeMinWidth">0</x:Double>
+    
+    <ControlTheme x:Key="{x:Type ToggleSwitch}" TargetType="ToggleSwitch">
+        <!--Setter Property="Foreground" Value="{DynamicResource AeroForeground}" /-->
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="{DynamicResource AeroFontSizeNormal}" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid Background="{TemplateBinding Background}"
+                    RowDefinitions="Auto,*">
+
+                    <ContentPresenter x:Name="PART_ContentPresenter"
+                                    Grid.Row="0"
+                                    Content="{TemplateBinding Content}"
+                                    ContentTemplate="{TemplateBinding ContentTemplate}"
+                                    RecognizesAccessKey="True"
+                                    VerticalAlignment="Top"/>
+
+                    <Grid Grid.Row="1"
+                        MinWidth="{DynamicResource ToggleSwitchThemeMinWidth}"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="{DynamicResource ToggleSwitchPreContentMargin}" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="{DynamicResource ToggleSwitchPostContentMargin}" />
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="12" MaxWidth="12" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid x:Name="SwitchAreaGrid"
+                            Grid.RowSpan="3"
+                            Grid.ColumnSpan="3"
+                            TemplatedControl.IsTemplateFocusTarget="True"
+                            Margin="0,5" />
+
+                        <ContentPresenter x:Name="PART_OffContentPresenter"
+                                        Grid.RowSpan="3"
+                                        Grid.Column="2"
+                                        Content="{TemplateBinding OffContent}"
+                                        ContentTemplate="{TemplateBinding OffContentTemplate}"
+                                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+
+                        <ContentPresenter x:Name="PART_OnContentPresenter"
+                                        Grid.RowSpan="3"
+                                        Grid.Column="2"
+                                        Content="{TemplateBinding OnContent}"
+                                        ContentTemplate="{TemplateBinding OnContentTemplate}"
+                                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+
+                        <Border x:Name="Bg"
+                                Classes="aeroState2"
+                                Background="{DynamicResource AeroTextBoxIdleBackground}"
+                                BorderBrush="{DynamicResource AeroTextBoxIdleBorderBrush}"
+                                BorderThickness="1"
+                                CornerRadius="10"
+                                Height="22"
+                                Width="56"
+                                Grid.Row="1" />
+
+                        <Canvas x:Name="PART_SwitchKnob" Grid.Row="1"
+                                HorizontalAlignment="Left"
+                                Width="18"
+                                Height="16"
+                                Margin="3">
+                            <Panel x:Name="PART_MovingKnobs"
+                                HorizontalAlignment="Left"
+                                Width="32"
+                                Height="16">
+                                <Border x:Name="KnobOuter" Classes="aeroState2"
+                                        BorderBrush="{DynamicResource AeroButtonIdleOuterBorderBrush}"
+                                        BorderThickness="1"
+                                        CornerRadius="8">
+                                    <Border x:Name="KnobInner" Classes="aeroState2"
+                                            Background="{DynamicResource AeroButtonIdleBackground}"
+                                            BorderBrush="{DynamicResource AeroButtonIdleInnerBorderBrush}"
+                                            BorderThickness="1"
+                                            CornerRadius="6" />
+                                </Border>
+                            </Panel>
+                        </Canvas>
+                    </Grid>
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+
+
+        <!-- pointerover (hover) state -->
+        <Style Selector="^:pointerover">
+            <Style Selector="^ /template/ Border#Bg">
+                <Setter Property="Background" Value="{DynamicResource AeroTextBoxHoverBackground}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource AeroTextBoxHoverBorderBrush}" />
+            </Style>
+            
+            <Style Selector="^ /template/ Border#KnobOuter">
+                <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonHoverOuterBorderBrush}" />
+            </Style>
+            <Style Selector="^ /template/ Border#KnobInner">
+                <Setter Property="Background" Value="{DynamicResource AeroButtonHoverBackground}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonHoverInnerBorderBrush}" />
+            </Style>
+        </Style>
+
+
+        <!-- pressed state -->
+        <Style Selector="^:pressed">
+            <Style Selector="^ /template/ Border#KnobOuter">
+                <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonPressedOuterBorderBrush}" />
+            </Style>
+            <Style Selector="^ /template/ Border#KnobInner">
+                <Setter Property="Background" Value="{DynamicResource AeroButtonPressedBackground}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonPressedInnerBorderBrush}" />
+            </Style>
+        </Style>
+
+
+        <!-- unchecked state -->
+        <Style Selector="^:unchecked">
+            <Style Selector="^ /template/ ContentPresenter#PART_OnContentPresenter">
+                <Setter Property="Opacity" Value="0" />
+                <Setter Property="IsHitTestVisible" Value="False" />
+            </Style>
+        </Style>
+
+
+        <!-- checked state -->
+        <Style Selector="^:checked">
+            <Style Selector="^ /template/ Border#Bg">
+                <Setter Property="Background" Value="{DynamicResource AeroToggleSwitchCheckedBackground}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource AeroToggleSwitchCheckedBorderBrush}" />
+            </Style>
+            <Style Selector="^ /template/ ContentPresenter#PART_OffContentPresenter">
+                <Setter Property="Opacity" Value="0" />
+                <Setter Property="IsHitTestVisible" Value="False" />
+            </Style>
+        </Style>
+
+
+        <!-- disabled state -->
+        <Style Selector="^:disabled">
+            <Style Selector="^ /template/ Border#Bg">
+                <Setter Property="Background" Value="{DynamicResource AeroTextBoxDisabledBackground}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource AeroTextBoxDisabledBorderBrush}" />
+            </Style>
+            
+            <Style Selector="^ /template/ Border#KnobOuter">
+                <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonDisabledOuterBorderBrush}" />
+            </Style>
+            <Style Selector="^ /template/ Border#KnobInner">
+                <Setter Property="Background" Value="{DynamicResource AeroButtonDisabledBackground}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonDisabledInnerBorderBrush}" />
+            </Style>
+        </Style>
+
+
+
+
+
+        <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter:not(:empty)">
+            <Setter Property="Margin" Value="{DynamicResource ToggleSwitchTopHeaderMargin}" />
+        </Style>
+
+        <Style Selector="^:not(:dragging) /template/ Panel#PART_MovingKnobs">
+            <Setter Property="Transitions">
+                <Transitions>
+                    <DoubleTransition Property="Canvas.Left" Duration="0:0:0.25" Easing="QuinticEaseOut" />
+                </Transitions>
+            </Setter>
+        </Style>
+    </ControlTheme>
+</ResourceDictionary>

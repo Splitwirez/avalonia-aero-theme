@@ -5,26 +5,29 @@ using AvaloniaAero.Demo.ViewModels;
 
 namespace AvaloniaAero.Demo
 {
-    public class ViewLocator : IDataTemplate
+    public class ViewLocator
+        : IDataTemplate
     {
         public bool SupportsRecycling => false;
 
-        public IControl Build(object data)
+        public Control Build(object data)
         {
-            IControl ret = null;
+            var type = ((ViewModelBase)data).ViewType;
             
-            var type = ((ViewModelBase)data).GetViewTypeName();
+            if (type == null)
+                return GetFailTextBlock(data);
             
-            if (type != null)
-                ret = (IControl)Activator.CreateInstance(type);
+            if (!(Activator.CreateInstance(type) is Control ret))
+                return GetFailTextBlock(data);
             
-            return (ret != null)
-                ? ret
-                : new TextBlock
-                    {
-                        Text = $"Not Found: {data.GetType().FullName}"
-                    };
+            return ret;
         }
+
+        TextBlock GetFailTextBlock(object data)
+            => new TextBlock()
+            {
+                Text = $"Not Found: {data.GetType().FullName}"
+            };
 
         public bool Match(object data)
         {

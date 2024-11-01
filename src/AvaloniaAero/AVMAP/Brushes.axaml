@@ -1,0 +1,352 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			x:ClassModifier="Internal">
+	<SolidColorBrush x:Key="AeroForeground" Color="{DynamicResource AeroForegroundColor}" />
+	<SolidColorBrush x:Key="AeroDisabledForeground" Color="{DynamicResource AeroDisabledForegroundColor}" />
+
+
+
+
+	<SolidColorBrush x:Key="AeroWindowBackground" Color="{DynamicResource AeroWindowBackgroundColor}" />
+
+
+
+
+	<LinearGradientBrush x:Key="AeroToolTipBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroToolTipBackgroundColor0}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroToolTipBackgroundColor1}" />
+	</LinearGradientBrush>
+
+	<SolidColorBrush x:Key="AeroToolTipBorderBrush" Color="{DynamicResource AeroToolTipBorderBrushColor}" />
+
+
+
+
+	<LinearGradientBrush x:Key="AeroButtonIdleBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroButtonIdleBackgroundColor0}" />
+		<GradientStop Offset="0.5" Color="{DynamicResource AeroButtonIdleBackgroundColor1}" />
+		<GradientStop Offset="0.5" Color="{DynamicResource AeroButtonIdleBackgroundColor2}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroButtonIdleBackgroundColor3}" />
+	</LinearGradientBrush>
+	
+    <SolidColorBrush x:Key="AeroButtonIdleOuterBorderBrush" Color="{DynamicResource AeroButtonIdleOuterBorderBrushColor}" />
+	
+    <LinearGradientBrush x:Key="AeroButtonIdleInnerBorderBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroButtonIdleInnerBorderBrushColor0}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroButtonIdleInnerBorderBrushColor1}" />
+	</LinearGradientBrush>
+
+
+	<LinearGradientBrush x:Key="AeroButtonHoverBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroButtonHoverBackgroundColor0}" />
+		<GradientStop Offset="0.5" Color="{DynamicResource AeroButtonHoverBackgroundColor1}" />
+		<GradientStop Offset="0.5" Color="{DynamicResource AeroButtonHoverBackgroundColor2}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroButtonHoverBackgroundColor3}" />
+	</LinearGradientBrush>
+
+	<SolidColorBrush x:Key="AeroButtonHoverOuterBorderBrush" Color="{DynamicResource AeroButtonHoverOuterBorderBrushColor}" />
+	
+    <LinearGradientBrush x:Key="AeroButtonHoverInnerBorderBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroButtonHoverInnerBorderBrushColor0}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroButtonHoverInnerBorderBrushColor1}" />
+	</LinearGradientBrush>
+
+
+	<LinearGradientBrush x:Key="AeroButtonPressedBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroButtonPressedBackgroundColor0}" />
+		<GradientStop Offset="0.5" Color="{DynamicResource AeroButtonPressedBackgroundColor1}" />
+		<GradientStop Offset="0.5" Color="{DynamicResource AeroButtonPressedBackgroundColor2}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroButtonPressedBackgroundColor3}" />
+	</LinearGradientBrush>
+
+	<SolidColorBrush x:Key="AeroButtonPressedOuterBorderBrush" Color="{DynamicResource AeroButtonPressedOuterBorderBrushColor}" />
+	<LinearGradientBrush x:Key="AeroButtonPressedInnerBorderBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroButtonPressedInnerBorderBrushColor0}" />
+		<GradientStop Offset="0.5" Color="{DynamicResource AeroButtonPressedInnerBorderBrushColor1}" />
+		<GradientStop Offset="0.5" Color="{DynamicResource AeroButtonPressedInnerBorderBrushColor2}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroButtonPressedInnerBorderBrushColor3}" />
+	</LinearGradientBrush>
+
+	<SolidColorBrush x:Key="AeroButtonDisabledBackground" Color="{DynamicResource AeroButtonDisabledBackgroundColor}" />
+	<SolidColorBrush x:Key="AeroButtonDisabledOuterBorderBrush" Color="{DynamicResource AeroButtonDisabledOuterBorderBrushColor}" />
+	<SolidColorBrush x:Key="AeroButtonDisabledInnerBorderBrush" Color="{DynamicResource AeroButtonDisabledInnerBorderBrushColor}" />
+	<SolidColorBrush x:Key="AeroButtonDisabledForeground" Color="{DynamicResource AeroButtonDisabledForegroundColor}" />
+
+	<SolidColorBrush x:Key="AeroCheckBoxIdleOuterBorderBrush" Color="{DynamicResource AeroCheckBoxIdleOuterBorderBrushColor}" />
+	<SolidColorBrush x:Key="AeroCheckBoxIdleMiddleBorderBrush" Color="{DynamicResource AeroCheckBoxIdleMiddleBorderBrushColor}" />
+	
+    <LinearGradientBrush x:Key="AeroCheckBoxIdleInnerBorderBrush" StartPoint="0%,0%" EndPoint="100%,100%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroCheckBoxIdleInnerBorderBrushColor0}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroCheckBoxIdleInnerBorderBrushColor1}" />
+	</LinearGradientBrush>
+
+	<LinearGradientBrush x:Key="AeroCheckBoxIdleBackground" StartPoint="0%,0%" EndPoint="100%,100%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroCheckBoxIdleBackgroundColor0}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroCheckBoxIdleBackgroundColor1}" />
+	</LinearGradientBrush>
+
+	<SolidColorBrush x:Key="AeroCheckBoxIdleCheckMarkBrush" Color="{DynamicResource AeroCheckBoxIdleCheckMarkBrushColor}" />
+	
+    
+    <SolidColorBrush x:Key="AeroCheckBoxHoverOuterBorderBrush" Color="{DynamicResource AeroCheckBoxHoverOuterBorderBrushColor}" />
+	<SolidColorBrush x:Key="AeroCheckBoxHoverMiddleBorderBrush" Color="{DynamicResource AeroCheckBoxHoverMiddleBorderBrushColor}" />
+	
+    <LinearGradientBrush x:Key="AeroCheckBoxHoverInnerBorderBrush" StartPoint="0%,0%" EndPoint="100%,100%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroCheckBoxHoverInnerBorderBrushColor0}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroCheckBoxHoverInnerBorderBrushColor1}" />
+	</LinearGradientBrush>
+
+	<LinearGradientBrush x:Key="AeroCheckBoxHoverBackground" StartPoint="0%,0%" EndPoint="100%,100%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroCheckBoxHoverBackgroundColor0}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroCheckBoxHoverBackgroundColor1}" />
+	</LinearGradientBrush>
+
+	<SolidColorBrush x:Key="AeroCheckBoxHoverCheckMarkBrush" Color="{DynamicResource AeroCheckBoxHoverCheckMarkBrushColor}" />
+	
+    
+    <SolidColorBrush x:Key="AeroCheckBoxPressedOuterBorderBrush" Color="{DynamicResource AeroCheckBoxPressedOuterBorderBrushColor}" />
+	<SolidColorBrush x:Key="AeroCheckBoxPressedMiddleBorderBrush" Color="{DynamicResource AeroCheckBoxPressedMiddleBorderBrushColor}" />
+	
+    <LinearGradientBrush x:Key="AeroCheckBoxPressedInnerBorderBrush" StartPoint="0%,0%" EndPoint="100%,100%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroCheckBoxPressedInnerBorderBrushColor0}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroCheckBoxPressedInnerBorderBrushColor1}" />
+	</LinearGradientBrush>
+
+	<LinearGradientBrush x:Key="AeroCheckBoxPressedBackground" StartPoint="0%,0%" EndPoint="100%,100%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroCheckBoxPressedBackgroundColor0}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroCheckBoxPressedBackgroundColor1}" />
+	</LinearGradientBrush>
+
+	<SolidColorBrush x:Key="AeroCheckBoxPressedCheckMarkBrush" Color="{DynamicResource AeroCheckBoxPressedCheckMarkBrushColor}" />
+	
+    
+    <SolidColorBrush x:Key="AeroCheckBoxDisabledBorderBrush" Color="{DynamicResource AeroCheckBoxDisabledBorderBrushColor}" />
+	
+    <LinearGradientBrush x:Key="AeroCheckBoxDisabledBackground" StartPoint="0%,0%" EndPoint="100%,100%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroCheckBoxDisabledBackgroundColor0}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroCheckBoxDisabledBackgroundColor1}" />
+	</LinearGradientBrush>
+
+	<SolidColorBrush x:Key="AeroCheckBoxDisabledCheckMarkBrush" Color="{DynamicResource AeroCheckBoxDisabledCheckMarkBrushColor}" />
+	
+    
+    
+    
+    <RadialGradientBrush x:Key="AeroRadioButtonIdleCircleFill" Center="25%,25%" GradientOrigin="25%,25%">
+		<GradientStop Offset="0.5" Color="{DynamicResource AeroRadioButtonIdleCircleFillColor0}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroRadioButtonIdleCircleFillColor1}" />
+	</RadialGradientBrush>
+
+
+	<RadialGradientBrush x:Key="AeroRadioButtonHoverCircleFill" Center="25%,25%" GradientOrigin="25%,25%">
+		<GradientStop Offset="0.5" Color="{DynamicResource AeroRadioButtonHoverCircleFillColor0}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroRadioButtonHoverCircleFillColor1}" />
+	</RadialGradientBrush>
+
+
+	<RadialGradientBrush x:Key="AeroRadioButtonPressedCircleFill" Center="25%,25%" GradientOrigin="25%,25%">
+		<GradientStop Offset="0.5" Color="{DynamicResource AeroRadioButtonPressedCircleFillColor0}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroRadioButtonPressedCircleFillColor1}" />
+	</RadialGradientBrush>
+
+
+	<RadialGradientBrush x:Key="AeroRadioButtonDisabledCircleFill" Center="25%,25%" GradientOrigin="25%,25%">
+		<GradientStop Offset="0.5" Color="{DynamicResource AeroRadioButtonDisabledCircleFillColor0}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroRadioButtonDisabledCircleFillColor1}" />
+	</RadialGradientBrush>
+
+	<SolidColorBrush x:Key="AeroTabControlBackground" Color="{DynamicResource AeroTabControlBackgroundColor}" />
+	<SolidColorBrush x:Key="AeroTabControlOuterBorderBrush" Color="{DynamicResource AeroTabControlOuterBorderBrushColor}" />
+	<SolidColorBrush x:Key="AeroTabControlInnerBorderBrush" Color="{DynamicResource AeroTabControlInnerBorderBrushColor}" />
+	
+    
+    
+    
+    <SolidColorBrush x:Key="AeroTextBoxIdleBackground" Color="{DynamicResource AeroTextBoxIdleBackgroundColor}" />
+	
+    <LinearGradientBrush x:Key="AeroTextBoxIdleBorderBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroTextBoxIdleBorderBrushColor0}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroTextBoxIdleBorderBrushColor1}" />
+	</LinearGradientBrush>
+
+	
+    <SolidColorBrush x:Key="AeroTextBoxHoverBackground" Color="{DynamicResource AeroTextBoxHoverBackgroundColor}" />
+	
+    <LinearGradientBrush x:Key="AeroTextBoxHoverBorderBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroTextBoxHoverBorderBrushColor0}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroTextBoxHoverBorderBrushColor1}" />
+	</LinearGradientBrush>
+
+	<SolidColorBrush x:Key="AeroTextBoxFocusBackground" Color="{DynamicResource AeroTextBoxFocusBackgroundColor}" />
+	<LinearGradientBrush x:Key="AeroTextBoxFocusBorderBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroTextBoxFocusBorderBrushColor0}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroTextBoxFocusBorderBrushColor1}" />
+	</LinearGradientBrush>
+
+	<SolidColorBrush x:Key="AeroTextBoxDisabledBackground" Color="{DynamicResource AeroTextBoxDisabledBackgroundColor}" />
+	<SolidColorBrush x:Key="AeroTextBoxDisabledBorderBrush" Color="{DynamicResource AeroTextBoxDisabledBorderBrushColor}" />
+	
+	<LinearGradientBrush x:Key="AeroTextBoxErrorBorderBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroTextBoxErrorBorderBrushColor0}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroTextBoxErrorBorderBrushColor1}" />
+	</LinearGradientBrush>
+	
+    
+    
+    
+    <LinearGradientBrush x:Key="AeroScrollBarButtonForeground" StartPoint="0%,0%" EndPoint="100%,100%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroScrollBarButtonForegroundColor0}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroScrollBarButtonForegroundColor1}" />
+	</LinearGradientBrush>
+
+	<SolidColorBrush x:Key="AeroScrollBarButtonIconStroke" Color="{DynamicResource AeroScrollBarButtonIconStrokeColor}" />
+	<SolidColorBrush x:Key="AeroScrollBarThumbIconStroke" Color="{DynamicResource AeroScrollBarThumbIconStrokeColor}" />
+	
+    <GradientStops x:Key="AeroScrollBarTrackBackgroundStops">
+		<GradientStop Offset="0" Color="{DynamicResource AeroScrollBarTrackBackgroundColor0}" />
+		<GradientStop Offset="0.25" Color="{DynamicResource AeroScrollBarTrackBackgroundColor1}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroScrollBarTrackBackgroundColor2}" />
+	</GradientStops>
+	<LinearGradientBrush x:Key="AeroHorizontalScrollBarTrackBackground" StartPoint="0%,0%" EndPoint="0%,100%"
+						GradientStops="{StaticResource AeroScrollBarTrackBackgroundStops}" />
+	<LinearGradientBrush x:Key="AeroVerticalScrollBarTrackBackground" StartPoint="0%,0%" EndPoint="100%,0%"
+						GradientStops="{StaticResource AeroScrollBarTrackBackgroundStops}" />
+
+	<GradientStops x:Key="AeroScrollBarTrackBorderBrushStops">
+		<GradientStop Offset="0" Color="{DynamicResource AeroScrollBarTrackBorderBrushColor0}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroScrollBarTrackBorderBrushColor1}" />
+	</GradientStops>
+	<LinearGradientBrush x:Key="AeroHorizontalScrollBarTrackBorderBrush" StartPoint="0%,0%" EndPoint="0%,100%"
+						GradientStops="{StaticResource AeroScrollBarTrackBorderBrushStops}" />
+	<LinearGradientBrush x:Key="AeroVerticalScrollBarTrackBorderBrush" StartPoint="0%,0%" EndPoint="100%,0%"
+						GradientStops="{StaticResource AeroScrollBarTrackBorderBrushStops}" />
+
+
+	<LinearGradientBrush x:Key="AeroVerticalScrollBarButtonIdleBackground" StartPoint="0%,0%" EndPoint="100%,0%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroVerticalScrollBarButtonIdleBackgroundColor0}" />
+		<GradientStop Offset="0.5" Color="{DynamicResource AeroVerticalScrollBarButtonIdleBackgroundColor1}" />
+		<GradientStop Offset="0.5" Color="{DynamicResource AeroVerticalScrollBarButtonIdleBackgroundColor2}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroVerticalScrollBarButtonIdleBackgroundColor3}" />
+	</LinearGradientBrush>
+
+	<SolidColorBrush x:Key="AeroVerticalScrollBarButtonIdleOuterBorderBrush" Color="{DynamicResource AeroVerticalScrollBarButtonIdleOuterBorderBrushColor}" />
+	
+    <LinearGradientBrush x:Key="AeroVerticalScrollBarButtonIdleInnerBorderBrush" StartPoint="0%,0%" EndPoint="100%,0%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroVerticalScrollBarButtonIdleInnerBorderBrushColor0}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroVerticalScrollBarButtonIdleInnerBorderBrushColor1}" />
+	</LinearGradientBrush>
+
+
+	<LinearGradientBrush x:Key="AeroVerticalScrollBarButtonHoverBackground" StartPoint="0%,0%" EndPoint="100%,0%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroVerticalScrollBarButtonHoverBackgroundColor0}" />
+		<GradientStop Offset="0.5" Color="{DynamicResource AeroVerticalScrollBarButtonHoverBackgroundColor1}" />
+		<GradientStop Offset="0.5" Color="{DynamicResource AeroVerticalScrollBarButtonHoverBackgroundColor2}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroVerticalScrollBarButtonHoverBackgroundColor3}" />
+	</LinearGradientBrush>
+
+	<SolidColorBrush x:Key="AeroVerticalScrollBarButtonHoverOuterBorderBrush" Color="{DynamicResource AeroVerticalScrollBarButtonHoverOuterBorderBrushColor}" />
+	
+    <LinearGradientBrush x:Key="AeroVerticalScrollBarButtonHoverInnerBorderBrush" StartPoint="0%,0%" EndPoint="100%,0%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroVerticalScrollBarButtonHoverInnerBorderBrushColor0}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroVerticalScrollBarButtonHoverInnerBorderBrushColor1}" />
+	</LinearGradientBrush>
+
+
+	<LinearGradientBrush x:Key="AeroVerticalScrollBarButtonPressedBackground" StartPoint="0%,0%" EndPoint="100%,0%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroVerticalScrollBarButtonPressedBackgroundColor0}" />
+		<GradientStop Offset="0.5" Color="{DynamicResource AeroVerticalScrollBarButtonPressedBackgroundColor1}" />
+		<GradientStop Offset="0.5" Color="{DynamicResource AeroVerticalScrollBarButtonPressedBackgroundColor2}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroVerticalScrollBarButtonPressedBackgroundColor3}" />
+	</LinearGradientBrush>
+
+	<SolidColorBrush x:Key="AeroVerticalScrollBarButtonPressedOuterBorderBrush" Color="{DynamicResource AeroVerticalScrollBarButtonPressedOuterBorderBrushColor}" />
+	
+    <LinearGradientBrush x:Key="AeroVerticalScrollBarButtonPressedInnerBorderBrush" StartPoint="0%,0%" EndPoint="100%,0%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroVerticalScrollBarButtonPressedInnerBorderBrushColor0}" />
+		<GradientStop Offset="0.5" Color="{DynamicResource AeroVerticalScrollBarButtonPressedInnerBorderBrushColor1}" />
+		<GradientStop Offset="0.5" Color="{DynamicResource AeroVerticalScrollBarButtonPressedInnerBorderBrushColor2}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroVerticalScrollBarButtonPressedInnerBorderBrushColor3}" />
+	</LinearGradientBrush>
+
+
+	<SolidColorBrush x:Key="AeroVerticalScrollBarButtonDisabledBackground" Color="{DynamicResource AeroVerticalScrollBarButtonDisabledBackgroundColor}" />
+	<SolidColorBrush x:Key="AeroVerticalScrollBarButtonDisabledOuterBorderBrush" Color="{DynamicResource AeroVerticalScrollBarButtonDisabledOuterBorderBrushColor}" />
+	<SolidColorBrush x:Key="AeroVerticalScrollBarButtonDisabledInnerBorderBrush" Color="{DynamicResource AeroVerticalScrollBarButtonDisabledInnerBorderBrushColor}" />
+	
+    
+    <SolidColorBrush x:Key="AeroScrollViewerCornerBackground" Color="{DynamicResource AeroScrollViewerCornerBackgroundColor}" />
+
+
+
+
+	<SolidColorBrush x:Key="AeroToggleSwitchCheckedBackground" Color="{DynamicResource AeroToggleSwitchCheckedBackgroundColor}" />
+	<LinearGradientBrush x:Key="AeroToggleSwitchCheckedBorderBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroToggleSwitchCheckedBorderBrushColor0}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroToggleSwitchCheckedBorderBrushColor1}" />
+	</LinearGradientBrush>
+
+
+
+
+	<LinearGradientBrush x:Key="AeroMenuBarBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroMenuBarBackgroundColor0}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroMenuBarBackgroundColor1}" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="AeroMenuBarShine" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroMenuBarShineColor0}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroMenuBarShineColor1}" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="AeroMenuBarSideBorderBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroMenuBarSideBorderBrushColor0}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroMenuBarSideBorderBrushColor1}" />
+	</LinearGradientBrush>
+	<SolidColorBrush x:Key="AeroMenuBarBottomOuterBorderBrush" Color="{DynamicResource AeroMenuBarBottomOuterBorderBrushColor}" />
+	<SolidColorBrush x:Key="AeroMenuBarBottomInnerBorderBrush" Color="{DynamicResource AeroMenuBarBottomInnerBorderBrushColor}" />
+
+
+
+
+	<SolidColorBrush x:Key="AeroMenuBarItemHoverBackground" Color="{DynamicResource AeroMenuBarItemHoverBackgroundColor}" />
+	<SolidColorBrush x:Key="AeroMenuBarItemHoverBorderBrush" Color="{DynamicResource AeroMenuBarItemHoverBorderBrushColor}" />
+
+	<SolidColorBrush x:Key="AeroMenuBarItemSelectedBackground" Color="{DynamicResource AeroMenuBarItemSelectedBackgroundColor}" />
+	<SolidColorBrush x:Key="AeroMenuBarItemSelectedBorderBrush" Color="{DynamicResource AeroMenuBarItemSelectedBorderBrushColor}" />
+
+
+
+
+	<SolidColorBrush x:Key="AeroGroupBoxBorderBrush" Color="{DynamicResource AeroGroupBoxBorderBrushColor}" />
+
+
+
+
+	<SolidColorBrush x:Key="AeroProgressBarFrameBackground" Color="{DynamicResource AeroProgressBarFrameBackgroundColor}" />
+	<LinearGradientBrush x:Key="AeroProgressBarFrameOuterBorderBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroProgressBarFrameOuterBorderBrushColor0}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroProgressBarFrameOuterBorderBrushColor1}" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="AeroProgressBarFrameInnerBorderBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroProgressBarFrameInnerBorderBrushColor0}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroProgressBarFrameInnerBorderBrushColor1}" />
+	</LinearGradientBrush>
+
+	<SolidColorBrush x:Key="AeroProgressBarFill" Color="{DynamicResource AeroProgressBarFillColor}" />
+	<LinearGradientBrush x:Key="AeroProgressBarFillFallback" StartPoint="0%,0%" EndPoint="100%,0%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroProgressBarFillFallbackColor0}" />
+		<GradientStop Offset="0.5" Color="{DynamicResource AeroProgressBarFillFallbackColor1}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroProgressBarFillFallbackColor0}" />
+	</LinearGradientBrush>
+	<GradientStops x:Key="AeroProgressBarFillShineStops">
+		<GradientStop Offset="0" Color="{DynamicResource AeroProgressBarFillShineColor0}" />
+		<GradientStop Offset="0.5" Color="{DynamicResource AeroProgressBarFillShineColor1}" />
+		<GradientStop Offset="0.5" Color="Transparent" />
+	</GradientStops>
+	<LinearGradientBrush x:Key="AeroProgressBarFillHorizontalShine"
+						StartPoint="0%,0%"
+						EndPoint="0%,100%"
+						GradientStops="{StaticResource AeroProgressBarFillShineStops}" />
+	<LinearGradientBrush x:Key="AeroProgressBarFillVerticalShine"
+						StartPoint="0%,0%"
+						EndPoint="100%,0%"
+						GradientStops="{StaticResource AeroProgressBarFillShineStops}" />
+</ResourceDictionary>

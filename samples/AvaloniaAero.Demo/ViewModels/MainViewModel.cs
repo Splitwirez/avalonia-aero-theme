@@ -1,22 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using AvaloniaAero;
-using AvaloniaAero.Demo;
+using Avalonia;
+using Avalonia.Styling;
 
 namespace AvaloniaAero.Demo.ViewModels
 {
-    public class MainViewModel : ViewModelBase
+    public class MainViewModel
+        : ViewModelBase
     {
         ObservableCollection<PageViewModelBase> _pages = new ObservableCollection<PageViewModelBase>()
         {
+            new ThemeOverviewPageViewModel(),
             new ButtonsPageViewModel(),
-            new ToggleSwitchPageViewModel(),
+            //new ListBoxPageViewModel(),
+            new MenusPageViewModel(),
+            new ProgressBarPageViewModel(),
             new ScrollViewerPageViewModel(),
-            new BoxesPageViewModel(),
             new SpinnersPageViewModel(),
+            new TextBoxPageViewModel(),
+            new ToggleSwitchPageViewModel(),
             //new TestPageViewModel(),
         };
         public ObservableCollection<PageViewModelBase> Pages
@@ -33,8 +36,8 @@ namespace AvaloniaAero.Demo.ViewModels
             set => RASIC(ref _currentPage, value);
         }
 
-        bool _areLightsOn = true;
         
+        bool _areLightsOn = Application.Current.RequestedThemeVariant != ThemeVariant.Dark;
         public bool AreLightsOn
         {
             get => _areLightsOn;
@@ -44,20 +47,10 @@ namespace AvaloniaAero.Demo.ViewModels
                 RASIC(ref _areLightsOn, value);
                 if (_areLightsOn != prev)
                 {
-                    var theme = App.Current.Styles.OfType<AeroTheme>().FirstOrDefault();
-                    theme.Variant = _areLightsOn ? AeroVariant.Light : AeroVariant.Dark;
-                    int index = App.Current.Styles.IndexOf(theme);
-                    App.Current.Styles.Remove(theme);
-                    App.Current.Styles.Insert(index, theme);
-                    
-                    /*var theme = App.Current.Styles.OfType<AeroTheme>().FirstOrDefault();
-                    int index = App.Current.Styles.IndexOf(theme);
-                    App.Current.Styles.Remove(theme);
-                    //theme.Mode = _areLightsOn ? AeroThemeMode.Light : AeroThemeMode.Dark;
-                    //App.Current.Styles.Insert(index, theme);
-                    var newTheme = new AeroTheme((Uri)null);
-                    newTheme.Mode = _areLightsOn ? AeroThemeMode.Light : AeroThemeMode.Dark;
-                    App.Current.Styles.Insert(index, newTheme);*/
+                    Application.Current.RequestedThemeVariant = _areLightsOn
+                        ? ThemeVariant.Light
+                        : ThemeVariant.Dark
+                    ;
                 }
             }
         }

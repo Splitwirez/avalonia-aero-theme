@@ -1,9 +1,0 @@
-<Styles xmlns="https://github.com/avaloniaui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <!--TEMP Fluent placeholders-->
-    <StyleInclude Source="avares://AvaloniaAero/FluentPlaceholders/Accents/AccentColors.axaml" />
-	<StyleInclude Source="avares://AvaloniaAero/FluentPlaceholders/Accents/BaseDark.axaml" />
-	<StyleInclude Source="avares://AvaloniaAero/FluentPlaceholders/Accents/Base.axaml" />
-	<!--StyleInclude Source="avares://AvaloniaAero/FluentPlaceholders/Accents/FluentBaseDark.axaml" /-->
-	<StyleInclude Source="avares://AvaloniaAero/FluentPlaceholders/Accents/FluentControlResourcesDark.axaml" />
-</Styles>

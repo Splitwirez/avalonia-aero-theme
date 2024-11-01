@@ -4,7 +4,8 @@ using Avalonia.Markup.Xaml;
 
 namespace AvaloniaAero.Demo.Views
 {
-    public class ButtonsPageView : UserControl
+    public partial class ButtonsPageView
+        : UserControl
     {
         public ButtonsPageView()
         {

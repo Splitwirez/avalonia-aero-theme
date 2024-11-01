@@ -4,7 +4,8 @@ using Avalonia.Markup.Xaml;
 
 namespace AvaloniaAero.Demo.Views
 {
-    public class ScrollViewerPageView : UserControl
+    public partial class ScrollViewerPageView
+        : UserControl
     {
         public ScrollViewerPageView()
         {

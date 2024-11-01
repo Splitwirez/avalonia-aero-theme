@@ -1,19 +1,6 @@
-<UserControl xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:vm="using:AvaloniaAero.Demo.ViewModels"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="398" d:DesignHeight="482"
-        x:Class="AvaloniaAero.Demo.Views.MainView"
-        Icon="/Assets/avalonia-logo.ico"
-        Title="Windows Aero for Avalonia Sample"
-        WindowWidth="398"
-        WindowHeight="482"
-        CanResize="False">
-    <Design.DataContext>
-        <vm:MainViewModel/>
-    </Design.DataContext>
-
+<UserControl x:Class="AvaloniaAero.Demo.Views.MainView"
+            xmlns="https://github.com/avaloniaui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <UserControl.Styles>
         <Style Selector="CheckBox.lightSwitch[IsChecked=true]">
             <Setter Property="Content" Value="Lights on"/>
@@ -21,10 +8,6 @@
         <Style Selector="CheckBox.lightSwitch[IsChecked=false]">
             <Setter Property="Content" Value="Lights off"/>
         </Style>
-
-        <!--Style Selector="Panel.switchContainer[Tag=true]">
-            <Setter Property="Margin" Value="-1,0,1,0"/>
-        </Style-->
         
         <Style Selector="ToggleSwitch.lightSwitch[IsChecked=true]">
             <Setter Property="Margin" Value="0,-20"/>
@@ -33,10 +16,6 @@
             <Setter Property="Margin" Value="-1,-20,1,-20"/>
             <Setter Property="RenderTransform" Value="translateX(1px)"/>
         </Style>
-
-        <!--Style Selector="TabControl#PagesTabControl > TabItem">
-            <Setter Property="Header" Value="{Binding Title, Mode=OneWay}"/>
-        </Style-->
     </UserControl.Styles>
 
     <DockPanel>
@@ -60,21 +39,15 @@
                 <Button Content="Apply"
                         IsEnabled="False"/>
             </UniformGrid>
-            <!--Panel Classes="switchContainer"
-                    Tag="{Binding AreLightsOn}"-->
-                <!--CheckBox x:Name="LightSwitch"
+            <ToggleSwitch  x:Name="LightSwitch"
                         IsChecked="{Binding AreLightsOn}"
-                        Classes="lightSwitch"/-->
-                <ToggleSwitch  x:Name="LightSwitch"
-                            IsChecked="{Binding AreLightsOn}"
-                            Classes="lightSwitch"
-                            OnContent="Lights on"
-                            OffContent="Lights off"/>
-                        <!--Margin="0,-20"-->
-            <!--/Panel-->
+                        Classes="lightSwitch"
+                        OnContent="Lights on"
+                        OffContent="Lights off"/>
         </DockPanel>
         <TabControl x:Name="PagesTabControl"
-                    Items="{Binding Pages}"
+                    ItemsSource="{Binding Pages}"
+                    SelectedIndex="1"
                     Margin="6,7,4,6">
             <TabControl.ItemTemplate>
                 <DataTemplate>

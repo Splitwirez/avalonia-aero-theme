@@ -1,0 +1,109 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:aecnv="using:AvaloniaAero.Converters"
+                    x:ClassModifier="Internal">
+    <aecnv:AdjustCornerRadiusConverter x:Key="AeroButtonInnerCornerRadiiConverter" Amount="-1" />
+
+    <ControlTheme x:Key="{x:Type Button}" TargetType="Button">
+        <Setter Property="Background" Value="{DynamicResource AeroButtonIdleBackground}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonIdleInnerBorderBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Foreground" Value="{DynamicResource AeroForeground}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Padding" Value="3" />
+        <Setter Property="FontSize" Value="{DynamicResource AeroFontSizeNormal}" />
+        <Setter Property="CornerRadius" Value="{DynamicResource AeroControlCornerRadius}" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Panel>
+                    <Border x:Name="Outer"
+                            Classes="aeroState2"
+                            BorderBrush="{DynamicResource AeroButtonIdleOuterBorderBrush}"
+                            BorderThickness="1"
+                            CornerRadius="{TemplateBinding CornerRadius}">
+                        <Border x:Name="Inner"
+                                Classes="aeroState2"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="{TemplateBinding CornerRadius, Converter={StaticResource AeroButtonInnerCornerRadiiConverter}}" />
+                    </Border>
+                    <ContentPresenter x:Name="PART_ContentPresenter"
+                                    ContentTemplate="{TemplateBinding ContentTemplate}"
+                                    Content="{TemplateBinding Content}"
+                                    Padding="{TemplateBinding Padding}"
+                                    HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                    VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+                </Panel>
+            </ControlTemplate>
+        </Setter>
+        
+        <Style Selector="^ /template/ Border#Outer">
+            <Setter Property="CornerRadius" Value="3" />
+        </Style>
+        <Style Selector="^ /template/ Border#Inner">
+            <Setter Property="CornerRadius" Value="2" />
+        </Style>
+
+
+        <!-- pointerover (hover) state -->
+        <Style Selector="^:pointerover">
+            <Style Selector="^ /template/ Border#Outer">
+                <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonHoverOuterBorderBrush}" />
+            </Style>
+            <Style Selector="^ /template/ Border#Inner">
+                <Setter Property="Background" Value="{DynamicResource AeroButtonHoverBackground}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonHoverInnerBorderBrush}" />
+            </Style>
+        </Style>
+
+
+        <!-- pressed state -->
+        <Style Selector="^:pressed">
+            <Style Selector="^ /template/ Border#Outer">
+                <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonPressedOuterBorderBrush}" />
+            </Style>
+            <Style Selector="^ /template/ Border#Inner">
+                <Setter Property="Background" Value="{DynamicResource AeroButtonPressedBackground}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonPressedInnerBorderBrush}" />
+            </Style>
+        </Style>
+
+
+        <!-- disabled state -->
+        <Style Selector="^:disabled">
+            <Style Selector="^ /template/ Border#Outer">
+                <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonDisabledOuterBorderBrush}" />
+            </Style>
+            <Style Selector="^ /template/ Border#Inner">
+                <Setter Property="Background" Value="{DynamicResource AeroButtonDisabledBackground}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonDisabledInnerBorderBrush}" />
+            </Style>
+            <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+                <Setter Property="TextBlock.Foreground" Value="{DynamicResource AeroButtonDisabledForeground}" />
+            </Style>
+        </Style>
+    </ControlTheme>
+
+
+    <ControlTheme x:Key="{x:Type RepeatButton}"
+                TargetType="{x:Type RepeatButton}"
+                BasedOn="{StaticResource {x:Type Button}}" />
+    
+    
+    
+    <ControlTheme x:Key="{x:Type ToggleButton}"
+                TargetType="{x:Type ToggleButton}"
+                BasedOn="{StaticResource {x:Type Button}}">
+        <Style Selector="^:checked">
+            <Style Selector="^ /template/ Border#Outer">
+                <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonPressedOuterBorderBrush}" />
+            </Style>
+            <Style Selector="^ /template/ Border#Inner">
+                <Setter Property="Background" Value="{DynamicResource AeroButtonPressedBackground}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource AeroButtonPressedInnerBorderBrush}" />
+            </Style>
+        </Style>
+    </ControlTheme>
+</ResourceDictionary>
