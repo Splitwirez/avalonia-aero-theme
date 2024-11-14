@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using Avalonia;
@@ -7,30 +8,35 @@ using Avalonia.Styling;
 namespace AvaloniaAero.Demo.ViewModels
 {
     public class MainViewModel
-        : ViewModelBase
+        : TabsViewModelBase
     {
-        ObservableCollection<PageViewModelBase> _pages = new ObservableCollection<PageViewModelBase>()
+        public ObservableCollection<ViewModelBase> Pages
         {
-            new ThemeOverviewPageViewModel(),
-            new ButtonsPageViewModel(),
-            //new ListBoxPageViewModel(),
-            new MenusPageViewModel(),
-            new ProgressBarPageViewModel(),
-            new ScrollViewerPageViewModel(),
-            new SpinnersPageViewModel(),
-            new TextBoxPageViewModel(),
-            new ToggleSwitchPageViewModel(),
-            //new TestPageViewModel(),
-        };
-        public ObservableCollection<PageViewModelBase> Pages
-        {
-            get => _pages;
-            protected set => RASIC(ref _pages, value);
+            get => Tabs;
+            protected set
+            {
+                var _pages = Tabs;
+                RASIC(ref _pages, value);
+            }
         }
+        protected override ObservableCollection<ViewModelBase> CreateTabs()
+            => new ObservableCollection<ViewModelBase>()
+            {
+                new ThemeOverviewPageViewModel(),
+                new ButtonsPageViewModel(),
+                //new ListBoxPageViewModel(),
+                new MenusPageViewModel(),
+                new ProgressBarPageViewModel(),
+                new ScrollViewerPageViewModel(),
+                new SpinnersPageViewModel(),
+                new TextBoxPageViewModel(),
+                new ToggleSwitchPageViewModel(),
+                //new TestPageViewModel(),
+            };
 
 
-        PageViewModelBase _currentPage = null;
-        public PageViewModelBase CurrentPage
+        ViewModelBase _currentPage = null;
+        public ViewModelBase CurrentPage
         {
             get => _currentPage;
             set => RASIC(ref _currentPage, value);
@@ -57,7 +63,7 @@ namespace AvaloniaAero.Demo.ViewModels
 
         public MainViewModel()
         {
-            CurrentPage = Pages.First();
+            CurrentPage = Tabs.First();
         }
     }
 }

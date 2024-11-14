@@ -46,12 +46,12 @@
                         OffContent="Lights off"/>
         </DockPanel>
         <TabControl x:Name="PagesTabControl"
-                    ItemsSource="{Binding Pages}"
-                    SelectedIndex="1"
+                    ItemsSource="{Binding Tabs, Mode=OneWay}"
+                    SelectedIndex="{Binding SelectedIndex, Mode=TwoWay}"
                     Margin="6,7,4,6">
             <TabControl.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding Title}" />
+                    <TextBlock Text="{Binding Title, Mode=OneWay}" />
                 </DataTemplate>
             </TabControl.ItemTemplate>
         </TabControl>
