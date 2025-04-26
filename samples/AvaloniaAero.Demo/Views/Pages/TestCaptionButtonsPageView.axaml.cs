@@ -2,28 +2,20 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Controls.Chrome;
-using Avalonia.Controls.Metadata;
-using Avalonia.Controls.Primitives;
 using Avalonia.Markup.Xaml;
 using Avalonia.Rendering;
-using Avalonia.VisualTree;
-//using static VTVExtensions = Avalonia.VisualTree.VisualExtensions;
 using System;
-using System.Reactive;
 using System.Reactive.Linq;
-using System.Reactive.Disposables;
-//using Avalonia.Reactive;
 using System.Reflection;
 
 namespace AvaloniaAero.Demo.Views
 {
-    public partial class TestPageView
+    public partial class TestCaptionButtonsPageView
         : UserControl
     {
         CaptionButtons _testCaptionButtons = null;
         TitleBar _testTitleBar = null;
-
-        public TestPageView()
+        public TestCaptionButtonsPageView()
         {
             InitializeComponent();
         }
@@ -31,7 +23,6 @@ namespace AvaloniaAero.Demo.Views
         private void InitializeComponent()
         {
             AvaloniaXamlLoader.Load(this);
-            
             _testCaptionButtons = this.Find<CaptionButtons>("TestCaptionButtons");
 
 
@@ -40,11 +31,13 @@ namespace AvaloniaAero.Demo.Views
             Console.WriteLine($"_testTitleBar: {_testTitleBar != null}");
             
             
-            //Attempt();
-            Attempt2();
+            if (true)
+                CaptionButtonsAttempt2();
+            else
+                CaptionButtonsAttempt1();
         }
 
-        void Attempt2()
+        void CaptionButtonsAttempt2()
         {
             var window = GetRootWindow();
             _testTitleBar[!HeightProperty] = _testCaptionButtons.GetObservable(CaptionButtons.BoundsProperty).Select(x => x.Height).ToBinding();
@@ -56,7 +49,7 @@ namespace AvaloniaAero.Demo.Views
         }
 
 
-        void Attempt()
+        void CaptionButtonsAttempt1()
         {
             var vRoot = GetRootWindow();
             Console.WriteLine($"vRoot: {vRoot != null}");

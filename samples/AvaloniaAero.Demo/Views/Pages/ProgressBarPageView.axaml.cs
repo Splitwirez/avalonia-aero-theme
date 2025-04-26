@@ -1,7 +1,6 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
-using AvaloniaAero.Demo.ViewModels;
 
 namespace AvaloniaAero.Demo.Views
 {
@@ -11,6 +10,7 @@ namespace AvaloniaAero.Demo.Views
         public ProgressBarPageView()
         {
             InitializeComponent();
+            //var a = new ProgressBar.ProgressBarTemplateSettings();
         }
 
         private void InitializeComponent()

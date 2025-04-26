@@ -20,7 +20,8 @@ namespace AvaloniaAero.Demo.ViewModels
             }
         }
         protected override ObservableCollection<ViewModelBase> CreateTabs()
-            => new ObservableCollection<ViewModelBase>()
+        {
+            ObservableCollection<ViewModelBase> tabs = new()
             {
                 new ThemeOverviewPageViewModel(),
                 new ButtonsPageViewModel(),
@@ -31,8 +32,17 @@ namespace AvaloniaAero.Demo.ViewModels
                 new SpinnersPageViewModel(),
                 new TextBoxPageViewModel(),
                 new ToggleSwitchPageViewModel(),
-                //new TestPageViewModel(),
             };
+
+
+            if (Config.Current.AllowTestPage)
+            {
+                tabs.Add(new TestCaptionButtonsViewModel());
+                tabs.Add(new TestGradientPageViewModel());
+            }
+
+            return tabs;
+        }
 
 
         ViewModelBase _currentPage = null;

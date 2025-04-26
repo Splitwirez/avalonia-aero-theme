@@ -2,6 +2,7 @@ using System;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using Avalonia.Styling;
 using AvaloniaAero.Demo.ViewModels;
 using AvaloniaAero.Demo.Views;
 
@@ -17,6 +18,10 @@ namespace AvaloniaAero.Demo
 
         public override void OnFrameworkInitializationCompleted()
         {
+            if (Config.Current.TryGetDesiredThemeVariant(out ThemeVariant variant))
+                RequestedThemeVariant = variant;
+
+
             var mainView = new MainView()
             {
                 DataContext = new MainViewModel()
@@ -32,6 +37,7 @@ namespace AvaloniaAero.Demo
                     [!DataContextProperty] = mainView[!DataContextProperty],
                 };
                 */
+                desktop.ShutdownMode = Avalonia.Controls.ShutdownMode.OnMainWindowClose;
             }
 			else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewLifetime)
 			{

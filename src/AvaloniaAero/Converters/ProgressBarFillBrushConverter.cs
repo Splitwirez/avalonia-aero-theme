@@ -16,7 +16,7 @@ namespace AvaloniaAero.Converters
         {}
 
 
-        static bool TryGetColorFrom(object obj, out Color color)
+        public static bool TryGetColorFrom(object obj, out Color color)
         {
             if (obj == null)
             {

@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvaloniaAero.Demo.Desktop",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvaloniaAero.Demo.Android", "samples\AvaloniaAero.Demo.Android\AvaloniaAero.Demo.Android.csproj", "{0D0B48EC-EC3D-4683-B553-7824944AF315}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvaloniaAero.Placeholders.Themes.Fluent", "src\AvaloniaAero.Placeholders.Themes.Fluent\AvaloniaAero.Placeholders.Themes.Fluent.csproj", "{DD454FF4-DDC3-4DC3-824D-B52F25AD0815}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +33,6 @@ Global
 		{656D4D6F-79EC-4CC5-8D3B-9F6B9E02FF60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{656D4D6F-79EC-4CC5-8D3B-9F6B9E02FF60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{656D4D6F-79EC-4CC5-8D3B-9F6B9E02FF60}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DD454FF4-DDC3-4DC3-824D-B52F25AD0815}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DD454FF4-DDC3-4DC3-824D-B52F25AD0815}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DD454FF4-DDC3-4DC3-824D-B52F25AD0815}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DD454FF4-DDC3-4DC3-824D-B52F25AD0815}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -5,10 +5,10 @@
         xmlns:v="using:AvaloniaAero.Demo.Views"
         mc:Ignorable="d" d:DesignWidth="398" d:DesignHeight="482"
         x:Name="PageRoot"
-        x:Class="AvaloniaAero.Demo.Views.TestPageView">
+        x:Class="AvaloniaAero.Demo.Views.TestCaptionButtonsPageView">
     <UserControl.Styles>
         <Style Selector=":is(Window)[IsActive=False] UserControl#PageRoot Popup">
-            <Setter Property="IsOpen" Value="False"/>
+            <Setter Property="IsOpen" Value="False" />
         </Style>
     </UserControl.Styles>
     <Popup
@@ -16,8 +16,8 @@
         Height="{Binding #PageRoot.Bounds.Height}"
         IsOpen="{Binding #PageRoot.IsVisible}">
         <UniformGrid Columns="1">
-            <TitleBar x:Name="TestTitleBar"/>
-            <CaptionButtons x:Name="TestCaptionButtons"/>
+            <TitleBar x:Name="TestTitleBar" />
+            <CaptionButtons x:Name="TestCaptionButtons" />
         </UniformGrid>
     </Popup>
 </UserControl>
