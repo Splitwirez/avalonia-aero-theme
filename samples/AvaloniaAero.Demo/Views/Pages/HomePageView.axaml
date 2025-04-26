@@ -1,0 +1,69 @@
+<UserControl x:Class="AvaloniaAero.Demo.Views.HomePageView"
+            xmlns="https://github.com/avaloniaui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:v="using:AvaloniaAero.Demo.Views"
+            xmlns:local="using:AvaloniaAero.Demo">
+    <StackPanel Orientation="Vertical"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Center"
+                Width="700"
+                Margin="4"
+                Spacing="4">
+        <DockPanel Height="70">
+            <TextBlock Text="View various controls with Aero for Avalonia"
+                    TextBlock.TextAlignment="Left"
+                    VerticalAlignment="Center" />
+        </DockPanel>
+
+        <ItemsControl ItemsSource="{Binding Pages, Mode=OneWay}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="2" />
+                    <!--
+                    <WrapPanel Orientation="Vertical" />
+                    -->
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Button Command="{Binding DataContext.NavigateCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type v:HomePageView}}, Mode=OneWay}"
+                            CommandParameter="{Binding Mode=OneWay}"
+                            HorizontalContentAlignment="Stretch"
+                            VerticalContentAlignment="Stretch"
+                            Padding="4">
+                        <DockPanel>
+                            <Rectangle Width="48"
+                                    Height="48"
+                                    Fill="#FFFF00FF"
+                                    DockPanel.Dock="Left"
+                                    Margin="0,0,4,0" />
+                            <StackPanel Orientation="Vertical"
+                                        VerticalAlignment="Stretch"
+                                        TextBlock.TextAlignment="Left">
+                                <TextBlock Text="{Binding Title, Mode=OneWay}" />
+                            </StackPanel>
+                        </DockPanel>
+                    </Button>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <Expander Header="Controls styled thus far"
+                HorizontalAlignment="Stretch">
+            <ItemsControl ItemsSource="{Binding StyledThusFar, Mode=OneWay}" />
+        </Expander>
+        <HeaderedContentControl Header="Progress">
+            <DockPanel>
+                <StackPanel Orientation="Horizontal"
+                            Margin="0,0,8,0"
+                            DockPanel.Dock="Left">
+                    <TextBlock Text="{Binding StyledThusFarCount, Mode=OneWay}" />
+                    <TextBlock Text="/" />
+                    <TextBlock Text="{Binding TotalControlsToStyleCount, Mode=OneWay}" />
+                </StackPanel>
+                <ProgressBar Value="{Binding StyledThusFarCount, Mode=OneWay}"
+                            Minimum="0"
+                            Maximum="{Binding TotalControlsToStyleCount, Mode=OneWay}" />
+            </DockPanel>
+        </HeaderedContentControl>
+    </StackPanel>
+</UserControl>

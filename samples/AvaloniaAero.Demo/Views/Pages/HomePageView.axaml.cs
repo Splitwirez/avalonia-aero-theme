@@ -4,10 +4,10 @@ using Avalonia.Markup.Xaml;
 
 namespace AvaloniaAero.Demo.Views
 {
-    public partial class ThemeOverviewPageView
+    public partial class HomePageView
         : UserControl
     {
-        public ThemeOverviewPageView()
+        public HomePageView()
         {
             InitializeComponent();
         }

@@ -1,52 +1,43 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
 using Avalonia;
 using Avalonia.Styling;
+using AvaloniaAero.Demo.Navigation;
 
 namespace AvaloniaAero.Demo.ViewModels
 {
     public class MainViewModel
-        : TabsViewModelBase
+        : ViewModelBase
+        , INavigator
     {
-        public ObservableCollection<ViewModelBase> Pages
+        List<IPage> _navHistory = new();
+        int _navCurrentPos = -1;
+
+
+        bool GetCanGoBack()
+            => _navCurrentPos > 0;
+
+        bool _canGoBack = false;
+        public bool CanGoBack
         {
-            get => Tabs;
-            protected set
-            {
-                var _pages = Tabs;
-                RASIC(ref _pages, value);
-            }
-        }
-        protected override ObservableCollection<ViewModelBase> CreateTabs()
-        {
-            ObservableCollection<ViewModelBase> tabs = new()
-            {
-                new ThemeOverviewPageViewModel(),
-                new ButtonsPageViewModel(),
-                //new ListBoxPageViewModel(),
-                new MenusPageViewModel(),
-                new ProgressBarPageViewModel(),
-                new ScrollViewerPageViewModel(),
-                new SpinnersPageViewModel(),
-                new TextBoxPageViewModel(),
-                new ToggleSwitchPageViewModel(),
-            };
-
-
-            if (Config.Current.AllowTestPage)
-            {
-                tabs.Add(new TestCaptionButtonsViewModel());
-                tabs.Add(new TestGradientPageViewModel());
-            }
-
-            return tabs;
+            get => _canGoBack;
+            protected set => RASIC(ref _canGoBack, value);
         }
 
 
-        ViewModelBase _currentPage = null;
-        public ViewModelBase CurrentPage
+        bool GetCanGoForward()
+            => _navCurrentPos < (_navHistory.Count - 1);
+
+        bool _canGoForward = false;
+        public bool CanGoForward
+        {
+            get => _canGoForward;
+            protected set => RASIC(ref _canGoForward, value);
+        }
+
+
+        IPage _currentPage = null;
+        public IPage CurrentPage
         {
             get => _currentPage;
             set => RASIC(ref _currentPage, value);
@@ -71,9 +62,81 @@ namespace AvaloniaAero.Demo.ViewModels
             }
         }
 
+
+
+
         public MainViewModel()
         {
-            CurrentPage = Tabs.First();
+            //CurrentPage = Tabs.First();
+            NavigateTo(new HomePageViewModel());
+        }
+
+
+
+
+        public void GoBack()
+        {
+            if (!GetCanGoBack())
+                return;
+
+            _navCurrentPos--;
+            CurrentPage = _navHistory[_navCurrentPos];
+            AfterNavigate();
+        }
+
+
+        public void GoForward()
+        {
+            NavigateToNext();
+            AfterNavigate();
+        }
+
+
+        public void NavigateTo(IPage page)
+        {
+            page.Navigator = this;
+
+
+            var navNewPos = _navCurrentPos + 1;
+            _navHistory.Insert(navNewPos, page);
+            NavigateToNext();
+
+
+            int navDesiredCount = _navCurrentPos + 1;
+            while (_navHistory.Count > navDesiredCount)
+            {
+                _navHistory.RemoveAt(_navHistory.Count - 1);
+            }
+            /*
+            int navActualCount = _navHistory.Count;
+            if (navActualCount > navDesiredCount)
+            {
+                for (int i = navDesiredCount; i < navActualCount; i++)
+                {
+                    _navHistory.RemoveAt(navDesiredCount);
+                }
+                //_navHistory = new(_navHistory.Take(navDesiredCount));
+            }
+            */
+            //CurrentPage = page;
+            AfterNavigate();
+        }
+
+
+        void NavigateToNext()
+        {
+            if (!GetCanGoForward())
+                return;
+
+            _navCurrentPos++;
+            CurrentPage = _navHistory[_navCurrentPos];
+        }
+
+
+        void AfterNavigate()
+        {
+            CanGoBack = GetCanGoBack();
+            CanGoForward = GetCanGoForward();
         }
     }
 }

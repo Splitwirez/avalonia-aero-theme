@@ -1,11 +1,22 @@
 ﻿using System;
 using System.Diagnostics;
+using AvaloniaAero.Demo.Navigation;
 
 namespace AvaloniaAero.Demo.ViewModels
 {
     public class PageViewModelBase
         : ViewModelBase
+        , IPage
     {
+        INavigator _navigator = null;
+        public INavigator Navigator
+        {
+            get => _navigator;
+            set => RASIC(ref _navigator, value);
+        }
+
+
+
         string _title = null;
         public string Title
         {

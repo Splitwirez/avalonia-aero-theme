@@ -2,12 +2,20 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using AvaloniaAero.Demo.Navigation;
 
 namespace AvaloniaAero.Demo.ViewModels
 {
-    public class ThemeOverviewPageViewModel
+    public class HomePageViewModel
         : PageViewModelBase
     {
+        readonly ObservableCollection<PageViewModelBase> _pages;
+        public ObservableCollection<PageViewModelBase> Pages
+        {
+            get => _pages;
+        }
+
+
         double _totalControlsToStyleCount = -1;
         public double TotalControlsToStyleCount
         {
@@ -31,9 +39,11 @@ namespace AvaloniaAero.Demo.ViewModels
         }
 
 
-        public ThemeOverviewPageViewModel()
-            : base("Overview")
+        public HomePageViewModel()
+            : base("Home")
         {
+            _pages = new(CreatePages());
+
             AeroThemeInfo themeInfo = new(Avalonia.Application.Current.Styles.OfType<AeroTheme>().First());
             TotalControlsToStyleCount = themeInfo.TotalControlsToStyleCount;
             var currentlyStyledControls = themeInfo.CurrentlyStyledControls;
@@ -43,6 +53,36 @@ namespace AvaloniaAero.Demo.ViewModels
                 StyledThusFar.Add(control);
             }
             StyledThusFarCount = StyledThusFar.Count();
+        }
+
+        IEnumerable<PageViewModelBase> CreatePages()
+        {
+            List<PageViewModelBase> ret = new()
+            {
+                new ButtonsPageViewModel(),
+                new ListBoxPageViewModel(),
+                new MenusPageViewModel(),
+                new ProgressBarPageViewModel(),
+                new ScrollViewerPageViewModel(),
+                new SpinnersPageViewModel(),
+                new TextBoxPageViewModel(),
+                new ToggleSwitchPageViewModel(),
+            };
+
+            if (Config.Current.AllowTestPage)
+            {
+                ret.Add(new TestCaptionButtonsViewModel());
+                ret.Add(new TestGradientPageViewModel());
+            }
+
+            return ret;
+        }
+
+
+        public void NavigateCommand(object parameter)
+        {
+            if (parameter is IPage page)
+                Navigator?.NavigateTo(page);
         }
     }
 }
