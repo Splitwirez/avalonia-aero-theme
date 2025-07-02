@@ -361,4 +361,58 @@
 						StartPoint="0%,0%"
 						EndPoint="100%,0%"
 						GradientStops="{StaticResource AeroProgressBarShineStops}" />
+
+
+
+
+	<SolidColorBrush x:Key="AeroListBoxBackground" Color="{DynamicResource AeroListBoxBackgroundColor}" />
+	<SolidColorBrush x:Key="AeroListBoxOuterBorderBrush" Color="{DynamicResource AeroListBoxOuterBorderColor}" />
+	<SolidColorBrush x:Key="AeroListBoxInnerBorderBrush" Color="{DynamicResource AeroListBoxInnerBorderColor}" />
+
+
+
+
+	<LinearGradientBrush x:Key="AeroListBoxItemHoverBackground"
+						StartPoint="0%,0%"
+						EndPoint="0%,100%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroListBoxItemHoverBackgroundColor0}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroListBoxItemHoverBackgroundColor1}" />
+	</LinearGradientBrush>
+	<SolidColorBrush x:Key="AeroListBoxItemHoverOuterBorderBrush" Color="{DynamicResource AeroListBoxItemHoverOuterBorderBrushColor}" />
+	<LinearGradientBrush x:Key="AeroListBoxItemHoverInnerBorderBrush"
+						StartPoint="0%,0%"
+						EndPoint="0%,100%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroListBoxItemHoverInnerBorderBrushColor0}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroListBoxItemHoverInnerBorderBrushColor1}" />
+	</LinearGradientBrush>
+
+
+	<LinearGradientBrush x:Key="AeroListBoxItemSelectedBackground"
+						StartPoint="0%,0%"
+						EndPoint="0%,100%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroListBoxItemSelectedBackgroundColor0}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroListBoxItemSelectedBackgroundColor1}" />
+	</LinearGradientBrush>
+	<SolidColorBrush x:Key="AeroListBoxItemSelectedOuterBorderBrush" Color="{DynamicResource AeroListBoxItemSelectedOuterBorderBrushColor}" />
+	<LinearGradientBrush x:Key="AeroListBoxItemSelectedInnerBorderBrush"
+						StartPoint="0%,0%"
+						EndPoint="0%,100%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroListBoxItemSelectedInnerBorderBrushColor0}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroListBoxItemSelectedInnerBorderBrushColor1}" />
+	</LinearGradientBrush>
+
+
+	<LinearGradientBrush x:Key="AeroListBoxItemSelectedHoverBackground"
+						StartPoint="0%,0%"
+						EndPoint="0%,100%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroListBoxItemSelectedHoverBackgroundColor0}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroListBoxItemSelectedHoverBackgroundColor1}" />
+	</LinearGradientBrush>
+	<SolidColorBrush x:Key="AeroListBoxItemSelectedHoverOuterBorderBrush" Color="{DynamicResource AeroListBoxItemSelectedHoverOuterBorderBrushColor}" />
+	<LinearGradientBrush x:Key="AeroListBoxItemSelectedHoverInnerBorderBrush"
+						StartPoint="0%,0%"
+						EndPoint="0%,100%">
+		<GradientStop Offset="0" Color="{DynamicResource AeroListBoxItemSelectedHoverInnerBorderBrushColor0}" />
+		<GradientStop Offset="1" Color="{DynamicResource AeroListBoxItemSelectedHoverInnerBorderBrushColor1}" />
+	</LinearGradientBrush>
 </ResourceDictionary>

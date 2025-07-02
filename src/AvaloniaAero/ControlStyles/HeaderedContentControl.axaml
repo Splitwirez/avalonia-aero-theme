@@ -41,7 +41,10 @@
                                         HorizontalAlignment="Left"
                                         VerticalContentAlignment="Center"
                                         Padding="2,0"
-                                        MaxWidth="{Binding #HeaderPresenterSizeHelper.Bounds.Width, Mode=OneWay}" />
+                                         />
+                        <!--
+                                        MaxWidth="{Binding #HeaderPresenterSizeHelper.Bounds.Width, Mode=OneWay}"
+                        -->
                     </Panel>
                             
                     <ContentPresenter x:Name="PART_ContentPresenter"

@@ -294,4 +294,40 @@
 
 	<Color x:Key="AeroProgressBarShineColor0">#DAFFFFFF</Color>
 	<Color x:Key="AeroProgressBarShineColor1">#A0FFFFFF</Color>
+
+
+
+
+	<Color x:Key="AeroListBoxBackgroundColor">#FF4A4A4A</Color>
+	<Color x:Key="AeroListBoxOuterBorderColor">#FF000000</Color>
+	<Color x:Key="AeroListBoxInnerBorderColor">#FF4A4A4A</Color>
+
+
+
+
+	<Color x:Key="AeroListBoxItemHoverBackgroundColor0">#C03F4449</Color>
+	<Color x:Key="AeroListBoxItemHoverBackgroundColor1">#66192D46</Color>
+
+	<Color x:Key="AeroListBoxItemHoverOuterBorderBrushColor">#AD00063C</Color>
+
+	<Color x:Key="AeroListBoxItemHoverInnerBorderBrushColor0">#9C46484A</Color>
+	<Color x:Key="AeroListBoxItemHoverInnerBorderBrushColor1">#9C343C48</Color>
+
+
+	<Color x:Key="AeroListBoxItemSelectedBackgroundColor0">#BF2E3948</Color>
+	<Color x:Key="AeroListBoxItemSelectedBackgroundColor1">#BF062345</Color>
+
+	<Color x:Key="AeroListBoxItemSelectedOuterBorderBrushColor">#E6000016</Color>
+
+	<Color x:Key="AeroListBoxItemSelectedInnerBorderBrushColor0">#D4394049</Color>
+	<Color x:Key="AeroListBoxItemSelectedInnerBorderBrushColor1">#D4203247</Color>
+
+
+	<Color x:Key="AeroListBoxItemSelectedHoverBackgroundColor0">#BF182B43</Color>
+	<Color x:Key="AeroListBoxItemSelectedHoverBackgroundColor1">#BF001540</Color>
+
+	<Color x:Key="AeroListBoxItemSelectedHoverOuterBorderBrushColor">#E6000004</Color>
+
+	<Color x:Key="AeroListBoxItemSelectedHoverInnerBorderBrushColor0">#DA303B45</Color>
+	<Color x:Key="AeroListBoxItemSelectedHoverInnerBorderBrushColor1">#DA1B2D43</Color>
 </ResourceDictionary>

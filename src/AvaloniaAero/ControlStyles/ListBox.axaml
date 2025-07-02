@@ -1,0 +1,58 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:ae="using:AvaloniaAero"
+                    xmlns:aecnv="using:AvaloniaAero.Converters"
+                    x:ClassModifier="Internal">
+    <aecnv:AdjustCornerRadiusConverter x:Key="AeroListBoxInnerCornerRadiiConverter" Amount="-1" />
+
+
+	<ControlTheme x:Key="{x:Type ListBox}" TargetType="ListBox">
+		<Setter Property="Foreground" Value="{DynamicResource AeroForeground}" />
+		<Setter Property="Background" Value="{DynamicResource AeroListBoxBackground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource AeroListBoxOuterBorderBrush}" />
+		<Setter Property="BorderThickness" Value="1" />
+		<Setter Property="CornerRadius" Value="0" />
+		<Setter Property="Padding" Value="0" />
+		<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+		<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+		<Setter Property="ScrollViewer.IsScrollChainingEnabled" Value="True" />
+		<Setter Property="ScrollViewer.IsScrollInertiaEnabled" Value="True" />
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Border x:Name="OuterBorder"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						CornerRadius="{TemplateBinding CornerRadius}">
+					<Border Background="{TemplateBinding Background}"
+							BorderBrush="{DynamicResource AeroListBoxInnerBorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							CornerRadius="{Binding #OuterBorder.CornerRadius, Converter={StaticResource AeroListBoxInnerCornerRadiiConverter}, Mode=OneWay}">
+						<ScrollViewer x:Name="PART_ScrollViewer"
+									VerticalSnapPointsType="{TemplateBinding (ScrollViewer.VerticalSnapPointsType)}"
+									HorizontalSnapPointsType="{TemplateBinding (ScrollViewer.HorizontalSnapPointsType)}"
+									HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
+									VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}"
+									IsScrollChainingEnabled="{TemplateBinding (ScrollViewer.IsScrollChainingEnabled)}"
+									IsScrollInertiaEnabled="{TemplateBinding (ScrollViewer.IsScrollInertiaEnabled)}"
+									IsDeferredScrollingEnabled="{TemplateBinding (ScrollViewer.IsDeferredScrollingEnabled)}"
+									AllowAutoHide="{TemplateBinding (ScrollViewer.AllowAutoHide)}"
+									BringIntoViewOnFocusChange="{TemplateBinding (ScrollViewer.BringIntoViewOnFocusChange)}">
+							<ItemsPresenter x:Name="PART_ItemsPresenter"
+											ItemsPanel="{TemplateBinding ItemsPanel}"
+											Margin="{TemplateBinding Padding}" />
+						</ScrollViewer>
+					</Border>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^:disabled">
+			<Style Selector="^">
+				<Setter Property="Foreground" Value="{DynamicResource AeroDisabledForeground}" />
+			</Style>
+			<Style Selector="^ /template/ ItemsPresenter#PART_ItemsPresenter">
+				<Setter Property="TextBlock.Foreground" Value="{DynamicResource AeroDisabledForeground}" />
+			</Style>
+		</Style>
+	</ControlTheme>
+</ResourceDictionary>

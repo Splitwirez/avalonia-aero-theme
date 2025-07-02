@@ -37,8 +37,10 @@
                 <!--
                 <ResourceInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Controls/ItemsControl.xaml" />
                 <ResourceInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Controls/Label.xaml" />
-                <ResourceInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Controls/ListBox.xaml" />
-                <ResourceInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Controls/ListBoxItem.xaml" />
+                -->
+                <ResourceInclude Source="avares://AvaloniaAero/ControlStyles/ListBox.axaml" />
+                <ResourceInclude Source="avares://AvaloniaAero/ControlStyles/ListBoxItem.axaml" />
+                <!--
                 <ResourceInclude Source="avares://AvaloniaAero.Placeholders.Themes.Fluent/Controls/MenuScrollViewer.xaml" />
                 -->
                 <ResourceInclude Source="avares://AvaloniaAero/ControlStyles/Menu.axaml" />

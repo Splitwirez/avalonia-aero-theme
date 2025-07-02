@@ -25,7 +25,7 @@ namespace AvaloniaAero.Demo.ViewModels
             {
                 new ThemeOverviewPageViewModel(),
                 new ButtonsPageViewModel(),
-                //new ListBoxPageViewModel(),
+                new ListBoxPageViewModel(),
                 new MenusPageViewModel(),
                 new ProgressBarPageViewModel(),
                 new ScrollViewerPageViewModel(),
