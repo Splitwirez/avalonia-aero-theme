@@ -273,27 +273,27 @@
 
 
 	<!-- [TODO: Dark-ify AeroProgressBar* colours] -->
-	<Color x:Key="AeroProgressBarFrameBackgroundColor0">#FFCACACA</Color>
-	<Color x:Key="AeroProgressBarFrameBackgroundColor1">#FFD5D5D5</Color>
+	<Color x:Key="AeroProgressBarFrameBackgroundColor0">#FF0E0E0E</Color>
+	<Color x:Key="AeroProgressBarFrameBackgroundColor1">#FF1A1A1A</Color>
 
-	<Color x:Key="AeroProgressBarFrameOuterBorderBrushColor0">#FFB2B2B2</Color>
-	<Color x:Key="AeroProgressBarFrameOuterBorderBrushColor1">#FF8C8C8C</Color>
+	<Color x:Key="AeroProgressBarFrameOuterBorderBrushColor0">#FF000000</Color>
+	<Color x:Key="AeroProgressBarFrameOuterBorderBrushColor1">#FF000000</Color>
 
-	<Color x:Key="AeroProgressBarFrameInnerBorderBrushColor0">#FFF1F1F1</Color>
-	<Color x:Key="AeroProgressBarFrameInnerBorderBrushColor1">#FFD1D1D1</Color>
+	<Color x:Key="AeroProgressBarFrameInnerBorderBrushColor0">#FF3A3A3A</Color>
+	<Color x:Key="AeroProgressBarFrameInnerBorderBrushColor1">#FF161616</Color>
 
-	<Color x:Key="AeroProgressBarStorageFrameBackgroundColor">#FFFBFBFB</Color>
+	<Color x:Key="AeroProgressBarStorageFrameBackgroundColor">#FF464646</Color>
 
-	<Color x:Key="AeroProgressBarStorageFrameInnerBorderBrushColor0">#FFF1F1F1</Color>
-	<Color x:Key="AeroProgressBarStorageFrameInnerBorderBrushColor1">#FFD1D1D1</Color>
+	<Color x:Key="AeroProgressBarStorageFrameInnerBorderBrushColor0">#FF3A3A3A</Color>
+	<Color x:Key="AeroProgressBarStorageFrameInnerBorderBrushColor1">#FF161616</Color>
 
-	<Color x:Key="AeroProgressBarFillColor">#FF00D328</Color>
+	<Color x:Key="AeroProgressBarFillColor">#FF006F00</Color>
 
 	<Color x:Key="AeroProgressBarFillFallbackColor0">#FFFF00FF</Color>
 	<Color x:Key="AeroProgressBarFillFallbackColor1">#FF00FF00</Color>
 
-	<Color x:Key="AeroProgressBarShineColor0">#DAFFFFFF</Color>
-	<Color x:Key="AeroProgressBarShineColor1">#A0FFFFFF</Color>
+	<Color x:Key="AeroProgressBarShineColor0">#36FFFFFF</Color>
+	<Color x:Key="AeroProgressBarShineColor1">#28FFFFFF</Color>
 
 
 
