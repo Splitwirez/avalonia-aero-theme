@@ -2,7 +2,7 @@
 
 namespace AvaloniaAero.Demo.ViewModels
 {
-    public class TestCaptionButtonsViewModel
+    public class TestCaptionButtonsPageViewModel
         : PageViewModelBase
     {
     }

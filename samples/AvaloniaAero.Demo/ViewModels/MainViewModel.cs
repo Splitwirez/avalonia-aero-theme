@@ -37,7 +37,7 @@ namespace AvaloniaAero.Demo.ViewModels
 
             if (Config.Current.AllowTestPage)
             {
-                tabs.Add(new TestCaptionButtonsViewModel());
+                tabs.Add(new TestCaptionButtonsPageViewModel());
                 tabs.Add(new TestGradientPageViewModel());
             }
 
