@@ -1,0 +1,38 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        x:Class="AeroAvalonia.AeroTheme">
+	<FluentTheme DensityStyle="Compact" />
+    <Styles.Resources>
+        <ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceInclude Source="avares://AeroAvalonia/AVMAP/Metrics.axaml"/>
+			</ResourceDictionary.MergedDictionaries>
+
+
+            <ResourceDictionary.ThemeDictionaries>
+                <!-- Light variant includes (light should be the "default", yes?) -->
+                <ResourceDictionary x:Key="Default">
+                    <ResourceDictionary.MergedDictionaries>
+                        <ResourceInclude Source="avares://AeroAvalonia/Variant/Light.axaml" />
+                        <ResourceInclude Source="avares://AeroAvalonia/AVMAP/Brushes.axaml"/>
+                    </ResourceDictionary.MergedDictionaries>
+                </ResourceDictionary>
+                
+
+                <!-- Dark variant includes -->
+                <ResourceDictionary x:Key="Dark">
+                    <ResourceDictionary.MergedDictionaries>
+                        <ResourceInclude Source="avares://AeroAvalonia/Variant/Dark.axaml" />
+                        <ResourceInclude Source="avares://AeroAvalonia/AVMAP/Brushes.axaml"/>
+                    </ResourceDictionary.MergedDictionaries>
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+        </ResourceDictionary>
+    </Styles.Resources>
+    
+    <!-- Styles included here -->
+    <StyleInclude Source="avares://AeroAvalonia/AVMAP/StyleTrailMix.axaml" />
+    <StyleInclude Source="avares://AeroAvalonia/AVMAP/Controls.axaml" />
+</Styles>

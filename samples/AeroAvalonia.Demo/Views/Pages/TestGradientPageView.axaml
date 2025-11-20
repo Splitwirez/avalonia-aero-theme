@@ -1,0 +1,32 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:v="using:AeroAvalonia.Demo.Views"
+        mc:Ignorable="d" d:DesignWidth="398" d:DesignHeight="482"
+        x:Name="PageRoot"
+        x:Class="AeroAvalonia.Demo.Views.TestGradientPageView">
+    <UserControl.Resources>
+    <!--
+    -->
+        <Window x:Key="GradientTestWindow"
+                Title="Gradient test"
+                Background="{ReflectionBinding #PageRoot.DataContext.GeneratedBrush, Mode=OneWay}" />
+    </UserControl.Resources>
+    <StackPanel Orientation="Vertical"
+                Spacing="8"
+                Margin="8">
+        <HeaderedContentControl Header="Radius">
+            <Slider Orientation="Horizontal"
+                    Value="{Binding Radius, Mode=TwoWay}"
+                    Minimum="0"
+                    Maximum="2" />
+        </HeaderedContentControl>
+        <HeaderedContentControl Header="Center">
+            <TextBox Text="{Binding Center, Mode=TwoWay}" />
+        </HeaderedContentControl>
+        <HeaderedContentControl Header="GradientOrigin">
+            <TextBox Text="{Binding GradientOrigin, Mode=TwoWay}" />
+        </HeaderedContentControl>
+    </StackPanel>
+</UserControl>

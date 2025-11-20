@@ -1,0 +1,28 @@
+<UserControl x:Class="AeroAvalonia.Demo.Views.ThemeOverviewPageView"
+            xmlns="https://github.com/avaloniaui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:v="using:AeroAvalonia.Demo.Views"
+            xmlns:local="using:AeroAvalonia.Demo">
+    <StackPanel Orientation="Vertical"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Margin="4">
+        <HeaderedContentControl Header="Controls styled thus far">
+            <ItemsControl ItemsSource="{Binding StyledThusFar, Mode=OneWay}" />
+        </HeaderedContentControl>
+        <HeaderedContentControl Header="Progress">
+            <DockPanel>
+                <StackPanel Orientation="Horizontal"
+                            Margin="0,0,8,0"
+                            DockPanel.Dock="Left">
+                    <TextBlock Text="{Binding StyledThusFarCount, Mode=OneWay}" />
+                    <TextBlock Text="/" />
+                    <TextBlock Text="{Binding TotalControlsToStyleCount, Mode=OneWay}" />
+                </StackPanel>
+                <ProgressBar Value="{Binding StyledThusFarCount, Mode=OneWay}"
+                            Minimum="0"
+                            Maximum="{Binding TotalControlsToStyleCount, Mode=OneWay}" />
+            </DockPanel>
+        </HeaderedContentControl>
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,98 @@
+<UserControl x:Class="AeroAvalonia.Demo.Views.ProgressBarPageView"
+            xmlns="https://github.com/avaloniaui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:sys="using:System">
+    <UserControl.Styles>
+        <Style Selector="DockPanel#RootPanel > Panel > :is(Control)">
+            <Setter Property="Margin" Value="8" />
+        </Style>
+        <Style Selector="ProgressBar">
+            <Setter Property="Value" Value="{Binding Value, Mode=OneWay}" />
+            <Setter Property="Minimum" Value="{Binding Minimum, Mode=OneWay}" />
+            <Setter Property="Maximum" Value="{Binding Maximum, Mode=OneWay}" />
+        </Style>
+        <Style Selector="ProgressBar:disabled">
+            <Setter Property="IsVisible" Value="False" />
+        </Style>
+        
+        <!--
+        <Style Selector="StackPanel > ProgressBar">
+            <Setter Property="Orientation" Value="{Binding $parent[StackPanel].Orientation, Mode=OneWay}" />
+        </Style>
+        -->
+        <Style Selector="StackPanel[Orientation=Vertical] > ProgressBar">
+            <Setter Property="Orientation" Value="Horizontal" />
+        </Style>
+        <Style Selector="StackPanel[Orientation=Horizontal] > ProgressBar">
+            <Setter Property="Orientation" Value="Vertical" />
+        </Style>
+
+        <!--
+        <Style Selector="StackPanel > ProgressBar:nth-child(2n)">
+            <Setter Property="IsIndeterminate" Value="True" />
+        </Style>
+        <Style Selector="StackPanel > ProgressBar:nth-child(4n-1),
+                        StackPanel > ProgressBar:nth-child(4n)">
+            <Setter Property="ShowProgressText" Value="True" />
+        </Style>
+        -->
+    </UserControl.Styles>
+    <DockPanel x:Name="RootPanel">
+        <Panel DockPanel.Dock="Top">
+            <HeaderedContentControl Header="Value"
+                                    VerticalAlignment="Bottom">
+                <StackPanel Orientation="Vertical">
+                    <NumericUpDown Value="{Binding Value, Mode=TwoWay}"
+                                Minimum="{Binding Minimum, Mode=OneWay}"
+                                Maximum="{Binding Maximum, Mode=OneWay}" />
+                </StackPanel>
+            </HeaderedContentControl>
+        </Panel>
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled"
+                    Padding="8,0">
+            <DockPanel LastChildFill="False">
+                <DockPanel.Styles>
+                    <Style Selector="HeaderedContentControl > StackPanel">
+                        <Setter Property="Spacing" Value="8" />
+                    </Style>
+                </DockPanel.Styles>
+                <HeaderedContentControl Header="Horizontal"
+                                        DockPanel.Dock="Top">
+                    <StackPanel Orientation="Vertical">
+                        <ProgressBar />
+                        <ProgressBar IsEnabled="False" />
+
+                        <ProgressBar IsIndeterminate="True" />
+                        <ProgressBar IsIndeterminate="True"
+                                    IsEnabled="False" />
+                    </StackPanel>
+                </HeaderedContentControl>
+                <HeaderedContentControl Header="StorageBar Theme"
+                                        DockPanel.Dock="Top">
+                    <StackPanel Orientation="Vertical">
+                        <ProgressBar Theme="{DynamicResource StorageBar}" />
+                        <ProgressBar IsEnabled="False"
+                                    Theme="{DynamicResource StorageBar}" />
+
+                        <ProgressBar IsIndeterminate="True"
+                                    Theme="{DynamicResource StorageBar}" />
+                        <ProgressBar IsIndeterminate="True"
+                                    IsEnabled="False"
+                                    Theme="{DynamicResource StorageBar}" />
+                    </StackPanel>
+                </HeaderedContentControl>
+                <HeaderedContentControl Header="Vertical"
+                                        DockPanel.Dock="Left">
+                    <StackPanel Orientation="Horizontal">
+                        <ProgressBar />
+                        <ProgressBar IsEnabled="False" />
+
+                        <ProgressBar IsIndeterminate="True" />
+                        <ProgressBar IsIndeterminate="True"
+                                    IsEnabled="False" />
+                    </StackPanel>
+                </HeaderedContentControl>
+            </DockPanel>
+        </ScrollViewer>
+    </DockPanel>
+</UserControl>

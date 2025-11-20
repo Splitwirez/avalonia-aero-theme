@@ -1,0 +1,73 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:ae="using:AeroAvalonia"
+                    xmlns:aecnv="using:AeroAvalonia.Converters"
+                    x:ClassModifier="Internal">
+    <aecnv:AdjustCornerRadiusConverter x:Key="AeroListBoxItemInnerCornerRadiiConverter" Amount="-1" />
+
+
+	<ControlTheme x:Key="{x:Type ListBoxItem}" TargetType="ListBoxItem">
+		<Setter Property="Background" Value="{DynamicResource AeroListBoxItemHoverBackground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource AeroListBoxItemHoverOuterBorderBrush}" />
+		<Setter Property="BorderThickness" Value="1" />
+		<Setter Property="CornerRadius" Value="2" />
+		<Setter Property="Padding" Value="4,2" />
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Panel Background="#01000000">
+					<Border x:Name="OuterBorder"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							CornerRadius="{TemplateBinding CornerRadius}">
+							<Border x:Name="InnerBorder"
+									Background="{TemplateBinding Background}"
+									BorderBrush="{DynamicResource AeroListBoxItemHoverInnerBorderBrush}"
+									BorderThickness="{TemplateBinding BorderThickness}"
+									CornerRadius="{Binding #OuterBorder.CornerRadius, Converter={StaticResource AeroListBoxItemInnerCornerRadiiConverter}, Mode=OneWay}" />
+					</Border>
+					<ContentPresenter x:Name="PART_ContentPresenter"
+									Content="{TemplateBinding Content}"
+									ContentTemplate="{TemplateBinding ContentTemplate}"
+									Padding="{TemplateBinding Padding}"
+									VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+									HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" />
+				</Panel>
+			</ControlTemplate>
+		</Setter>
+		<Style Selector="^:not(:pointerover,:pressed,:selected,:focus)">
+			<Style Selector="^ /template/ Border#OuterBorder">
+				<Setter Property="IsVisible" Value="False" />
+			</Style>
+		</Style>
+
+
+		<!--  Selected State  -->
+		<Style Selector="^:selected:not(:pointerover),^:pressed">
+			<Style Selector="^ /template/ Border#OuterBorder">
+				<Setter Property="BorderBrush" Value="{DynamicResource AeroListBoxItemSelectedOuterBorderBrush}" />
+			</Style>
+			<Style Selector="^ /template/ Border#InnerBorder">
+				<Setter Property="Background" Value="{DynamicResource AeroListBoxItemSelectedBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource AeroListBoxItemSelectedInnerBorderBrush}" />
+			</Style>
+		</Style>
+
+
+		<!--  Selected PointerOver State  -->
+		<Style Selector="^:selected:pointerover">
+			<Style Selector="^ /template/ Border#OuterBorder">
+				<Setter Property="BorderBrush" Value="{DynamicResource AeroListBoxItemSelectedHoverOuterBorderBrush}" />
+			</Style>
+			<Style Selector="^ /template/ Border#InnerBorder">
+				<Setter Property="Background" Value="{DynamicResource AeroListBoxItemSelectedHoverBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource AeroListBoxItemSelectedHoverInnerBorderBrush}" />
+			</Style>
+		</Style>
+
+
+		<!--  Disabled State  -->
+		<Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
+			<Setter Property="Foreground" Value="{DynamicResource SystemControlDisabledBaseMediumLowBrush}" />
+		</Style>
+	</ControlTheme>
+</ResourceDictionary>

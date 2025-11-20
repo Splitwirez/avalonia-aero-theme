@@ -1,0 +1,24 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:v="using:AeroAvalonia.Demo.Views"
+        mc:Ignorable="d" d:DesignWidth="398" d:DesignHeight="482"
+        x:Class="AeroAvalonia.Demo.Views.ListBoxPageView">
+    <StackPanel Orientation="Vertical"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Spacing="10"
+                Margin="4">
+        <ListBox>
+            <ListBoxItem Content="ListBoxItem 1" />
+            <ListBoxItem Content="ListBoxItem 2" />
+            <ListBoxItem Content="ListBoxItem 3" />
+        </ListBox>
+        <ListBox IsEnabled="False">
+            <ListBoxItem Content="Disabled ListBoxItem 1" />
+            <ListBoxItem Content="Disabled ListBoxItem 2" />
+            <ListBoxItem Content="Disabled ListBoxItem 3" />
+        </ListBox>
+    </StackPanel>
+</UserControl>

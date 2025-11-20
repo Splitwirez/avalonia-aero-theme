@@ -1,0 +1,59 @@
+<UserControl x:Class="AeroAvalonia.Demo.Views.MainView"
+            xmlns="https://github.com/avaloniaui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <UserControl.Styles>
+        <Style Selector="CheckBox.lightSwitch[IsChecked=true]">
+            <Setter Property="Content" Value="Lights on"/>
+        </Style>
+        <Style Selector="CheckBox.lightSwitch[IsChecked=false]">
+            <Setter Property="Content" Value="Lights off"/>
+        </Style>
+        
+        <Style Selector="ToggleSwitch.lightSwitch[IsChecked=true]">
+            <Setter Property="Margin" Value="0,-20"/>
+        </Style>
+        <Style Selector="ToggleSwitch.lightSwitch[IsChecked=false]">
+            <Setter Property="Margin" Value="-1,-20,1,-20"/>
+            <Setter Property="RenderTransform" Value="translateX(1px)"/>
+        </Style>
+    </UserControl.Styles>
+
+    <DockPanel>
+        <DockPanel Margin="7,0,7,8" DockPanel.Dock="Bottom">
+            <UniformGrid Rows="1"
+                        HorizontalAlignment="Right"
+                        DockPanel.Dock="Right">
+            <!--Grid ColumnDefinitions="73,8,73,8,73"-->
+                <UniformGrid.Styles>
+                    <Style Selector="Button">
+                        <Setter Property="Width" Value="73"/>
+                        <Setter Property="Margin" Value="8,0,0,0"/>
+                    </Style>
+                </UniformGrid.Styles>
+                <Button Content="OK"
+                        Command="{Binding $parent[Window].Close}"
+                        IsDefault="True"/>
+                <Button Content="Cancel"
+                        IsCancel="True"
+                        Command="{Binding $parent[Window].Close}"/>
+                <Button Content="Apply"
+                        IsEnabled="False"/>
+            </UniformGrid>
+            <ToggleSwitch  x:Name="LightSwitch"
+                        IsChecked="{Binding AreLightsOn}"
+                        Classes="lightSwitch"
+                        OnContent="Lights on"
+                        OffContent="Lights off"/>
+        </DockPanel>
+        <TabControl x:Name="PagesTabControl"
+                    ItemsSource="{Binding Tabs, Mode=OneWay}"
+                    SelectedIndex="{Binding SelectedIndex, Mode=TwoWay}"
+                    Margin="6,7,4,6">
+            <TabControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Title, Mode=OneWay}" />
+                </DataTemplate>
+            </TabControl.ItemTemplate>
+        </TabControl>
+    </DockPanel>
+</UserControl>
