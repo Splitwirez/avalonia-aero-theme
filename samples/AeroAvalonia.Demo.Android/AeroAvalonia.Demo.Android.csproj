@@ -7,7 +7,7 @@
 	</PropertyGroup>
 	<PropertyGroup>
 		<SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
-		<ApplicationId>com.splitwirez.AvaloniaAeroDemo</ApplicationId>
+		<ApplicationId>com.splitwirez.AeroAvaloniaDemo</ApplicationId>
 		<ApplicationVersion>1</ApplicationVersion>
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<AndroidPackageFormat>apk</AndroidPackageFormat>
@@ -37,6 +37,6 @@
     <ItemGroup>
 		<PackageReference Include="Avalonia.Android" Version="$(AvaloniaVer)" />
 		<PackageReference Include="Xamarin.AndroidX.Core.SplashScreen" Version="1.0.1.4" />
-		<ProjectReference Include="../AvaloniaAero.Demo/AvaloniaAero.Demo.csproj" />
+		<ProjectReference Include="../AeroAvalonia.Demo/AeroAvalonia.Demo.csproj" />
 	</ItemGroup>
 </Project>
