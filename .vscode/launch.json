@@ -14,9 +14,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/samples/AvaloniaAero.Demo.Desktop/bin/Debug/net5.0/AvaloniaAero.Demo.Desktop.dll",
+            "program": "${workspaceFolder}/samples/AeroAvalonia.Demo.Desktop/bin/Debug/net5.0/AeroAvalonia.Demo.Desktop.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/samples/AvaloniaAero.Demo.Desktop",
+            "cwd": "${workspaceFolder}/samples/AeroAvalonia.Demo.Desktop",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
             "console": "internalConsole",
             "stopAtEntry": false
